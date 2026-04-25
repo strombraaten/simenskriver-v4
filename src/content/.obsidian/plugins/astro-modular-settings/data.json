@@ -1,0 +1,239 @@
+{
+  "runWizardOnStartup": false,
+  "currentTemplate": "minimal",
+  "currentTheme": "dracula",
+  "customThemeFile": "custom",
+  "contentOrganization": "file-based",
+  "themeColors": {
+    "mode": "simple",
+    "simpleColors": {
+      "accent": "#5865f2",
+      "background": "#1e1e1e"
+    }
+  },
+  "siteInfo": {
+    "site": "https://astro-modular.netlify.app",
+    "title": "Simen skriver",
+    "description": "Simen skriver om teknologisk tankemat og ymse ting han lærer seg. Sjeldent i tredje person.",
+    "author": "Simen Strøm Braaten",
+    "language": "nb-NO",
+    "faviconThemeAdaptive": true,
+    "defaultOgImageAlt": "Astro Modular logo."
+  },
+  "layout": {
+    "contentWidth": "50rem"
+  },
+  "tableOfContents": {
+    "enabled": false,
+    "depth": 4
+  },
+  "footer": {
+    "enabled": true,
+    "content": "© 2026 {author}. Built with the <a href=\"https://github.com/davidvkimball/astro-modular\" target=\"_blank\">Astro Modular</a> theme.",
+    "showSocialIconsInFooter": true
+  },
+  "seo": {
+    "defaultOgImageAlt": "Astro Modular logo."
+  },
+  "navigation": {
+    "showNavigation": true,
+    "style": "minimal",
+    "showMobileMenu": true,
+    "pages": [
+      {
+        "title": "Notater",
+        "url": "/"
+      },
+      {
+        "title": "Tanker",
+        "url": "/tanker"
+      },
+      {
+        "title": "Meg",
+        "url": "/meg"
+      }
+    ],
+    "social": [
+      {
+        "title": "GitHub",
+        "url": "https://github.com/strombraaten",
+        "icon": "github"
+      },
+      {
+        "title": "Linkedin",
+        "url": "https://www.linkedin.com/in/strombraaten/",
+        "icon": "linkedin"
+      }
+    ]
+  },
+  "commandPalette": {
+    "enabled": true,
+    "shortcut": "ctrl+K",
+    "placeholder": "Se hva du finner",
+    "search": {
+      "posts": true,
+      "pages": false,
+      "projects": false,
+      "docs": false
+    },
+    "sections": {
+      "quickActions": false,
+      "pages": false,
+      "social": false
+    },
+    "quickActions": {
+      "enabled": true,
+      "toggleMode": true,
+      "graphView": true,
+      "changeTheme": true
+    }
+  },
+  "homeOptions": {
+    "featuredPost": {
+      "enabled": false,
+      "type": "featured",
+      "slug": "getting-started"
+    },
+    "recentPosts": {
+      "enabled": true,
+      "count": 500
+    },
+    "projects": {
+      "enabled": false,
+      "count": 2
+    },
+    "docs": {
+      "enabled": false,
+      "count": 3
+    },
+    "blurb": {
+      "placement": "below"
+    }
+  },
+  "postOptions": {
+    "postsPerPage": 6,
+    "readingTime": true,
+    "wordCount": false,
+    "tags": false,
+    "linkedMentions": {
+      "enabled": false,
+      "linkedMentionsCompact": false
+    },
+    "graphView": {
+      "enabled": false,
+      "showInSidebar": true,
+      "maxNodes": 100,
+      "showOrphanedPosts": true
+    },
+    "postNavigation": true,
+    "showPostCardCoverImages": "none",
+    "postCardAspectRatio": "og",
+    "customPostCardAspectRatio": "2.5/1",
+    "comments": {
+      "enabled": false,
+      "provider": "giscus",
+      "rawScript": "",
+      "repo": "",
+      "repoId": "",
+      "category": "",
+      "categoryId": "",
+      "mapping": "",
+      "strict": "",
+      "reactions": "",
+      "metadata": "",
+      "inputPosition": "",
+      "theme": "",
+      "lang": "",
+      "loading": ""
+    }
+  },
+  "features": {
+    "commandPalette": true,
+    "readingTime": false,
+    "linkedMentions": false,
+    "linkedMentionsCompact": false,
+    "graphView": false,
+    "postNavigation": false,
+    "hideScrollBar": true,
+    "scrollToTop": true,
+    "showSocialIconsInFooter": false,
+    "profilePicture": false,
+    "comments": false,
+    "featureButton": "none",
+    "showPostCardCoverImages": "featured-and-posts",
+    "postCardAspectRatio": "og",
+    "customPostCardAspectRatio": "2.5/1",
+    "quickActions": {
+      "enabled": true,
+      "toggleMode": true,
+      "graphView": true,
+      "changeTheme": true
+    }
+  },
+  "typography": {
+    "headingFont": "Merriweather",
+    "proseFont": "Inter",
+    "monoFont": "JetBrains Mono",
+    "fontSource": "cdn",
+    "fontDisplay": "swap",
+    "customFonts": {
+      "heading": "Atkinson Hyperlegible Next",
+      "prose": "Atkinson Hyperlegible Next",
+      "mono": "JetBrains Mono",
+      "urls": "https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Merriweather:opsz,wght@18..144,700&display=swap"
+    }
+  },
+  "optionalFeatures": {
+    "profilePicture": {
+      "enabled": false,
+      "image": "/profile.jpg",
+      "alt": "Profile picture",
+      "size": "md",
+      "url": "",
+      "placement": "footer",
+      "style": "circle"
+    },
+    "comments": {
+      "enabled": false,
+      "provider": "giscus",
+      "rawScript": "",
+      "repo": "",
+      "repoId": "",
+      "category": "",
+      "categoryId": "",
+      "mapping": "",
+      "strict": "",
+      "reactions": "",
+      "metadata": "",
+      "inputPosition": "",
+      "theme": "",
+      "lang": "",
+      "loading": ""
+    }
+  },
+  "deployment": {
+    "platform": "vercel"
+  },
+  "pluginConfig": {
+    "obsidianSettings": {
+      "attachmentLocation": "subfolder",
+      "subfolderName": "attachments"
+    },
+    "astroComposerSettings": {
+      "creationMode": "file",
+      "indexFileName": "index"
+    },
+    "imageInserterSettings": {
+      "valueFormat": "[[attachments/{image-url}]]",
+      "insertFormat": "[[attachments/{image-url}]]"
+    }
+  },
+  "optionalContentTypes": {
+    "projects": false,
+    "docs": false
+  },
+  "availableThemes": "default",
+  "customThemes": "",
+  "customThemeGenerationEnabled": false,
+  "removeRibbonIcon": false
+}
