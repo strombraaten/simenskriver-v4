@@ -1,36 +1,31 @@
-// Custom Theme Template
-// Rename this file to custom-theme.ts (or any name you prefer)
-// Then set theme: "custom" in src/config.ts - it will work automatically!
+// simen-skriver theme
+// primary: Lunar Eclipse (neutral gray scale)
+// highlight: Dark Shamrock (mint green accent)
 
 export const customTheme = {
   primary: {
-    50: "#ffffff",   // Pure white
-    100: "#f8f8f8",
-    200: "#e8e8e8",
-    300: "#d0d0d0",
-    400: "#a0a0a0",
-    500: "#808080",  // Base gray
-    600: "#606060",
-    700: "#404040",
-    800: "#202020",
-    900: "#101010",
-    950: "#000000"   // Pure black
+    50:  '#fcfcfc',  // hsl(0, 0%, 99%) — near white
+    100: '#f7f7f7',  // hsl(0, 0%, 97%)
+    200: '#eaeaeb',  // hsl(240, 2%, 92%)
+    300: '#d5d5d8',  // hsl(240, 4%, 84%)
+    400: '#bbbbbf',  // hsl(240, 3%, 74%)
+    500: '#909098',  // hsl(240, 4%, 58%)
+    600: '#6c6c75',  // hsl(240, 4%, 44%)
+    700: '#47474d',  // hsl(240, 4%, 29%)
+    800: '#2c2c30',  // hsl(240, 5%, 18%)
+    900: '#1d1d20',  // hsl(240, 5%, 12%)
+    950: '#101013',  // hsl(240, 8%, 7%) — near black
   },
   highlight: {
-    50: "#f0f8ff",   // Very light blue
-    100: "#e0f2fe",
-    200: "#bae6fd",
-    300: "#7dd3fc",
-    400: "#38bdf8",
-    500: "#0ea5e9",  // Base light blue
-    600: "#0284c7",
-    700: "#0369a1",
-    800: "#075985",
-    900: "#0c4a6e",
-    950: "#082f49"
+    50:  '#f2fdf9',  // extrapolated light mint
+    100: '#ddf8ef',  // extrapolated
+    200: '#b9eedd',  // extrapolated
+    300: '#8ce3c6',  // extrapolated
+    400: '#5fd8b0',  // extrapolated
+    500: '#32cd99',  // hsl(160, 61%, 50%) — Dark Shamrock base
+    600: '#31c493',  // hsl(160, 60%, 48%)
+    700: '#2caf83',  // hsl(160, 60%, 43%)
+    800: '#26976f',  // hsl(159, 60%, 37%)
+    900: '#218262',  // hsl(160, 60%, 32%)
   }
 };
-
-// Usage in src/config.ts:
-// theme: "custom",
-// customTheme: customTheme

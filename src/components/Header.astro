@@ -2,6 +2,7 @@
 import { siteConfig } from '../config';
 import ThemeToggle from './ThemeToggle.astro';
 import Icon from './Icon.astro';
+import SiteLogo from './SiteLogo.astro';
 
 const showProfilePicture = siteConfig.profilePicture.enabled && siteConfig.profilePicture.placement === 'header';
 const profilePicture = siteConfig.profilePicture;
@@ -43,9 +44,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
               class={getHeaderProfilePictureClasses(profilePicture.style)}
             />
           ) : (
-            <span class="font-semibold text-primary-900 dark:text-primary-50">
-              {siteConfig.title}
-            </span>
+            <SiteLogo class="h-10 w-auto text-primary-900 dark:text-primary-50" />
           )}
         </a>
       </div>
