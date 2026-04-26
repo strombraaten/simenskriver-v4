@@ -159,7 +159,7 @@
     "showSocialIconsInFooter": false,
     "profilePicture": false,
     "comments": false,
-    "featureButton": "none",
+    "featureButton": "mode",
     "showPostCardCoverImages": "featured-and-posts",
     "postCardAspectRatio": "og",
     "customPostCardAspectRatio": "2.5/1",
