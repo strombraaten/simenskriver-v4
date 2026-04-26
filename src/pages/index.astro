@@ -3,7 +3,7 @@ import { getCollection, getEntry, render, type CollectionEntry } from 'astro:con
 import { isValidDate } from '@/utils/markdown';
 import { siteConfig } from '@/config';
 import { generateHomeSEO } from '@/utils/seo';
-import { shouldShowPost, shouldShowContent, sortPostsByDate, processPost } from '@/utils/markdown';
+import { shouldShowPost, shouldShowContent, sortPostsByDate, processPost, extractTags } from '@/utils/markdown';
 import { hasProjectCategories } from '@/utils/categories';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PostCard from '@/components/PostCard.astro';
@@ -121,6 +121,50 @@ if (siteConfig.homeOptions.blurb.placement !== 'none') {
   }
 }
 
+// ── Four-view post list data ────────────────────────────────────────────────
+
+// Year view: group posts by year, years sorted descending, posts newest-first within each year
+const postsByYear: Record<number, typeof processedPosts> = {};
+for (const post of processedPosts) {
+  const year = new Date((post as any).data.date).getFullYear();
+  if (!postsByYear[year]) postsByYear[year] = [];
+  postsByYear[year].push(post);
+}
+const years = Object.keys(postsByYear).map(Number).sort((a, b) => b - a);
+
+// Tag view: alphabetical tags excluding newsletter, posts grouped per tag
+const EXCLUDED_TAGS = ['nyhetsbrev'];
+const allTags = extractTags(visiblePosts).filter(t => !EXCLUDED_TAGS.includes(t));
+const postsByTag: Record<string, typeof processedPosts> = {};
+for (const tag of allTags) {
+  postsByTag[tag] = processedPosts.filter((post: any) => {
+    const tags = Array.isArray(post.data.tags)
+      ? post.data.tags
+      : post.data.tags ? [post.data.tags] : [];
+    return tags.some((t: string) => t?.trim() === tag);
+  });
+}
+
+// Alphabetical view: sorted A–Å by title
+const alphabeticalPosts = [...processedPosts].sort((a: any, b: any) =>
+  (a.data.title || '').localeCompare(b.data.title || '', 'nb')
+);
+
+// Last-modified view: sort by lastModified, falling back to date
+const lastModifiedPosts = [...processedPosts].sort((a: any, b: any) => {
+  const dateA = a.data.lastModified ? new Date(a.data.lastModified) : new Date(a.data.date);
+  const dateB = b.data.lastModified ? new Date(b.data.lastModified) : new Date(b.data.date);
+  return dateB.getTime() - dateA.getTime();
+});
+
+// Date helpers
+const fmtShort = (d: Date | string) =>
+  new Date(d).toLocaleDateString('nb-NO', { day: 'numeric', month: 'short', year: 'numeric' });
+const fmtFull = (d: Date | string) =>
+  new Date(d).toLocaleDateString('nb-NO', { day: 'numeric', month: 'long', year: 'numeric' });
+
+// ── End four-view data ───────────────────────────────────────────────────────
+
 // Determine which content types are being displayed
 const hasFeaturedPost = siteConfig.homeOptions.featuredPost.enabled && featuredPost;
 const hasRecentPosts = siteConfig.homeOptions.recentPosts.enabled && previewPosts.length > 0;
@@ -218,39 +262,98 @@ const structuredData = {
             </section>
           )}
 
-          <!-- Recent posts preview -->
-          {siteConfig.homeOptions.recentPosts.enabled && previewPosts.length > 0 && (
+          <!-- All posts — four-view switcher -->
+          {siteConfig.homeOptions.recentPosts.enabled && processedPosts.length > 0 && (
             <section class="mb-12">
-              {!useSpecialTreatment && (
-                <div class="flex items-center justify-between mb-6">
-                  <h2 class="text-lg font-semibold text-primary-900 dark:text-primary-50">
-                    Recent Posts
-                  </h2>
-                  <a
-                    href="/posts"
-                    class="text-primary-600 dark:text-primary-300 hover:text-highlight-600 dark:hover:text-highlight-400 font-medium transition-colors"
-                  >
-                    View all posts →
-                  </a>
-                </div>
-              )}
 
-              <div class="space-y-4">
-                {previewPosts.map((post, index) => (
-                  <PostCard post={post} eager={featuredPost ? index === 0 : index < 2} context="recent" />
-                ))}
+              <!-- View tabs -->
+              <div class="view-tabs" role="tablist">
+                <button data-view-btn="year"     class="view-tab" role="tab" aria-selected="true">År</button>
+                <button data-view-btn="tag"      class="view-tab" role="tab">Tema</button>
+                <button data-view-btn="alpha"    class="view-tab" role="tab">Alfabetisk</button>
+                <button data-view-btn="modified" class="view-tab" role="tab">Sist endret</button>
               </div>
 
-              {useSpecialTreatment && (
-                <div class="mt-8 text-center">
-                  <a
-                    href="/posts"
-                    class="text-primary-600 dark:text-primary-300 hover:text-highlight-600 dark:hover:text-highlight-400 font-medium transition-colors"
-                  >
-                    View all posts →
-                  </a>
+              <div id="post-views" data-view="year">
+
+                <!-- Year view -->
+                <div class="view-section view-year">
+                  {years.map(year => (
+                    <div class="group-block">
+                      <h2 class="group-heading">{year}</h2>
+                      <ul class="post-list">
+                        {postsByYear[year].map((post: any) => (
+                          <li>
+                            <a href={`/posts/${post.id}`} class="post-row">
+                              <span class="post-title">{post.data.title}</span>
+                              <span class="post-date">{fmtShort(post.data.date)}</span>
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
                 </div>
-              )}
+
+                <!-- Tag view -->
+                <div class="view-section view-tag">
+                  {allTags.map(tag => (
+                    postsByTag[tag].length > 0 && (
+                      <div class="group-block">
+                        <h2 class="group-heading">
+                          <a href={`/posts/tag/${encodeURIComponent(tag)}`} class="tag-heading-link">{tag}</a>
+                        </h2>
+                        <p class="tag-count">
+                          {postsByTag[tag].length} {postsByTag[tag].length === 1 ? 'notat' : 'notater'} med denne emneknaggen
+                        </p>
+                        <ul class="post-list">
+                          {postsByTag[tag].map((post: any) => (
+                            <li>
+                              <a href={`/posts/${post.id}`} class="post-row">
+                                <span class="post-title">{post.data.title}</span>
+                                <span class="post-date">{fmtShort(post.data.date)}</span>
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )
+                  ))}
+                </div>
+
+                <!-- Alphabetical view -->
+                <div class="view-section view-alpha">
+                  <ul class="post-list">
+                    {alphabeticalPosts.map((post: any) => (
+                      <li>
+                        <a href={`/posts/${post.id}`} class="post-row">
+                          <span class="post-title">{post.data.title}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <!-- Last-modified view -->
+                <div class="view-section view-modified">
+                  <ul class="post-list">
+                    {lastModifiedPosts.map((post: any) => {
+                      const d = post.data.lastModified
+                        ? new Date(post.data.lastModified)
+                        : new Date(post.data.date);
+                      return (
+                        <li>
+                          <a href={`/posts/${post.id}`} class="post-row">
+                            <span class="post-title">{post.data.title}</span>
+                            <span class="post-date">{fmtFull(d)}</span>
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+
+              </div>
             </section>
           )}
 
@@ -364,23 +467,160 @@ const structuredData = {
   // Hero search button functionality
   document.addEventListener('DOMContentLoaded', () => {
     const heroSearchButton = document.getElementById('hero-search-button');
-
     if (heroSearchButton) {
       heroSearchButton.addEventListener('click', () => {
-        const event = new CustomEvent('openCommandPalette');
-        window.dispatchEvent(event);
+        window.dispatchEvent(new CustomEvent('openCommandPalette'));
       });
     }
   });
+
+  // View switcher — persists selected view in localStorage
+  (function () {
+    const wrapper = document.getElementById('post-views');
+    const buttons = document.querySelectorAll('[data-view-btn]');
+    if (!wrapper || !buttons.length) return;
+
+    function setView(view) {
+      wrapper.dataset.view = view;
+      localStorage.setItem('post-view', view);
+      buttons.forEach(btn => {
+        const isActive = btn.dataset.viewBtn === view;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+    }
+
+    // Restore persisted view (default: year)
+    setView(localStorage.getItem('post-view') || 'year');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (btn.dataset.viewBtn) setView(btn.dataset.viewBtn);
+      });
+    });
+  })();
 </script>
 
 <style>
-  /* Enhanced homepage styles */
-  .btn-primary {
-    @apply inline-flex items-center px-6 py-3 font-medium rounded-lg transition-all duration-200 hover:shadow-lg transform hover:scale-105;
+  /* ── View tabs ────────────────────────────────────────────────────────────── */
+  .view-tabs {
+    display: flex;
+    gap: 0.125rem;
+    border-bottom: 1px solid;
+    @apply border-primary-200 dark:border-primary-700;
+    margin-bottom: 1.5rem;
   }
 
-  .btn-primary:focus-visible {
-    @apply outline-none ring-2 ring-highlight-500 ring-offset-2;
+  .view-tab {
+    @apply text-sm font-medium;
+    padding: 0.375rem 0.75rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    @apply text-primary-400 dark:text-primary-500;
+    transition: color 0.15s;
+  }
+
+  .view-tab:hover {
+    @apply text-primary-700 dark:text-primary-200;
+  }
+
+  .view-tab.active {
+    @apply text-primary-900 dark:text-primary-50;
+  }
+
+  /* Active underline indicator */
+  .view-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    @apply bg-highlight-500;
+  }
+
+  /* ── View sections ────────────────────────────────────────────────────────── */
+  .view-section {
+    display: none;
+  }
+
+  #post-views[data-view="year"]     .view-year,
+  #post-views[data-view="tag"]      .view-tag,
+  #post-views[data-view="alpha"]    .view-alpha,
+  #post-views[data-view="modified"] .view-modified {
+    display: block;
+  }
+
+  /* ── Group blocks (year / tag headings) ───────────────────────────────────── */
+  .group-block {
+    margin-bottom: 2rem;
+  }
+
+  .group-heading {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    @apply text-primary-400 dark:text-primary-500;
+    margin-bottom: 0.375rem;
+  }
+
+  .tag-heading-link {
+    transition: color 0.15s;
+  }
+
+  .tag-heading-link:hover {
+    @apply text-highlight-600 dark:text-highlight-400;
+  }
+
+  .tag-count {
+    font-size: 0.7rem;
+    @apply text-primary-400 dark:text-primary-500;
+    margin-bottom: 0.375rem;
+  }
+
+  /* ── Post list rows ───────────────────────────────────────────────────────── */
+  .post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .post-list li:first-child .post-row {
+    border-top: 1px solid;
+    @apply border-primary-100 dark:border-primary-800;
+  }
+
+  .post-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid;
+    @apply border-primary-100 dark:border-primary-800;
+    @apply text-primary-800 dark:text-primary-200;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .post-row:hover {
+    @apply text-highlight-600 dark:text-highlight-400;
+  }
+
+  .post-title {
+    font-size: 0.875rem;
+  }
+
+  .post-date {
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    @apply text-primary-400 dark:text-primary-500;
+  }
+
+  .post-row:hover .post-date {
+    @apply text-highlight-500 dark:text-highlight-500;
   }
 </style>

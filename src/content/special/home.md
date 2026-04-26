@@ -2,7 +2,5 @@
 title: Homepage
 description:
 ---
-%%The title and description frontmatter properties are not used for SEO. Set homepageTitle in config.ts for the homepage meta title.%%
-## Takk for at du leser
 
-Gjør som 52 andre fine folk, og få skriveriene mine rett til eposten din.
+Jeg heter Simen, og jeg er en UX-designer som brenner for å gjøre kompliserte ting enkle og forståelige. Her samler jeg tanker, notater og refleksjoner om design, teknologi, læring og alt det andre som opptar meg — behandlet som en digital hage mer enn en tradisjonell blogg.

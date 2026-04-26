@@ -10,6 +10,7 @@ const postsCollection = defineCollection({
     date: z.coerce.date().default(() => new Date()),
     tags: z.array(z.string()).nullable().optional(),
     draft: z.boolean().optional(),
+    lastModified: z.coerce.date().optional(),
     image: z.any().nullable().optional().transform((val) => {
       // Handle various Obsidian syntax formats
       if (Array.isArray(val)) {

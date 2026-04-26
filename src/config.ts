@@ -372,7 +372,7 @@ export const siteConfig: SiteConfig = {
     },
     blurb: {
       // [CONFIG:HOME_OPTIONS_BLURB_PLACEMENT]
-      placement: "below", // 'above' (at the top), 'below' (after content), or 'none' (disabled)
+      placement: "above", // 'above' (at the top), 'below' (after content), or 'none' (disabled)
     },
   },
 
