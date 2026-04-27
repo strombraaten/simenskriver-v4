@@ -23,21 +23,24 @@ const processedPosts = await Promise.all(
   sortedPosts.map(async (post) => await processPost(post))
 ) as any[];
 
+const regularProcessedPosts = processedPosts.filter((p: any) => p.data.type !== 'utkast');
+const utkastProcessedPosts  = processedPosts.filter((p: any) => p.data.type === 'utkast');
+
 // Get featured post based on configuration
 let featuredPost = null;
 if (siteConfig.homeOptions.featuredPost.enabled) {
   if (siteConfig.homeOptions.featuredPost.type === "latest") {
-    featuredPost = processedPosts[0];
+    featuredPost = regularProcessedPosts[0];
   } else if (siteConfig.homeOptions.featuredPost.type === "featured" && siteConfig.homeOptions.featuredPost.slug) {
     // Find the specific post by id (slug config value maps to post.id in v6)
-    featuredPost = processedPosts.find(post => post.id === siteConfig.homeOptions.featuredPost.slug) || null;
+    featuredPost = regularProcessedPosts.find(post => post.id === siteConfig.homeOptions.featuredPost.slug) || null;
   }
 }
 
 // Get preview posts based on whether featured post is shown
 const previewPosts = featuredPost
-  ? processedPosts.slice(1, siteConfig.homeOptions.recentPosts.count + 1)
-  : processedPosts.slice(0, siteConfig.homeOptions.recentPosts.count);
+  ? regularProcessedPosts.slice(1, siteConfig.homeOptions.recentPosts.count + 1)
+  : regularProcessedPosts.slice(0, siteConfig.homeOptions.recentPosts.count);
 
 // Get featured projects if enabled
 let featuredProjects: any[] = [];
@@ -124,8 +127,8 @@ if (siteConfig.homeOptions.blurb.placement !== 'none') {
 // ── Four-view post list data ────────────────────────────────────────────────
 
 // Year view: group posts by year, years sorted descending, posts newest-first within each year
-const postsByYear: Record<number, typeof processedPosts> = {};
-for (const post of processedPosts) {
+const postsByYear: Record<number, typeof regularProcessedPosts> = {};
+for (const post of regularProcessedPosts) {
   const year = new Date((post as any).data.date).getFullYear();
   if (!postsByYear[year]) postsByYear[year] = [];
   postsByYear[year].push(post);
@@ -134,10 +137,11 @@ const years = Object.keys(postsByYear).map(Number).sort((a, b) => b - a);
 
 // Tag view: alphabetical tags excluding newsletter, posts grouped per tag
 const EXCLUDED_TAGS = ['nyhetsbrev'];
-const allTags = extractTags(visiblePosts).filter(t => !EXCLUDED_TAGS.includes(t));
-const postsByTag: Record<string, typeof processedPosts> = {};
+const regularVisiblePosts = visiblePosts.filter(p => (p as any).data.type !== 'utkast');
+const allTags = extractTags(regularVisiblePosts).filter(t => !EXCLUDED_TAGS.includes(t));
+const postsByTag: Record<string, typeof regularProcessedPosts> = {};
 for (const tag of allTags) {
-  postsByTag[tag] = processedPosts.filter((post: any) => {
+  postsByTag[tag] = regularProcessedPosts.filter((post: any) => {
     const tags = Array.isArray(post.data.tags)
       ? post.data.tags
       : post.data.tags ? [post.data.tags] : [];
@@ -146,12 +150,12 @@ for (const tag of allTags) {
 }
 
 // Alphabetical view: sorted A–Å by title
-const alphabeticalPosts = [...processedPosts].sort((a: any, b: any) =>
+const alphabeticalPosts = [...regularProcessedPosts].sort((a: any, b: any) =>
   (a.data.title || '').localeCompare(b.data.title || '', 'nb')
 );
 
 // Last-modified view: sort by lastModified, falling back to date
-const lastModifiedPosts = [...processedPosts].sort((a: any, b: any) => {
+const lastModifiedPosts = [...regularProcessedPosts].sort((a: any, b: any) => {
   const dateA = a.data.lastModified ? new Date(a.data.lastModified) : new Date(a.data.date);
   const dateB = b.data.lastModified ? new Date(b.data.lastModified) : new Date(b.data.date);
   return dateB.getTime() - dateA.getTime();
@@ -240,7 +244,7 @@ const structuredData = {
             </div>
           </div>
         </article>
-      ) : processedPosts.length > 0 ? (
+      ) : (regularProcessedPosts.length > 0 || utkastProcessedPosts.length > 0) ? (
         <>
           <!-- Home blurb above posts -->
           {siteConfig.homeOptions.blurb.placement === 'above' && HomeBlurbContent && (
@@ -263,7 +267,7 @@ const structuredData = {
           )}
 
           <!-- All posts — four-view switcher -->
-          {siteConfig.homeOptions.recentPosts.enabled && processedPosts.length > 0 && (
+          {siteConfig.homeOptions.recentPosts.enabled && (regularProcessedPosts.length > 0 || utkastProcessedPosts.length > 0) && (
             <section class="mb-12">
 
               <!-- View tabs -->
@@ -272,6 +276,9 @@ const structuredData = {
                 <button data-view-btn="tag"      class="view-tab" role="tab">Tema</button>
                 <button data-view-btn="alpha"    class="view-tab" role="tab">Alfabetisk</button>
                 <button data-view-btn="modified" class="view-tab" role="tab">Sist endret</button>
+                {utkastProcessedPosts.length > 0 && (
+                  <button data-view-btn="utkast" class="view-tab" role="tab">Utkast</button>
+                )}
               </div>
 
               <div id="post-views" data-view="year">
@@ -350,6 +357,20 @@ const structuredData = {
                         </li>
                       );
                     })}
+                  </ul>
+                </div>
+
+                <!-- Utkast view -->
+                <div class="view-section view-utkast">
+                  <ul class="post-list">
+                    {utkastProcessedPosts.map((post: any) => (
+                      <li>
+                        <a href={`/posts/${post.id}`} class="post-row">
+                          <span class="post-title">{post.data.title}</span>
+                          <span class="post-date">{fmtShort(post.data.date)}</span>
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </div>
 
@@ -549,7 +570,8 @@ const structuredData = {
   #post-views[data-view="year"]     .view-year,
   #post-views[data-view="tag"]      .view-tag,
   #post-views[data-view="alpha"]    .view-alpha,
-  #post-views[data-view="modified"] .view-modified {
+  #post-views[data-view="modified"] .view-modified,
+  #post-views[data-view="utkast"]   .view-utkast {
     display: block;
   }
 

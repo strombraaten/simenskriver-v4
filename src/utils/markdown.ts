@@ -147,9 +147,19 @@ export async function generateTOC(headings: Heading[]): Promise<Heading[]> {
 
 // Process content data for display (posts, projects, docs, etc.)
 export async function processPost(post: any) {
-  const { Content, headings, remarkPluginFrontmatter } = await render(post);
+  let Content: any = null;
+  let headings: any[] = [];
+  let remarkPluginFrontmatter: any = {};
+
+  try {
+    ({ Content, headings, remarkPluginFrontmatter } = await render(post));
+  } catch (e) {
+    // render() can fail on posts with external image URLs in body
+    console.warn(`[processPost] Could not render "${post.id}":`, (e as Error).message);
+  }
+
   const { excerpt, wordCount, hasMore } = processMarkdown(post.body || "");
-  const readingTime = getReadingTime(remarkPluginFrontmatter, post.body || ""); // Pass post.body as fallback
+  const readingTime = getReadingTime(remarkPluginFrontmatter, post.body || "");
   const toc = await generateTOC(headings);
 
   return {
