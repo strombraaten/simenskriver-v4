@@ -2,8 +2,9 @@
 import type { GetStaticPaths } from 'astro';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
-import { shouldShowContent } from '@/utils/markdown';
+import { shouldShowContent, shouldShowPost } from '@/utils/markdown';
 import PageLayout from '@/layouts/PageLayout.astro';
+import PostLayout from '@/layouts/PostLayout.astro';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   // Get all pages
@@ -56,25 +57,33 @@ export const getStaticPaths: GetStaticPaths = async () => {
       props: { page }
     }));
 
-  return [...pagePaths, ...specialPaths];
+  // Generate paths for posts with a permalink field
+  const posts = await getCollection('posts');
+  const permalinkPaths = posts
+    .filter(post => post.data.permalink && shouldShowPost(post, isDev))
+    .map(post => {
+      const slug = post.data.permalink!.replace(/^\//, '');
+      return { params: { slug }, props: { post } };
+    });
+
+  return [...pagePaths, ...specialPaths, ...permalinkPaths];
 };
 
 export interface Props {
-  page: any;
+  page?: any;
+  post?: any;
 }
 
-const { page } = Astro.props;
+const { page, post } = Astro.props;
 
-// Validate page data
-if (!page) {
-  return Astro.redirect('/404');
-}
-
-// Check if page should be visible (handles drafts in production)
 const isDev = import.meta.env.DEV;
-if (!shouldShowContent(page, isDev)) {
-  return Astro.redirect('/404');
+
+if (post) {
+  if (!shouldShowPost(post, isDev)) return Astro.redirect('/404');
+} else {
+  if (!page) return Astro.redirect('/404');
+  if (!shouldShowContent(page, isDev)) return Astro.redirect('/404');
 }
 ---
 
-<PageLayout page={page} />
+{post ? <PostLayout post={post} /> : <PageLayout page={page} />}
