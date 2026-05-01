@@ -66,6 +66,7 @@ Content collections and their schemas are defined in `src/content.config.ts`. Al
 | `src/content.config.ts` | Content collection schemas |
 | `tailwind.config.mjs` | Tailwind with dynamic theme colors via CSS custom properties |
 | `vite.config.mjs` | Build optimisation and minification |
+| `docs/solutions/` | Documented solutions to past problems (bugs, best practices, workflow patterns), organized by category with YAML frontmatter (`module`, `tags`, `problem_type`) |
 
 ### Component Hierarchy
 
