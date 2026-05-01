@@ -4,14 +4,11 @@ lastModified: 2023-03-26
 tags:
   - teknologi
   - nyhetsbrev
-aliases:
-  - tastatur
-  - betydningen av at noe er enkelt
+aliases: betydningen av at noe er enkelt
 title: Tastatur
 slug: tastatur
 type: utkast
 ---
-
 > [!tip]- Vil utdype mer her seinere
 > For eksempel om ortholineære tastatur. Hva det er. Hvordan man kan trekke det enda litt lengre med en "columnar" layout. Og ikke minst hvorfor alle egentlig burde bytte over til Colemak.
 >

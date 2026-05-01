@@ -4,14 +4,11 @@ lastModified: 2025-01-25
 tags:
   - bærekraft
   - teknologi
-aliases:
-  - verstinger på elektronisk søppel
-  - verstinger
+aliases: verstinger på elektronisk søppel
 title: Vi nordmenn er verstinger på elektronisk søppel
 slug: verstinger
 description: Hva vil det si at nordmenn er verstinger på elektronisk søppel? Hvor ille er det egentlig? Og hva kan du gjøre med det?
 ---
-
 # Verstinger på elektronisk søppel
 
 De fleste av vårs har ting vi ikke bruker lenger, liggende i en skuff. Kanskje det er den telefonen du brukte for 8 år sida? Eller den iPaden du kjøpte på ferie i 2011, for du trodde du kom til å bruke den masse til lesing og ta notater på skolen, meeen som har vært i en boks i boden siden da.
