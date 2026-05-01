@@ -200,12 +200,6 @@
   force = true
 
 [[redirects]]
-  from = "/posts/Bærekraftig webutvikling"
-  to = "/posts/barekraftig-webutvikling"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/posts/bærekraftig webutvikling"
   to = "/posts/barekraftig-webutvikling"
   status = 301
@@ -231,12 +225,6 @@
 
 [[redirects]]
   from = "/posts/det er noe feil med blogging som konsept"
-  to = "/posts/blogging-som-konsept"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/posts/Det er noe feil med blogging som konsept"
   to = "/posts/blogging-som-konsept"
   status = 301
   force = true
@@ -364,12 +352,6 @@
 [[redirects]]
   from = "/posts/fridager med intensjon"
   to = "/posts/firedagers-uke"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/posts/Følg nysgjerrigheten"
-  to = "/posts/folg-nysgjerrigheten"
   status = 301
   force = true
 
@@ -646,12 +628,6 @@
 [[redirects]]
   from = "/posts/nå-sida"
   to = "/posts/na-sida"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/posts/Den neste nye tingen"
-  to = "/posts/neste-nye"
   status = 301
   force = true
 

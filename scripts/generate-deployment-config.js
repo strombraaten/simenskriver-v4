@@ -261,6 +261,27 @@ async function processDirectory(dirPath, isPost = false) {
     return { redirects: [], processedFiles: 0 };
   }
 }
+function deduplicateRedirectsCaseInsensitive(redirects) {
+  const dedupedByLowercasePath = new Map();
+
+  for (const redirect of redirects) {
+    const normalizedFrom = redirect.from.toLowerCase();
+    const existing = dedupedByLowercasePath.get(normalizedFrom);
+
+    if (!existing) {
+      dedupedByLowercasePath.set(normalizedFrom, redirect);
+      continue;
+    }
+
+    const existingIsLowercase = existing.from === normalizedFrom;
+    const candidateIsLowercase = redirect.from === normalizedFrom;
+    if (!existingIsLowercase && candidateIsLowercase) {
+      dedupedByLowercasePath.set(normalizedFrom, redirect);
+    }
+  }
+
+  return Array.from(dedupedByLowercasePath.values());
+}
 
 // Function to update astro.config.mjs with redirects (dev-only)
 async function updateAstroConfig(redirects) {
@@ -887,6 +908,7 @@ async function generateRedirects() {
   }
   
   if (allRedirects.length > 0) {
+    allRedirects = deduplicateRedirectsCaseInsensitive(allRedirects);
     log.info(`📁 Processing pages directory...`);
     log.info(`📁 Processing posts directory...`);
     log.info(`📁 Processing projects directory...`);
