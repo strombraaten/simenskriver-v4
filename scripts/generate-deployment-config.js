@@ -277,7 +277,7 @@ async function updateAstroConfig(redirects) {
     
     // Format redirects with conditional dev-only check
     // Using process.env.NODE_ENV for reliable environment detection at config load time
-    const redirectsString = JSON.stringify(redirectsObj, null, 2).replace(/"/g, "'");
+    const redirectsString = JSON.stringify(redirectsObj, null, 2);
     const newRedirectsSection = `redirects: (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'build') ? ${redirectsString} : {}`;
     
     // Remove ALL existing redirects entries (including any comments before them)
