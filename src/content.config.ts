@@ -32,6 +32,7 @@ const postsCollection = defineCollection({
     author: z.string().nullable().optional(),
     noIndex: z.boolean().optional(),
     type: z.string().optional(),
+    permalink: z.string().optional(),
   }),
 });
 
