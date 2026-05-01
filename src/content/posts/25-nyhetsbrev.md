@@ -1,8 +1,8 @@
 ---
 date: 2023-10-15
 lastModified: 2023-10-15
-title: 
-slug: 12-06-2024-Nyhetsbrev
+title: Nyhetsbrev 25
+slug: 12-06-2024-nyhetsbrev
 draft: true
 ---
 
