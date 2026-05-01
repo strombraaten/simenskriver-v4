@@ -4,7 +4,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Astro Modular** — a static blog/digital-garden theme for Astro, designed to use Obsidian as a CMS. Content lives in `src/content/` as Markdown/MDX; wikilinks, embeds, callouts, and other Obsidian syntax are processed by custom remark/rehype plugins at build time.
+**Simen Skriver** — a personal blog and digital garden built on the [Astro Modular](https://astro-modular.netlify.app/) theme. Uses [Vault CMS](https://docs.vaultcms.org/guides/introduction/) to set up a tailored Obsidian writing environment: content is authored in Obsidian and pushed directly to the repo via the Obsidian Git plugin, triggering Vercel deploys automatically. Deployed on **Vercel**; domain (`simenskriver.no`) is registered and managed via **GoDaddy**. Content lives in `src/content/` as Markdown/MDX; wikilinks, embeds, callouts, and other Obsidian syntax are processed by custom remark/rehype plugins at build time.
+
+## ⚠ Workflow Safety
+
+Before making changes, consider whether they could break either of these two systems:
+
+**Astro Modular theme compatibility**
+- This project tracks the upstream [Astro Modular](https://astro-modular.netlify.app/) theme. Avoid changes that deviate heavily from the theme's conventions — they risk creating merge conflicts or broken upgrades when pulling in future upstream updates.
+- Prefer configuration-based customisation (via `src/config.ts`) over modifying theme internals directly.
+
+**Obsidian → Git → Vercel authoring workflow**
+- Content is written in Obsidian and pushed to the repo via the Obsidian Git plugin, triggering Vercel deploys automatically. [Vault CMS](https://docs.vaultcms.org/guides/introduction/) configures this environment.
+- Do NOT change: content folder structure (`src/content/`), frontmatter field names/types, wikilink/embed syntax handling, or image paths — these are tightly coupled to what Obsidian and Vault CMS expect.
+- Do NOT rename or restructure the `scripts/` pipeline steps that run before the Astro build (image sync, alias processing, graph generation) — the Obsidian workflow depends on these.
+
+If a proposed change risks any of the above, flag it explicitly before proceeding.
 
 ## Commands
 
@@ -51,6 +66,7 @@ Content collections and their schemas are defined in `src/content.config.ts`. Al
 | `src/content.config.ts` | Content collection schemas |
 | `tailwind.config.mjs` | Tailwind with dynamic theme colors via CSS custom properties |
 | `vite.config.mjs` | Build optimisation and minification |
+| `docs/solutions/` | Documented solutions to past problems (bugs, best practices, workflow patterns), organized by category with YAML frontmatter (`module`, `tags`, `problem_type`) |
 
 ### Component Hierarchy
 
