@@ -1,5 +1,6 @@
 ---
 import { siteConfig, getFontFamily, getGoogleFontsUrl, shouldLoadLocalFonts, shouldLoadCdnFonts, getFontDisplay, getThemeDisplayName } from '@/config';
+import { customTheme as serverCustomTheme } from '../themes/custom/custom';
 import type { SEOData } from '@/types';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
@@ -45,7 +46,7 @@ const scrollbarClass = siteConfig.hideScrollBar ? '' : 'show-scrollbars';
 ---
 
 <!DOCTYPE html>
-<html lang={siteConfig.language} class={`scrollbar-hide ${scrollbarClass}`} data-theme-config={siteConfig.theme} data-custom-theme-file={siteConfig.customThemeFile} data-available-themes={JSON.stringify(siteConfig.availableThemes)} data-command-palette-enabled={siteConfig.commandPalette.enabled} data-command-palette-change-theme={siteConfig.commandPalette.quickActions.changeTheme} data-feature-button={siteConfig.featureButton} data-favicon-theme-adaptive={siteConfig.faviconThemeAdaptive}>
+<html lang={siteConfig.language} class={`scrollbar-hide ${scrollbarClass}`} data-theme-config={siteConfig.theme} data-custom-theme-file={siteConfig.customThemeFile} data-custom-theme={JSON.stringify(serverCustomTheme)} data-available-themes={JSON.stringify(siteConfig.availableThemes)} data-command-palette-enabled={siteConfig.commandPalette.enabled} data-command-palette-change-theme={siteConfig.commandPalette.quickActions.changeTheme} data-feature-button={siteConfig.featureButton} data-favicon-theme-adaptive={siteConfig.faviconThemeAdaptive}>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -724,9 +725,18 @@ const scrollbarClass = siteConfig.hideScrollBar ? '' : 'show-scrollbars';
           customThemeFile = themeName;
         }
 
-        // Try to load the custom theme
-        try {
-          // Import the custom theme dynamically
+        // Use server-injected theme data when available (works in production builds)
+        const serverThemeRaw = document.documentElement.getAttribute('data-custom-theme');
+        if (serverThemeRaw && themeName === 'custom') {
+          try {
+            themes[themeName] = JSON.parse(serverThemeRaw);
+          } catch (e) {
+            console.warn('Failed to parse server-injected theme data', e);
+          }
+        }
+
+        // Try to load the custom theme dynamically (fallback, works in dev)
+        if (!themes[themeName]) try {
           const customThemeModule = await import(`/src/themes/custom/${customThemeFile}.ts`);
 
           // Look for the theme export - try different possible export names
