@@ -7,7 +7,7 @@ tags:
 aliases:
   - Håndtegna notater i Obsidian
 title: Håndtegna notater i Obsidian
-slug: obsidian-tegning
+permalink: obsidian-tegning
 ---
 
 # Håndtegna notater i Obsidian

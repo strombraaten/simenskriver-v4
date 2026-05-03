@@ -6,7 +6,7 @@ tags:
 aliases:
   - et oppslagsverk for Vim
 title: Et oppslagsverk for Vim
-slug: vim-oppslagsverk
+permalink: vim-oppslagsverk
 ---
 
 > [!tip] Anbefaler å lese [[vim|en introduksjon til Vim]] før du kaster deg ut i oppslagsverket.

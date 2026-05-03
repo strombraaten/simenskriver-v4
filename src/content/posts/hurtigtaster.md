@@ -4,7 +4,7 @@ lastModified: 2024-03-07
 tags:
   - apper
 title: Hurtigtaster
-slug: hurtigtaster
+permalink: hurtigtaster
 ---
 
 ## Figma

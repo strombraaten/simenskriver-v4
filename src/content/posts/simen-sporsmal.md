@@ -7,7 +7,7 @@ aliases:
   - Simen-spørsmål
   - hva er egentlig et Simen-spørsmål
 title: Hva er egentlig et Simen-spørsmål?
-slug: simen-sporsmal
+permalink: simen-sporsmal
 ---
 
 "Å, det der var et skikkelig Simen-spørsmål", er en setning jeg får høre overraskende ofte. Som regel er det da snakk om et spørsmål som ikke helt kan besvares med ett enkelt ord. Hvor du også sier hvorfor du vil svare akkurat det.

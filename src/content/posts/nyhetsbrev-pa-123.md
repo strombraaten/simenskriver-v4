@@ -6,7 +6,7 @@ tags:
 aliases:
   - Nyhetsbrev på 1-2-3
 title: Nyhetsbrev på 1-2-3
-slug: nyhetsbrev-pa-123
+permalink: nyhetsbrev-pa-123
 ---
 
 # Heisann verden!

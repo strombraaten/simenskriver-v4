@@ -6,7 +6,7 @@ tags:
 aliases:
   - å lære åpent
 title: Å lære åpent
-slug: lare-apent
+permalink: lare-apent
 ---
 
 Sakte, men sikkert prøver jeg nemlig å forklare hvordan jeg gjør det jeg gjør. Først og fremst med skrivinga, men også til dels [[gira-av-obsidian|hvordan jeg bruker Obsidian]], for det får jeg en del spørsmål om.

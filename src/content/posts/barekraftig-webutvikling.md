@@ -7,7 +7,7 @@ aliases:
   - bærekraftig webutvikling
 tags:
   - bærekraft
-slug: barekraftig-webutvikling
+permalink: barekraftig-webutvikling
 ---
 
 Hva betyr bærekraft i sammenhengen av å lage digitale greier? Det er et spørsmål jeg har tenkt en del på, og som jeg prøver å forstå i større grad.

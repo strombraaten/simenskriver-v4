@@ -6,7 +6,7 @@ tags:
 aliases:
   - oppfølgingsspørsmål
 title: Oppfølgingsspørsmål
-slug: oppfolgingssporsmal
+permalink: oppfolgingssporsmal
 ---
 
 Henger tett sammen med [[gode-sporsmal|gode spørsmål]], siden dette handler om hvordan du får samtalene til å vare lengre, og hvordan du får bedre svar av folka du snakker med.

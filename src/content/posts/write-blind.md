@@ -6,7 +6,7 @@ tags:
 aliases:
   - Write blind, edit later
 title: Write blind, edit later
-slug: write-blind
+permalink: write-blind
 ---
 You might’ve heard the saying “Write drunk, edit sober” (a quote that seems to be [misattributed](https://www.reddit.com/r/QuotesPorn/comments/1gj6qu/write_drunk_edit_sober_ernest_hemingway_850x1133/) to good ol’ Hemingway). Which hypothetically could be helpful every once in a while, because it’s implying something about your intentions and thresholds. When you’re drunk you‘re likely to lack the patience to think things all the way through. And you can’t really bother to find the perfect words that’ll result in the most descriptive, precise, and beautiful sentence humanity has ever read. Basically you don’t really give a fuck.
 

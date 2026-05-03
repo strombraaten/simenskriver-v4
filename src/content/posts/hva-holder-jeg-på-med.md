@@ -8,7 +8,7 @@ tags:
 aliases:
   - Hva holder jeg på med?
 title: Hva holder jeg på med?
-slug: hva-holder-jeg-på-med
+permalink: hva-holder-jeg-på-med
 ---
 Nå høres det ut som at jeg er kritisk til hva jeg sjøl driver med, men jeg syns det er nyttig å reflektere over hva jeg faktisk prøver å få til.
 

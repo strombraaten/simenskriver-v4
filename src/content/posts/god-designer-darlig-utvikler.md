@@ -8,7 +8,7 @@ aliases:
   - Fra å være en god designer til å bli en dårlig utvikler
   - fra god designer til en dårlig utvikler
 title: Fra å være en god designer til å bli en dårlig utvikler
-slug: god-designer-darlig-utvikler
+permalink: god-designer-darlig-utvikler
 ---
 Hva lærer du egentlig om design ved å bli en dårlig utvikler? Og er det ikke negativt å være dårlig?
 

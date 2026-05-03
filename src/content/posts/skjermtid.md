@@ -8,7 +8,7 @@ tags:
 aliases:
   - ansvar for egen skjermtid
 title: Ta ansvar for egen skjermtid
-slug: skjermtid
+permalink: skjermtid
 ---
 
 Siden sønnen min blei født for åtte måneder siden har jeg tenkt mye på dette med "skjermtid", og hvor mye jeg bruker mobilen spesielt. 

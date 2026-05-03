@@ -6,7 +6,7 @@ tags:
 aliases:
   - hva basket har lært meg om å være en god kollega
 title: Hva basket har lært meg om å være en god kollega
-slug: god-kollega
+permalink: god-kollega
 ---
 
 # Hva basket har lært meg om å være en god kollega

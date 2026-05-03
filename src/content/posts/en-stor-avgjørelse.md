@@ -5,7 +5,7 @@ tags:
   - produktivitet
   - tankemat
 title: Én stor avgjørelse i stedet for mange små
-slug: en-stor-avgjørelse
+permalink: en-stor-avgjørelse
 type: utkast
 ---
 Når enn jeg kan tar jeg heller én stor avgjørelse i stedet for mange små. Ta månedlig sparing som et eksempel. Fra måned til måned vil jeg gjerne sette av noe penger til framtidig sparing. Da er det fort gjort å vente til slutten av måneden, rett før jeg får lønning igjen, og bare spare det som er igjen. Hvis det er noe i det hele tatt.

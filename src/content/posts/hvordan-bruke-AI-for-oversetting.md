@@ -7,7 +7,7 @@ tags:
 aliases:
   - Hvordan jeg bruker kunstig intelligens for å oversette
 title: Hvordan jeg bruker kunstig intelligens for å oversette
-slug: hvordan-bruke-AI-for-oversetting
+permalink: hvordan-bruke-AI-for-oversetting
 ---
 
 ## Personlige begrensninger

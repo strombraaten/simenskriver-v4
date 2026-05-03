@@ -6,7 +6,7 @@ tags:
 aliases:
   - momentum skaper momentum
 title: momentum skaper momentum
-slug: momentum
+permalink: momentum
 ---
 Når én ting skjer er det mer sannsynlig at noe annet skjer. Det er noe jeg må minne meg sjøl på støtt og stadig.
 

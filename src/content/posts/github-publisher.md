@@ -7,7 +7,7 @@ tags:
 aliases:
   - Github Publisher
 title: Github Publisher
-slug: github-publisher
+permalink: github-publisher
 ---
 
 ## Hvorfor bør du bruke Github Publisher?

@@ -7,7 +7,7 @@ aliases:
   - Fortløpende brukertesting, og verdien av det
   - verdien av fortløpende brukertesting
 title: Fortløpende brukertesting, og verdien av det
-slug: brukertesting
+permalink: brukertesting
 description: Brukertesting er en av de tingene som du gjerne vil gjøre, men som er lett å nedprioritere fordi du kaaan jo fortsette uten. Men hvordan skal du kunne lage en tjeneste uten å forstå utgangspunktet til de som skal bruke den?
 ---
 > [!NOTE] Denne artikkelserien ble [først publisert på variantbloggen](https://blog.variant.no/del-1-fortl%C3%B8pende-brukertesting-og-verdien-av-det-fdabb3594bc3)

@@ -11,7 +11,7 @@ aliases:
   - dum ned smarttelefon
   - hvorfor du burde dumme ned smarttelefonen din
 title: Dum ned smarttelefonen
-slug: dum-ned-smarttelefonen
+permalink: dum-ned-smarttelefonen
 ---
 
 ## Dum ned smarttelefonen

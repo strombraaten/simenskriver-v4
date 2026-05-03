@@ -6,7 +6,7 @@ tags:
 aliases:
   - en tanke i utvikling
 title: En tanke i utvikling
-slug: tanke-i-utvikling
+permalink: tanke-i-utvikling
 ---
 
 Da jeg snakka om [[digital-hage|digitalt hagearbeid]] nevnte jeg hvordan [Maggie Appleton](https://maggieappleton.com/?ref=simen-skriver) definerer progresjonen av et notat gjennom kategoriene _budding, seedling_, og _evergreen_.

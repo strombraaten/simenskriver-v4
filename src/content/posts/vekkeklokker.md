@@ -4,7 +4,7 @@ lastModified: 2024-07-14
 tags: 
 aliases: 
 title: vekkeklokker
-slug: 
+permalink: vekkeklokker
 draft: true
 ---
 > Hei Broder, du som både liker research og å være utilgjengelig på mobilen. Har du noen kan satt deg inn i vekkerklokker? Jeg er aleine hjemme nå og har hatt gleden av å kunne legge mobilen i et annet rom når jeg ikke må stå opp tidlig. ☺️ Men når jeg skal opp trenger jeg jo fortsatt vekkerklokke. Har du noen forslag? Mine kriterier er at den må være stille og ikke for stor ⏰

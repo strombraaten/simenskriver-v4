@@ -8,7 +8,7 @@ aliases:
   - Å skape løsningen i fellesskap
   - å lage løsningen i fellesskap
 title: Å skape løsningen i fellesskap
-slug: skape-løsningen-i-fellesskap
+permalink: skape-løsningen-i-fellesskap
 ---
 
 ## Hvordan pølsa lages

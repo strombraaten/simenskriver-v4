@@ -7,7 +7,7 @@ tags:
 aliases:
   - Don't make me think
 title: Don't make me think
-slug: dont-make-me-think
+permalink: dont-make-me-think
 ---
 ## Hva innebærer det å "Don't make me think"?
 

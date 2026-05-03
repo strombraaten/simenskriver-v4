@@ -4,7 +4,7 @@ lastModified: 2024-03-24
 tags:
   - apper
 title: Rocket
-slug: rocket
+permalink: rocket
 ---
 [Rocket-appen](https://matthewpalmer.net/rocket/) er genial for å alltid ha emojis lett tilgjengelig (og at navnene er like uansett hvilken app du er i).
 

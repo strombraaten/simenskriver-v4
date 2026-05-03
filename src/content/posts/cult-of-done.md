@@ -6,7 +6,7 @@ tags:
 aliases:
   - the cult of done
 title: The cult of done
-slug: cult-of-done
+permalink: cult-of-done
 ---
 [Truls Henrik](https://www.truls.dev/blog/welcome) tipsa meg nylig om [en youtube-kanal som heter No Boilerplate](https://www.youtube.com/watch?v=bJQj1uKtnus). Hvor det er ganske så korte, men skikkelig konkrete og gjennomtenkte videoer. Han har blant annet snakka om noe som heter ["The cult of done"](https://medium.com/@bre/the-cult-of-done-manifesto-724ca1c2ff13). Som er 13 prinsipper, skrivi av [Bre Pettis](https://medium.com/@bre) og [Kio Stark](https://www.kiostark.com/), som løfter fram det å få ting gjort, i stedet for å streve etter perfeksjon.
 

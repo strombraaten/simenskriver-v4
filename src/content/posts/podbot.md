@@ -8,7 +8,7 @@ tags:
 aliases:
   - hva om favoritt-podkasten din hadde en egen chatbot
 title: Hva om favoritt-podkasten din hadde en egen chatbot?
-slug: podbot
+permalink: podbot
 description: Hvilke muligheter åpnes opp dersom du kan søke i alt det muntlige innholdet fra favoritt-podkastene dine? Hva betyr det for de som lager podkastene du hører på?
 ---
 Mot slutten av 2022 [lagde Dan Shipper en chatbot](https://every.to/superorganizers/i-trained-a-gpt-3-chatbot-on-every-episode-of-my-favorite-podcast) basert på alle episodene fra [the Huberman Lab-podkasten](https://open.spotify.com/show/79CkJF3UJTHFV8Dse3Oy0P?si=2666a5bbf9a04187) (fra Andrew Huberman).

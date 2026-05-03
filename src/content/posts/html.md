@@ -6,7 +6,7 @@ tags:
 aliases:
   - HTML
 title: HTML
-slug: html
+permalink: html
 ---
 
 Byggeklosser

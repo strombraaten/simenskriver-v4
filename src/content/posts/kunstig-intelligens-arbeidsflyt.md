@@ -8,7 +8,7 @@ aliases:
   - Hvordan passer kunstig intelligens inn i arbeidsflyten min?
   - arbeidsflyt for kunstig intelligens
 title: Hvordan passer kunstig intelligens inn i arbeidsflyten min?
-slug: kunstig-intelligens-arbeidsflyt
+permalink: kunstig-intelligens-arbeidsflyt
 ---
 ## Hvordan passer kunstig intelligens inn i arbeidsflyten min?
 

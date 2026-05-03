@@ -4,7 +4,7 @@ lastModified: 2024-07-11
 tags:
   - prosjekter
 title: Samtalekort
-slug: samtalekort
+permalink: samtalekort
 ---
 
 ## Bakgrunn

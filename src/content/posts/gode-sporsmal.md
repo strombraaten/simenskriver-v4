@@ -6,7 +6,7 @@ tags:
 aliases:
   - gode spørsmål
 title: Gode spørsmål
-slug: gode-sporsmal
+permalink: gode-sporsmal
 ---
 
 Henger tett sammen med [[oppfolgingssporsmal|oppfølgingsspørsmål]], siden dette handler om hvordan du starter en samtale, men ikke hvordan du får samtalen til å vare lengre.

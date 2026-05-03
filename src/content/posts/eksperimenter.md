@@ -4,7 +4,7 @@ lastModified: 2022-12-06
 tags:
   - tankemat
 title: Eksperimenter i hverdagen
-slug: eksperimenter
+permalink: eksperimenter
 ---
 
 Er det _ett_ poeng jeg vil få fram i dag er det at du trenger ikke gjøre alt _hver_ dag.

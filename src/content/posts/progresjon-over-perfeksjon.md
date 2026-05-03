@@ -5,6 +5,6 @@ tags:
 aliases: 
 title: progresjon over perfeksjon
 publish: 
-slug: 
+permalink: progresjon-over-perfeksjon
 type: utkast
 ---

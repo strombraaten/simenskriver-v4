@@ -6,7 +6,7 @@ tags:
   - nyhetsbrev
 aliases: betydningen av at noe er enkelt
 title: Tastatur
-slug: tastatur
+permalink: tastatur
 type: utkast
 ---
 > [!tip]- Vil utdype mer her seinere

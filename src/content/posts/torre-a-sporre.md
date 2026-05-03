@@ -6,7 +6,7 @@ tags:
 aliases:
   - å tørre og spørre
 title: Å tørre og spørre
-slug: torre-a-sporre
+permalink: torre-a-sporre
 ---
 ## Én tanke om å tørre og spørre
 

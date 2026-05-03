@@ -6,7 +6,7 @@ tags:
 aliases:
   - variabler i Figma
 title: Variabler i Figma
-slug: figma-variabler
+permalink: figma-variabler
 ---
 
 ## Notater

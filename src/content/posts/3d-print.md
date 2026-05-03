@@ -5,7 +5,7 @@ tags:
 aliases: 
 title: Hvorfor 3D-printing plutselig er så spennende
 publish: 
-slug: 3d-print
+permalink: 3d-print
 description:
 ---
 Jeg liker å forbedre ting. Forbedre arbeidsflyter og prosesser. Helt ærlig så bruker jeg ofte *mer* tid på å tilrettelegge et system for å gjøre en oppgave lettere å utføre, enn å gjøre selve oppgava.

@@ -4,7 +4,7 @@ lastModified: 2024-03-11
 tags:
   - behind-the-scenes
 title: Versjonslogg
-slug: versjonslogg
+permalink: versjonslogg
 ---
 ## Arkiv
 

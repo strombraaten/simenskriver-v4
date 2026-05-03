@@ -6,7 +6,7 @@ tags:
 aliases:
   - vent nå litt
 title: Vent nå litt
-slug: vent-litt
+permalink: vent-litt
 ---
 
 Sjeldent har det gått såpass kort tid fra jeg har sagt en ting til jeg har blitt uenig med meg sjøl, og tenkt noe annet, som da jeg skreiv om [[hva-betyr-kvalitet|kvalitet]]. For i det innlegget skreiv jeg at _kvalitet_ handler om et produkt eller en tjeneste leverer på det den skal gjøre.

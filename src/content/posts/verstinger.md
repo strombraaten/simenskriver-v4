@@ -6,7 +6,7 @@ tags:
   - teknologi
 aliases: verstinger på elektronisk søppel
 title: Vi nordmenn er verstinger på elektronisk søppel
-slug: verstinger
+permalink: verstinger
 description: Hva vil det si at nordmenn er verstinger på elektronisk søppel? Hvor ille er det egentlig? Og hva kan du gjøre med det?
 ---
 # Verstinger på elektronisk søppel

@@ -7,7 +7,7 @@ tags:
 aliases:
   - hva er et rikt liv for deg?
 title: Hva er et rikt liv for deg?
-slug: rikt-liv
+permalink: rikt-liv
 ---
 ## Et rikt liv
 

@@ -2,7 +2,7 @@
 date: 2023-10-15
 lastModified: 2023-10-15
 title: Nyhetsbrev 25
-slug: 12-06-2024-nyhetsbrev
+permalink: 12-06-2024-nyhetsbrev
 draft: true
 ---
 

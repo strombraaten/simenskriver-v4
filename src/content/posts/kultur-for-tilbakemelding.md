@@ -7,7 +7,7 @@ aliases:
   - kultur for tilbakemelding
   - tilbakemeldingskultur
 title: Kultur for tilbakemelding
-slug: tilbakemeldingskultur
+permalink: tilbakemeldingskultur
 ---
 
 Tidligere har jeg snakka om [[god-kollega|hva basket har lært meg om å være en god kollega]]. Der forklarer jeg hvordan det å være åpen for veiledning er én av de fire egenskapene som må ligge til rette for å skape en "vinnende kultur", i mangel på bedre ord.

@@ -9,7 +9,7 @@ aliases:
   - hypotesedrevet produktutvikling
   - hypotesedrevet tilnærming
 title: Alt blir enklere med hypoteser
-slug: hypoteser
+permalink: hypoteser
 ---
 
 Jeg har en hypotese om at alt blir enklere dersom du tar utgangspunkt i det du veit i øyeblikket, og handler ut i fra det. Det er en temmelig trygg påstand, det tipper jeg vi begge er enige om. Samtidig er det noe *overraskende* befriende med det.

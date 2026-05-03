@@ -6,7 +6,7 @@ tags:
 aliases:
   - AI
 title: Kunstig intelligens
-slug: kunstig-intelligens
+permalink: kunstig-intelligens
 ---
 ## Selve begrepet
 

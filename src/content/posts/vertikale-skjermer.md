@@ -8,7 +8,7 @@ aliases:
   - Hvorfor bruker vi ikke vertikale skjermer i større grad?
   - vertikal skjermer
 title: Hvorfor bruker vi ikke vertikale skjermer i større grad?
-slug: vertikale-skjermer
+permalink: vertikale-skjermer
 ---
 
 ## Intro

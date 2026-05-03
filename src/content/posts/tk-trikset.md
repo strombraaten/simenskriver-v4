@@ -6,7 +6,7 @@ tags:
 aliases:
   - TK-trikset
 title: TK-trikset
-slug: tk
+permalink: tk
 ---
 
 ## Skriv først, utdyp seinere

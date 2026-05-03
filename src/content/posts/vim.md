@@ -6,7 +6,7 @@ tags:
 aliases:
   - en introduksjon til Vim
 title: En enkel introduksjon til Vim
-slug: vim
+permalink: vim
 ---
 
 *Vim* er noe jeg har dansa forsiktig rundt over en lengre periode nå. På samme måte som når du ser en elg i skogen. Først så skvetter du. Samtidig er du fascinert over hva du ser, så du vil gjerne se litt til. Så du prøver å gå rolig forbi for å vise at du ikke er ute etter bråk, for du er redd for hva som skjer dersom du blir værende for lenge. Og når du har fått litt avstand så tar du beina fatt og løper avgårde.

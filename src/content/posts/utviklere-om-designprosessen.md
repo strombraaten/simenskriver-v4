@@ -7,7 +7,7 @@ tags:
 aliases:
   - Hva jeg har lært av utviklere om designprosessen
 title: Hva jeg har lært av utviklere om designprosessen
-slug: utviklere-om-designprosessen
+permalink: utviklere-om-designprosessen
 ---
 
 # Hva jeg har lært av utviklere om designprosessen

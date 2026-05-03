@@ -4,7 +4,7 @@ lastModified: 2024-03-24
 tags: 
 aliases: 
 title: colemak
-slug: colemak
+permalink: colemak
 type: utkast
 ---
 Colemak er et alternativ til QWERTY, som er standarden for hvor knappene på et tastatur plasseres.

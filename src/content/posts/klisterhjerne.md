@@ -8,7 +8,7 @@ aliases:
   - readwise
   - digital klisterhjerne
 title: Digital klisterhjerne
-slug: klisterhjerne
+permalink: klisterhjerne
 ---
 
 ## Hva mener jeg egentlig med digital klisterhjerne

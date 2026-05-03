@@ -9,7 +9,7 @@ aliases:
   - tilrettelegge for tilfeldigheter
   - tilfeldigheter
 title: Å tilrettelegge for tilfeldigheter
-slug: tilrettelegge-for-tilfeldigheter
+permalink: tilrettelegge-for-tilfeldigheter
 ---
 # Å tilrettelegge for tilfeldigheter
 

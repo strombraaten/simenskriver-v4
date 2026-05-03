@@ -6,7 +6,7 @@ tags:
 aliases:
   - prisen av en dårlig brukeropplevelse
 title: Prisen av en dårlig brukeropplevelse
-slug: prisen-av-ux
+permalink: prisen-av-ux
 ---
 
 Okei, nå skal jeg prøve å kjempe for noe jeg egentlig ikke har noe erfaring med, nemlig å sette en pris på dårlige brukeropplevelser, i form av kroner og øre.

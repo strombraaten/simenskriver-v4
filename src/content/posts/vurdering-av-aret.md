@@ -8,7 +8,7 @@ aliases:
   - årlig vurdering
   - vurdering av året
 title: Vurdering av året
-slug: vurdering-av-aret
+permalink: vurdering-av-aret
 ---
 Dette er spørsmålene jeg stiller meg sjøl for å vurdere året som har vært, og hva jeg vil ta med meg inn i året som kommer.
 

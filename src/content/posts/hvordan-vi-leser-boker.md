@@ -6,7 +6,7 @@ tags:
 aliases:
   - hvordan vi leser bøker
 title: Det er noe feil med hvordan vi leser bøker
-slug: hvordan-vi-leser-boker
+permalink: hvordan-vi-leser-boker
 ---
 
 Jeg tror det er på tide å revurdere hvordan vi leser bøker. Spesielt de du leser for å la deg inspirere. De bøkene som gir deg nye tanker. Nye perspektiver, nye måter å se verden på. Kanskje også de bøkene hvor du går aktivt inn for å lære deg noe.

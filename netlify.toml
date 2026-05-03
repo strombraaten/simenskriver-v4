@@ -662,24 +662,6 @@
   force = true
 
 [[redirects]]
-  from = "/posts/mermaid-test"
-  to = "/posts/obsidian-embeds-demo"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/posts/mermaid-diagram-test"
-  to = "/posts/obsidian-embeds-demo"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/posts/mermaid-diagrams"
-  to = "/posts/obsidian-embeds-demo"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/posts/Håndtegna notater i Obsidian"
   to = "/posts/obsidian-tegning"
   status = 301
@@ -868,24 +850,6 @@
 [[redirects]]
   from = "/posts/Hva jeg har lært av utviklere om designprosessen"
   to = "/posts/utviklere-om-designprosessen"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/posts/astro-suite-vault-modular-guide"
-  to = "/posts/vault-cms-guide"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/posts/astro-suite-obsidian-vault-guide-astro-modular"
-  to = "/posts/vault-cms-guide"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/posts/obsidian-vault-guide"
-  to = "/posts/vault-cms-guide"
   status = 301
   force = true
 

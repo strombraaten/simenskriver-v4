@@ -6,7 +6,7 @@ tags:
   - design
   - kode
 title: Om det å snakke samme språk
-slug: snakke-samme-sprak
+permalink: snakke-samme-sprak
 ---
 ## Hvordan designere forholder seg til størrelser
 

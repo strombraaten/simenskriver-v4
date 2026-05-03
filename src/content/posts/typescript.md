@@ -5,7 +5,7 @@ tags:
   - læring
   - teknologi
 title: Typescript
-slug: typescript
+permalink: typescript
 ---
 
 Okei, her er det bare å ta et dypt pust og sette i gang.

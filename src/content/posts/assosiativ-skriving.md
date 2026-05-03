@@ -6,7 +6,7 @@ tags:
 aliases:
   - assosiativ skriving
 title: Gleden av assosiativ skriving
-slug: assosiativ-skriving
+permalink: assosiativ-skriving
 ---
 Noe av det jeg liker best med å skrive er å hoppe fra én tanke til den neste. Å bare utforske hvor tankene tar veien.
 

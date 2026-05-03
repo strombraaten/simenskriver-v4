@@ -4,7 +4,7 @@ lastModified: 2024-03-07
 tags:
   - tankemat
 title: Syntaks er nok mer interessant enn du tror
-slug: syntaks
+permalink: syntaks
 ---
 
 Syntaks er et ord jeg utelukkende forbinder med programmering, med kode. Med andre ord, ting jeg ikke kan.

@@ -6,7 +6,7 @@ tags:
   - design
   - kode
 title: Samtalekort som app
-slug: samtalekort-som-app
+permalink: samtalekort-som-app
 description: Når terskelen er så høy for å printe opp flere kort, hvorfor ikke bare lære seg å lage en app?
 ---
 Er du klar for det her? For dette kommer til å eskalere fort. Eller. Så fort som du klarer å lese, eller skumme gjennom innholdet, men mot slutten skal du få se noe temmelig kult 🤓

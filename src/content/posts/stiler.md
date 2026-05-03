@@ -4,7 +4,7 @@ lastModified: 2023-09-24
 tags:
   - nyhetsbrev
 title: Stiler, regler, og vaner
-slug: stiler
+permalink: stiler
 ---
 ## Stiler, regler, og vaner
 

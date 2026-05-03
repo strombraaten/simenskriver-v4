@@ -8,7 +8,7 @@ aliases:
   - En hyllest til den digitale blyanten
   - den digitale blyanten
 title: En hyllest til den digitale blyanten
-slug: blyanten
+permalink: blyanten
 ---
 
 # En hyllest til den digitale blyanten

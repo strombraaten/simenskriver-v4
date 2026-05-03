@@ -7,7 +7,7 @@ tags:
 aliases:
   - fridager med intensjon
 title: Firedagers uke
-slug: firedagers-uke
+permalink: firedagers-uke
 ---
 ## Rikdommen i en fridag
 

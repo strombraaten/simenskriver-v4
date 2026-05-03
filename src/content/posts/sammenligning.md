@@ -4,7 +4,7 @@ lastModified: 2023-11-12
 tags:
   - tankemat
 title: Om sammenligning
-slug: sammenligning
+permalink: sammenligning
 ---
 
 I det siste har jeg tenkt mye på hvordan vi sammenligner vårs med andre. Noen vil nok si at det er unngåelig, og det er godt mulig, men hvordan har det blitt sånn? Og hva kommer det av?

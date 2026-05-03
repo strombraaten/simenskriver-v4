@@ -6,7 +6,7 @@ tags:
 aliases:
   - apper
 title: Apper jeg liker
-slug: apper-jeg-liker
+permalink: apper-jeg-liker
 ---
 
 ## Mac
