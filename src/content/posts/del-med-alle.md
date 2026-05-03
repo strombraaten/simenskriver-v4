@@ -4,7 +4,7 @@ lastModified: 2025-05-21
 tags:
   - læring
 title: Skriv til en, del med alle
-slug: del-med-alle
+permalink: del-med-alle
 ---
 ## Når nysgjerrigheten overlapper
 

@@ -6,7 +6,7 @@ tags:
 aliases:
   - skriveprosessen min på 6 minutter
 title: Skriveprosessen min på 6 minutter
-slug: skriveprosessen
+permalink: skriveprosessen
 ---
 
 Jeg har tidligere snakka om at [[fyller-arbeidet-tida-du-har-tilgjengelig|Parkinsons lov]] handler om hvordan arbeidet fyller den tida som er tilgjengelig. Men hvordan så prosessen egentlig ut da jeg halverte tida jeg vanligvis bruker på å skrive en artikkel, før jeg trykker på den store, grønne publiseringsknappen? Det skal du få se med dine egne øyne i dag.

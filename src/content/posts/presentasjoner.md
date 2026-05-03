@@ -5,7 +5,7 @@ tags:
 aliases: 
 title: presentasjoner
 publish: 
-slug: 
+permalink: presentasjoner
 type: utkast
 ---
 ### Presentasjonsteknikk

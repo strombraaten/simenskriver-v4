@@ -4,7 +4,7 @@ lastModified: 2023-10-29
 tags:
   - apper
 title: Logseq
-slug: logseq
+permalink: logseq
 ---
 [Logseq er et program](https://logseq.com/) som ligner på Obsidian på mange måter, men som kanskje i *enda* større grad er fokusert på å dumpe ned tanker, kjapt og enkelt, og heller organisere det i etterkant. For å være enda mer teknisk så er det en "block-based outliner", som er bygd rundt det å skrive punktlister framfor lengre tekster som deles opp i avsnitt (som Obsidian blant annet er mer fokusert rundt).
 

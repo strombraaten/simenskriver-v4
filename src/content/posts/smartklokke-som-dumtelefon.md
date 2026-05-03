@@ -7,7 +7,7 @@ tags:
   - produktivitet
 aliases:
 title: Smartklokke som telefon
-slug: smartklokke-som-dumtelefon
+permalink: smartklokke-som-dumtelefon
 ---
 ## Innledning
 

@@ -8,7 +8,7 @@ aliases:
   - Hvordan snakker du med en maskin?
   - hvordan snakker du med en maskin
 title: Hvordan snakker du med en maskin?
-slug: hvordan-snakke-med-en-maskin
+permalink: hvordan-snakke-med-en-maskin
 ---
 
 ## Samtalekunst mellom menneske og maskin

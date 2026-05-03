@@ -7,7 +7,7 @@ tags:
 aliases:
   - Om oppmerksomhet
 title: Om oppmerksomhet
-slug: oppmerksomhet
+permalink: oppmerksomhet
 ---
 
 ## Hvordan tar du vare på på oppmerksomheten din?

@@ -6,7 +6,7 @@ tags:
   - tankemat
   - nyhetsbrev
 title: iPodens comeback
-slug: ipodens-comeback
+permalink: ipodens-comeback
 ---
 Inspirasjonen for [[dum-ned-smarttelefonen|hvorfor du burde dumme ned smarttelefonen din]] var en video fra Brandon Shaw (link nedenfor), hvor han gjorde ulike grep for å unngå algoritmene vi blir så påvirket av i dag.
 

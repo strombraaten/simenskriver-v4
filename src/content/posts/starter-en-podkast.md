@@ -7,7 +7,7 @@ tags:
 aliases:
   - starter en podkast
 title: Jeg starter en podkast
-slug: starter-en-podkast
+permalink: starter-en-podkast
 ---
 I det siste har jeg tenkt mye på det å lage en podkast. Og nå er et godt tidspunkt for å si at deeet.. kommer til å skje 🥳
 

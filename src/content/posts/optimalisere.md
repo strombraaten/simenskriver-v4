@@ -6,7 +6,7 @@ tags:
 aliases:
   - Optimalisere eller fornøydifisere
 title: Optimalisere eller fornøydifisere
-slug: optimalisere
+permalink: optimalisere
 ---
 Optimalisere eller fornøydifisere, det er spørsmålet. "Fornøydifisere" er vel strengt talt ikke et ord, men det var ikke "satfisficer" heller det, før økonomen [Herbert Simon slo sammen *satisfy* og *suffice*](https://en.wikipedia.org/wiki/Satisficing) rundt 1950-tallet en gang. 
 

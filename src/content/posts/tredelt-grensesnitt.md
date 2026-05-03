@@ -4,7 +4,7 @@ lastModified: 2025-03-23
 tags:
   - design
 title: Det tredelte AI-grensesnittet
-slug: tredelt-grensesnitt
+permalink: tredelt-grensesnitt
 description: Det virker som det etableres en slags "best practice" når det kommer til tekstbaserte AI-verktøy nå. Hvor alle baserer seg på et tredelt grensesnitt som gjerne viser en oversikt, en chat, og et fortløpende resultat.
 ---
 Oversikt. Chat. Fortløpende resultat. 

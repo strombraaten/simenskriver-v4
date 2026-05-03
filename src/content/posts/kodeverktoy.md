@@ -5,7 +5,7 @@ tags:
   - kode
   - apper
 title: Verktøyene til en dårlig utvikler
-slug: kodeverktoy
+permalink: kodeverktoy
 type: utkast
 ---
 

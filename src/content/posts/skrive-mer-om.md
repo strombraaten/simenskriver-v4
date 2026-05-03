@@ -6,7 +6,7 @@ tags:
 aliases:
   - hva vil du at jeg skal skrive mer om
 title: Hva vil du at jeg skal skrive mer om?
-slug: skrive-mer-om
+permalink: skrive-mer-om
 ---
 
 _Det her blir nok ganske så meta, for nå skal jeg skrive om en prosess jeg også skal gjennomføre._

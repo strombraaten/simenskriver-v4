@@ -4,7 +4,7 @@ lastModified: 2024-06-30
 tags:
   - nyhetsbrev
 title: Abonnementer og sommerferie
-slug: abonnementer-og-sommerferie
+permalink: abonnementer-og-sommerferie
 ---
 ## Oppfølging om ABO-dagen
 

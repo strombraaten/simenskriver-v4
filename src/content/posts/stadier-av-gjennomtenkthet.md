@@ -5,7 +5,7 @@ tags:
   - skriving
   - tankemat
 title: Stadier av gjennomtenkthet
-slug: stadier-av-gjennomtenkthet
+permalink: stadier-av-gjennomtenkthet
 ---
 
 > [!info] Oppdatering

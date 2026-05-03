@@ -6,7 +6,7 @@ aliases:
   - meninga med livet
 title: Meninga med livet
 publish: 
-slug: meninga-med-livet
+permalink: meninga-med-livet
 type: utkast
 ---
 I dag tenkte jeg å snakke litt om meningen med livet. Når vi snakker om det på den måten, så er det som om det skal være én ting, et punkt som gjelder alle, uansett hva slags livssituasjon du er i. Men ting blir jo mye lettere dersom man heller ser på det som alt. Det endrer seg når du føler selv at du går igjennom ulike livssituasjoner. Og i året du er i nå, for eksempel, så er det familie som fyller livet ditt med mening. Mens ti år tidligere, kanskje, så var det å følge din egen nysgjerrighet.

@@ -8,7 +8,7 @@ aliases:
   - verdien av bøker du ikke har lest
   - anti-bibliotek
 title: Verdien av bøker du ikke har lest
-slug: boker-du-ikke-har-lest
+permalink: boker-du-ikke-har-lest
 ---
 
 ## Skribentenes pallplassering

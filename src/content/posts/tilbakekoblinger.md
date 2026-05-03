@@ -5,7 +5,7 @@ tags:
 aliases:
   - Andre notater som linker tilbake
 title: Tilbakekoblinger
-slug: tilbakekoblinger
+permalink: tilbakekoblinger
 ---
 
 Tilbakekoblinger er [[linker]] som viser hvilke notater som omtaler det notatet du er i. Altså andre notater som linker tilbake hit f. eks. Det viser altså tilknytninger, eller relevante notater.

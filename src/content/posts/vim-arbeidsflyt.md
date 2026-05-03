@@ -5,7 +5,7 @@ tags:
   - teknologi
   - læring
 title: Arbeidsflyt med Vim
-slug: vim-arbeidsflyt
+permalink: vim-arbeidsflyt
 ---
 
 ## Hva er det jeg har lært så langt?

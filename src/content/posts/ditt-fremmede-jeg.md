@@ -4,7 +4,7 @@ lastModified: 2024-03-27
 tags:
   - tankemat
 title: Ditt framtidige, fremmede jeg
-slug: ditt-fremmede-jeg
+permalink: ditt-fremmede-jeg
 enableToc: true
 aliases:
   - Ditt framtidige, fremmede jeg

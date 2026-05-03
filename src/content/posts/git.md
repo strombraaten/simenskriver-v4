@@ -6,7 +6,7 @@ tags:
 aliases:
   - grunnleggende om git
 title: Grunnleggende om git
-slug: git
+permalink: git
 ---
 
 Hva skulle jeg gjerne visst sjøl hvis jeg skulle lært meg *git* fra bunnen av?

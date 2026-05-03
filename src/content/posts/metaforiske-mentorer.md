@@ -7,7 +7,7 @@ tags:
 aliases:
   - rubberducking
 title: Metaforiske mentorer
-slug: metaforiske-mentorer
+permalink: metaforiske-mentorer
 ---
 ## En introduserende feilsitering
 

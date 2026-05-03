@@ -5,7 +5,7 @@ tags:
   - teknologi
   - tankemat
 title: Digital minimalisme
-slug: digital-minimalisme
+permalink: digital-minimalisme
 type: utkast
 ---
 

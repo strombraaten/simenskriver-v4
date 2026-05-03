@@ -7,7 +7,7 @@ aliases:
   - Zettelkasten
   - en introduksjon til Zettelkasten
 title: En introduksjon til Zettelkasten
-slug: zettelkasten
+permalink: zettelkasten
 ---
 
 Det jeg skal fortelle deg om nå, hvis du har lest noen av de tidligere artiklene her, kommer ikke til å være noe nytt for deg. Og det er kjempebra!

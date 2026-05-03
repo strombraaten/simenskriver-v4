@@ -7,7 +7,7 @@ tags:
 aliases:
   - Vim med Colemak-layout
 title: Vim-colemak
-slug: vim-colemak
+permalink: vim-colemak
 ---
 Det å bruke [[vim|Vim]] med Colemak-layouten kan by på en del problemer, men dersom du først rocker Colemak er det også en god sjanse for at du har et programmerbart tastatur, vil jeg si. Og i det tilfellet skal det gå greit.
 

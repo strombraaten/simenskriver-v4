@@ -7,7 +7,7 @@ aliases:
   - Den neste nye tingen
   - den neste nye tingen
 title: Den neste nye tingen
-slug: neste-nye
+permalink: neste-nye
 ---
 
 I dag oppdaga jeg noe som heter [Tana](https://tana.inc/?ref=simen-skriver). Såvidt jeg forstår overlapper det med Notion, [[obsidian|obsidian]], og Things-appen, som jeg bruker fra før av, så jeg trenger den nok ikke. Men.. Det hadde vært spennende å prøve det da 🤔 Og det er akkurat den følelsen vi skal se på i dag.

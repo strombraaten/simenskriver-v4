@@ -5,7 +5,7 @@ tags:
   - tankemat
   - teknologi
 title: Skjermbilder
-slug: skjermbilder
+permalink: skjermbilder
 ---
 
 Jeg tror jeg har undervurdert skjermbilder.

@@ -5,7 +5,7 @@ tags:
   - teknologi
 aliases: 
 title: Markdown
-slug: markdown
+permalink: markdown
 ---
 
 Markdown er en standard for hvordan tekst ser ut på internett, og hvordan du formaterer det. 

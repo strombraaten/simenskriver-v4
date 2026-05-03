@@ -6,7 +6,7 @@ tags:
 aliases:
   - mitt syn på rabattkoder
 title: Rabattkoder
-slug: rabatt
+permalink: rabatt
 ---
 
 ## Rabattkoder

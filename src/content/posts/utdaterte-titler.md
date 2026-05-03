@@ -6,7 +6,7 @@ tags:
 aliases:
   - utdaterte titler
 title: Utdaterte titler
-slug: utdaterte-titler
+permalink: utdaterte-titler
 ---
 
 I dag bjudar jag på en aldri så liten reality check (som kanskje kan være til inspirasjon for flere)

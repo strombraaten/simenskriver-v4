@@ -5,7 +5,7 @@ tags:
 aliases:
   - versjonslogg 0.2
 title: Versjonslogg 0.2
-slug: versjonslogg-02
+permalink: versjonslogg-02
 ---
 
 # Versjonslogg 0.2

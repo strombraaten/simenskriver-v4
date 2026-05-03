@@ -9,7 +9,7 @@ aliases:
   - betale for søketjenesten
   - hva om du hadde betalt for å google
 title: Hva om du hadde betalt for å google?
-slug: betale-for-googling
+permalink: betale-for-googling
 ---
 "Å Google" er jo synonymt med å søke etter noe. Men siden du ikke betaler for søketjenesten så får du blant annet sponsa søkeresultater, hvor selskaper betaler for å vises fram framfor andre.
 

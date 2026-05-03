@@ -4,7 +4,7 @@ lastModified: 2024-02-04
 tags:
   - nyhetsbrev
 title: Hobbyer
-slug: hobbyer
+permalink: hobbyer
 ---
 
 Når [Maggie Appleton](https://maggieappleton.com/) introduserer seg for å holde et foredrag sier hu ofte:

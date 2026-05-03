@@ -6,7 +6,7 @@ tags:
 aliases:
   - Hadde jeg hatt mer tid skulle jeg skrivi en kortere artikkel
 title: Hadde jeg hatt mer tid skulle jeg skrivi en kortere artikkel
-slug: mer-tid
+permalink: mer-tid
 ---
 
 Det å skrive kortfatta er noe jeg virkelig beundrer. Som du kanskje har lagt merke til har jeg lettere for å skrive langt enn kort. Så det er et sitat jeg trekker fram jevnt og trutt for å beskrive den følelsen:

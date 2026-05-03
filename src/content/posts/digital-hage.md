@@ -8,7 +8,7 @@ aliases:
   - evergreen notes
   - digitalt hagearbeid
 title: Digitalt hagearbeid
-slug: digital-hage
+permalink: digital-hage
 ---
 
 Nå skal jeg være ærlig. Jeg har ikke lest hele [artikkelen jeg har tenkt til å referere til](https://maggieappleton.com/garden-history?ref=simen-skriver) nå. Kanskje bare en fjerdedel. Uansett, jeg er bare så gira at jeg må komme gang. Så la meg forklare hva som er spennende med digitalt hagearbeid.

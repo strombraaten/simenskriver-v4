@@ -4,7 +4,7 @@ lastModified: 2024-03-07
 tags:
   - læring
 title: CSS
-slug: css
+permalink: css
 ---
 
 ## Egenskaper

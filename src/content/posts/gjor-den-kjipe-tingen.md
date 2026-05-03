@@ -4,7 +4,7 @@ lastModified: 2023-06-18
 tags:
   - tankemat
 title: Gjør den kjipe tingen
-slug: gjor-den-kjipe-tingen
+permalink: gjor-den-kjipe-tingen
 ---
 
 ## Hva er det vanskelige valget

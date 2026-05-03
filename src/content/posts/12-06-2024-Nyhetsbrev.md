@@ -2,7 +2,7 @@
 date: 2024-06-12
 lastModified: 2024-06-12
 title: Nyhetsbrev 12.06.2024
-slug: 12-06-2024-Nyhetsbrev
+permalink: 12-06-2024-Nyhetsbrev
 draft: true
 ---
 I dag vil jeg skrive om:

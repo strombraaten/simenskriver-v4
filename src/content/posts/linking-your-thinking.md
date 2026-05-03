@@ -4,7 +4,7 @@ lastModified: 2024-03-07
 tags:
   - apper
 title: Linking your thinking
-slug: linking-your-thinking
+permalink: linking-your-thinking
 ---
 
 Du skulle kanskje tro at det å skrive om å skrive, eller mer presist skrive om notater, hadde en slags begrensning, men tydeligvis ikke!

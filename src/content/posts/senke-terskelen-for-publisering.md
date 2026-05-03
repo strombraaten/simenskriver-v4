@@ -6,7 +6,7 @@ tags:
 aliases:
   - senke terskelen for å publisere
 title: Senke terskelen for å publisere
-slug: senke-terskelen-for-publisering
+permalink: senke-terskelen-for-publisering
 type: utkast
 ---
 

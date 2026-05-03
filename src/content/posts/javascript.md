@@ -4,7 +4,7 @@ lastModified: 2024-03-07
 tags:
   - læring
 title: Javascript
-slug: javascript
+permalink: javascript
 ---
 
 ## Intro

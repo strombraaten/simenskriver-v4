@@ -7,7 +7,7 @@ aliases:
   - Følg nysgjerrigheten
   - følg nysgjerrigheten
 title: Følg nysgjerrigheten
-slug: folg-nysgjerrigheten
+permalink: folg-nysgjerrigheten
 ---
 
 Er det én ting jeg lærte fra min grandonkel Arne, som levde til å bli 102 år gammel, er det å følge nysgjerrigheten, og bruke den som drivkraft. Jeg kjente han egentlig ikke noe særlig da jeg vokste opp. Det var ikke før året han fylte 100, da jeg var i starten av tjueårene, at jeg tok kontakt for å bli bedre kjent. 

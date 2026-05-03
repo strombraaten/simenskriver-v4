@@ -4,7 +4,7 @@ lastModified: 2024-03-07
 tags:
   - apper
 title: Linker
-slug: linker
+permalink: linker
 ---
 
 Linker er en av de fundamentale greiene med [[Obsidian]].

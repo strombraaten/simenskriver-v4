@@ -8,7 +8,7 @@ aliases:
   - Bruk av Vim i obsidian
   - Vim i Obsidian
 title: Bruk av Vim i obsidian
-slug: vim-obsidian
+permalink: vim-obsidian
 ---
 
 > [!quote] **Sitat, Njøs:**

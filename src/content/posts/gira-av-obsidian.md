@@ -6,7 +6,7 @@ tags:
 aliases:
   - Hvorfor jeg blir så gira av Obsidian
 title: Hvorfor jeg blir så gira av Obsidian
-slug: gira-av-obsidian
+permalink: gira-av-obsidian
 ---
 
 Hva om du enkelt kunne finne ut av hva som helst? For eksempel navnet på den boka du leste for sju år siden, som handla om lykke eller glede. Eller kanskje det var et sitat fra en eller annen gammel greker?

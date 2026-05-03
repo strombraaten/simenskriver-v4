@@ -2,7 +2,7 @@
 date: 2024-07-11
 lastModified: 2024-07-11
 title: Samtalekort-appen
-slug: samtalekort-appen
+permalink: samtalekort-appen
 type: utkast
 ---
 

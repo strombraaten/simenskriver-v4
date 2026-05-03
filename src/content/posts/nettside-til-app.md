@@ -8,7 +8,7 @@ aliases:
   - Gjør enhver nettside til en app på macen
   - fra nettside til app
 title: Gjør enhver nettside til en app på macen
-slug: nettside-til-app
+permalink: nettside-til-app
 ---
 Her om dagen fikk jeg et aldri så lite eureka-øyeblikk, som jeg tenkte skulle dele med deg i dag. For visste du at du kan lagre ChatGPT som en egen "web-app" på macen din? Du kan såklart gjøre det med andre sider og, men akkurat ChatGPT har jeg hatt lyst til å ha som et stand-alone vindu i lang tid nå.
 

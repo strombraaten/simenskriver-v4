@@ -6,7 +6,7 @@ tags:
 aliases:
   - Snøballeffekten av læring
 title: Snøballeffekten av læring
-slug: snoballeffekten-av-laring
+permalink: snoballeffekten-av-laring
 ---
 Det vil alltid være noe du *burde* lære deg. Samtidig er det sjeldent moro å lære seg noe nytt når du får det "prakka på deg". Om du er "nødt" til å lære deg noe du ikke kan. Eksempler på det kan være å sette seg inn i fondsparing, pensjon, eller boliglån, bare fordi du veit at det er noe man "*burde* kunne mer om". 
 

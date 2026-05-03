@@ -8,7 +8,7 @@ aliases:
   - om å bruke det du lærer
   - bruk det du lærer
 title: Om å bruke det du lærer
-slug: bruk-det-du-larer
+permalink: bruk-det-du-larer
 ---
 
 I blant føler jeg meg litt flåsete når jeg siterer folk i øst og vest, og refererer til bøker, artikler og podcaster. Som om jeg prøver å virke mer intellektuell og belest, med nesa til værs, enn det jeg egentlig er.

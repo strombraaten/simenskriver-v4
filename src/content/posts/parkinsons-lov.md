@@ -6,7 +6,7 @@ tags:
 aliases:
   - Parkinsons lov
 title: Fyller arbeidet tida du har tilgjengelig?
-slug: parkinsons-lov
+permalink: parkinsons-lov
 ---
 
 Du kjenner kanskje til utrykket _"If you wait until the last minute, it only takes a minute to do"_? Eller kanskje du kjenner til originalen, _"Work expands so as to fill the time available for its completion"_. 

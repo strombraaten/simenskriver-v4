@@ -7,7 +7,7 @@ tags:
 aliases:
   - innsiktsbibliotek som eksperiment
 title: Innsiktsbibliotek
-slug: innsiktsbibliotek
+permalink: innsiktsbibliotek
 ---
 Heisann! I dag står det *innsiktsbibliotek* på menyen. Og det er nok et begrep som er fremmed for flere av dere, så jeg skal straks komme tilbake til *hva* det er.
 

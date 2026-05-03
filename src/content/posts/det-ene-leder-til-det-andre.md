@@ -5,7 +5,7 @@ tags:
   - nyhetsbrev
   - tankemat
 title: Det ene leder til det andre
-slug: det-ene-leder-til-det-andre
+permalink: det-ene-leder-til-det-andre
 description: Det høres veldig forenkla, men tanken av at det ene leder til det andre har vist seg å være den beste tilnærminga for å ikke sette meg fast. For å ikke overtenke noe.
 ---
 I dag blir det en tematisk kollasj av skriverier. Hvor jeg samler noen setninger herfra og derfra, fra tidligere nyhetsbrev og skriverier. For når jeg ser tilbake på dem handler egentlig alle om det samme temaet, nettopp at det ene leder til det andre.

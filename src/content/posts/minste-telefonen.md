@@ -5,7 +5,7 @@ tags:
   - teknologi
 aliases:
 title: Den minste telefonen
-slug: minste-telefonen
+permalink: minste-telefonen
 description:
 ---
 Det er noe spennende med å prøve noe nytt. Samtidig er det ikke alltid like lett. 

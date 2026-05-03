@@ -5,7 +5,7 @@ tags:
   - skriving
   - teknologi
 title: Distraksjonsfri skriving
-slug: distraksjonsfri-skriving
+permalink: distraksjonsfri-skriving
 ---
 Her om dagen blei jeg tipsa om et produkt som jeg faktisk drømte om for 8 år siden. Det høres flåsete ut, men grunnen til at jeg husker det er at [jeg publiserte en artikkel på Medium](https://medium.com/@Strombraaten/write-blind-edit-later-d0bbfc0ca330), hvor jeg skreiv:
 

@@ -7,7 +7,7 @@ tags:
 aliases:
   - skap en felles forståelse ved å visualisere
 title: Skap en felles forståelse ved å visualisere
-slug: visualisering
+permalink: visualisering
 ---
 
 ## Bakgrunnen

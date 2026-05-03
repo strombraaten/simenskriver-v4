@@ -5,7 +5,7 @@ tags:
   - teknologi
   - behind-the-scenes
 title: Hvordan jeg har lagd denne sida
-slug: hvordan-jeg-har-lagd-denne-sida
+permalink: hvordan-jeg-har-lagd-denne-sida
 ---
 
 ## Hvordan henger det sammen?

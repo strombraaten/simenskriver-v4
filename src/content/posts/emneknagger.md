@@ -4,7 +4,7 @@ lastModified: 2024-03-07
 tags:
   - teknologi
 title: Emneknagger
-slug: emneknagger
+permalink: emneknagger
 ---
 
 NRK var det vel som introduserte ordet *emneknagg* i stedet for det engelske ord "tag". Og jeg har i grunn sansen for det. En *tag* er jo bare en knagg for emner, så den oversettelsen der støtter jeg.

@@ -5,7 +5,7 @@ tags:
   - nyhetsbrev
   - versjonslogg
 title: Versjonslogg 0.1
-slug: versjonslogg01
+permalink: versjonslogg01
 ---
 
 ## Endringer siden sist

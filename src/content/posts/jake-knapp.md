@@ -7,7 +7,7 @@ aliases:
   - Jake Knapp
   - Gleden av å gi et kompliment
 title: Jake Knapp
-slug: jake-knapp
+permalink: jake-knapp
 ---
 ### Gleden av å gi komplimenter
 

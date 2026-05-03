@@ -6,7 +6,7 @@ tags:
   - tankemat
   - apper
 title: Den årlige ABO-dagen
-slug: abonnementer
+permalink: abonnementer
 ---
 Om du hadde sletta alle abonnementene du har i dag, hva hadde du faktisk savna innen de neste to-tre ukene? Det spørsmålet har jeg hatt i bakhodet siden jeg så noen skrive om det på LinkedIn.
 

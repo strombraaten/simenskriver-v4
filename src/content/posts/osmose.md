@@ -4,7 +4,7 @@ lastModified: 2022-12-10
 tags:
   - nyhetsbrev
 title: Å lære gjennom osmose
-slug: osmose
+permalink: osmose
 ---
 
 «Learning by osmosis» er et utrykk som har festa seg hos meg. For det første er det jo bare gøy å si ordet «osmoooose». For det andre så handler det om en måte å tilegne seg kunnskap på som jeg ikke gjør helt bevisst. Og jeg tipper det gjelder deg og.
