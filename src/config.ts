@@ -201,7 +201,7 @@ export const siteConfig: SiteConfig = {
 
   // Global Settings
   // [CONFIG:THEME]
-  theme: "custom", // Available themes: "minimal" | "oxygen" | "atom" | "ayu" | "catppuccin" | "charcoal" | "dracula" | "everforest" | "flexoki" | "gruvbox" | "macos" | "nord" | "obsidian" | "rose-pine" | "sky" | "solarized" | "things" | "custom"
+  theme: "dracula", // Available themes: "minimal" | "oxygen" | "atom" | "ayu" | "catppuccin" | "charcoal" | "dracula" | "everforest" | "flexoki" | "gruvbox" | "macos" | "nord" | "obsidian" | "rose-pine" | "sky" | "solarized" | "things" | "custom"
   // [CONFIG:CUSTOM_THEME_FILE]
   customThemeFile: "custom", // Only used if theme is set to "custom" above. Filename in src/themes/custom/ (without .ts extension)
   // [CONFIG:AVAILABLE_THEMES]
@@ -316,7 +316,6 @@ export const siteConfig: SiteConfig = {
     // [CONFIG:NAVIGATION_PAGES]
     pages: [
       { title: "Notater", url: "/" },
-      { title: "Tanker", url: "/tanker" },
       { title: "Meg", url: "/meg" }
     ],
     // [CONFIG:NAVIGATION_SOCIAL]
@@ -372,7 +371,7 @@ export const siteConfig: SiteConfig = {
     },
     blurb: {
       // [CONFIG:HOME_OPTIONS_BLURB_PLACEMENT]
-      placement: "above", // 'above' (at the top), 'below' (after content), or 'none' (disabled)
+      placement: "below", // 'above' (at the top), 'below' (after content), or 'none' (disabled)
     },
   },
 
@@ -388,7 +387,7 @@ export const siteConfig: SiteConfig = {
     tags: false,
     linkedMentions: {
       // [CONFIG:POST_OPTIONS_LINKED_MENTIONS_ENABLED]
-      enabled: true,
+      enabled: false,
       // [CONFIG:POST_OPTIONS_LINKED_MENTIONS_COMPACT]
       linkedMentionsCompact: false,
     },
