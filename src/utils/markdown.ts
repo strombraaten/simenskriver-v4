@@ -154,8 +154,7 @@ export async function processPost(post: any) {
   try {
     ({ Content, headings, remarkPluginFrontmatter } = await render(post));
   } catch (e) {
-    // render() can fail on posts with external image URLs in body
-    console.warn(`[processPost] Could not render "${post.id}":`, (e as Error).message);
+    console.error(`[processPost] Could not render "${post.id}": ${(e as Error).message}`);
   }
 
   const { excerpt, wordCount, hasMore } = processMarkdown(post.body || "");

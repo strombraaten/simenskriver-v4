@@ -17,8 +17,6 @@ Men hva betyr det egentlig? Jo, for eksempel da jeg slukte til meg alt av kunnsk
 
 Jeg satte meg inn i alle slags temaer – fra indeksfond, pengeprofiler, bruk av kredittkort framfor "vanlig bankkort" (debet), til pensjon, og esg-rating. Alt det handler jo om privat økonomi, det veit jeg jo. Men ved å behandle hvert område som sitt eget notat, og bryte det ned på den måten, så åpner jeg også opp for at det kan knyttes til andre, mindre åpenbare koblinger – **helt automagisk**. Her kan du se det illustrert gjennom [[obsidian|obsidian]] sin interaktive graf:
 
-![](https://www.simenskriver.no/content/images/2022/12/CleanShot-2022-12-16-at-08.38.25@2x.png)
-
 > [!important] Ahoi! Her er det bilder som har blitt borte vekk
 > Skal se om jeg får fiksa opp i det en dag
 

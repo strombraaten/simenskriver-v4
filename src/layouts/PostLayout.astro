@@ -258,7 +258,7 @@ if (siteConfig.postOptions.graphView.enabled && siteConfig.postOptions.graphView
 
         <!-- Article content -->
         <div class="prose dark:prose-dark max-w-none" id="post-content">
-          <Content />
+          {Content ? <Content /> : <p class="text-muted italic">Innholdet kunne ikke lastes for dette innlegget.</p>}
         </div>
 
         {siteConfig.postOptions.linkedMentions.enabled && (
