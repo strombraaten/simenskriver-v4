@@ -1,4 +1,5 @@
 ---
+draft: false
 date: 2023-05-07
 lastModified: 2023-05-07
 title: Hva andre mener om det jeg skriver
