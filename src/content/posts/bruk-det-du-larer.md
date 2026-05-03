@@ -1,9 +1,11 @@
 ---
+title: Om å bruke det du lærer
 date: 2022-12-09
-lastModified: 2024-03-07
+description: Om du skulle tatt i bruk det du leser og hører, hvordan hadde det sett ut? Vi konsumerer mye kunnskap, men hva kommer ut på andre sida?
 tags:
   - tankemat
   - læring
+lastModified: 2024-03-07
 aliases:
   - om å bruke det du lærer
   - bruk det du lærer

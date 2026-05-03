@@ -44,13 +44,13 @@ views:
       and:
         - file.folder.startsWith("posts")
     sort:
-      - property: date
-        direction: DESC
+      - property: draft
+        direction: ASC
     imageProperty: note.image
-    fallbackToEmbeds: if-empty
+    fallbackToEmbeds: never
     propertyDisplay1: formula.Slug
     showTextPreview: true
-    imageFormat: cover
+    imageFormat: none
     showDate: true
     showDraftStatus: true
     propertyLabels: above
@@ -64,7 +64,7 @@ views:
     tagsProperty: note.tags
     customizeNewButton: true
     newNoteLocation: posts
-    cardSize: 250
+    cardSize: 310
     imageAspectRatio: 0.55
     maxTagsToShow: 2
     dateIncludeTime: false
