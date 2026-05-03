@@ -72,13 +72,17 @@ function processExcerptLinks(text: string, targetSlug: string): string {
       }
     }
 
-    const wikilinkFormat = `[[${displayText}]]`;
-
     if (isRelevantLink) {
-      return `<mark class="bg-highlight-200 dark:bg-highlight-800 text-highlight-900 dark:text-highlight-100 px-1 rounded-sm">${wikilinkFormat}</mark>`;
-    } else {
-      return wikilinkFormat;
+      return `<mark class="bg-highlight-200 dark:bg-highlight-800 text-highlight-900 dark:text-highlight-100 px-1 rounded-sm">${displayText}</mark>`;
     }
+    if (linkText) {
+      const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-+|-+$/g, '');
+      const resolved = posts.find(p => norm(p.id) === norm(linkText!) || norm(p.data.title) === norm(linkText!));
+      if (resolved) {
+        return `<a href="/posts/${resolved.id}" class="underline underline-offset-2">${displayText}</a>`;
+      }
+    }
+    return displayText;
   });
 
   // Then, process wikilinks - skip if already processed (has mark tag or triple brackets)
@@ -149,10 +153,16 @@ function processExcerptLinks(text: string, targetSlug: string): string {
     }
     
     const displayText = display || (anchorIndex !== -1 ? link.substring(0, anchorIndex) : link);
-    const wikilinkFormat = `[[${displayText}]]`;
-    const replacement = isRelevantLink 
-      ? `<mark class="bg-highlight-200 dark:bg-highlight-800 text-highlight-900 dark:text-highlight-100 px-1 rounded-sm">${wikilinkFormat}</mark>`
-      : wikilinkFormat;
+    let replacement: string;
+    if (isRelevantLink) {
+      replacement = `<mark class="bg-highlight-200 dark:bg-highlight-800 text-highlight-900 dark:text-highlight-100 px-1 rounded-sm">${displayText}</mark>`;
+    } else {
+      const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-+|-+$/g, '');
+      const resolved = posts.find(p => norm(p.id) === linkSlug || norm(p.data.title) === linkSlug);
+      replacement = resolved
+        ? `<a href="/posts/${resolved.id}" class="underline underline-offset-2">${displayText}</a>`
+        : displayText;
+    }
     
     wikilinkMatches.push({ index: matchIndex, match, link, display, replacement });
   }
@@ -253,9 +263,9 @@ function processExcerptLinks(text: string, targetSlug: string): string {
         displayWords.some(word => titleLower.includes(word) && word.length >= 5);
     }
     
-    const replacement = isRelevantLink 
-      ? `<mark class="bg-highlight-200 dark:bg-highlight-800 text-highlight-900 dark:text-highlight-100 px-1 rounded-sm">[[${trimmedDisplay}]]</mark>`
-      : `[[${trimmedDisplay}]]`;
+    const replacement = isRelevantLink
+      ? `<mark class="bg-highlight-200 dark:bg-highlight-800 text-highlight-900 dark:text-highlight-100 px-1 rounded-sm">${trimmedDisplay}</mark>`
+      : trimmedDisplay;
     
     incompleteMatches.push({ index: matchIndex, match, displayText: replacement });
   }
