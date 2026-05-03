@@ -6,6 +6,7 @@ tags:
 title: Surdeig for nybegynnere
 slug: surdeig
 description:
+permalink: /surdeig
 ---
 Etter også de ulike bruksområdene for tale til tekst, er det bare å sette ord på noen kjappe tanker. Spesielt til noen av meldingene som denne, eller om det er på Slack eller Teams som tilbakemelding til en kollega.
 
