@@ -10,7 +10,6 @@ lastModified: 2024-03-07
 aliases:
   - om å bruke det du lærer
   - bruk det du lærer
-title: Om å bruke det du lærer
 permalink: bruk-det-du-larer
 ---
 
