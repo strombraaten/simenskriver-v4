@@ -6,6 +6,8 @@ noIndex: false
 hideTOC: false
 aliases:
   - about-me
+date: 2026-05-07
+draft: true
 ---
 Welcome to **Astro Modular**, an Astro blog theme template designed for Obsidian users, created by [David V. Kimball](https://davidvkimball.com). This theme turns Obsidian into a powerful CMS for instant blog publishing.
 
