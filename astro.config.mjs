@@ -214,12 +214,7 @@ export default defineConfig({
   "/posts/vurdering av året": "/posts/vurdering-av-aret",
   "/posts/Write blind, edit later": "/posts/write-blind",
   "/posts/Zettelkasten": "/posts/zettelkasten",
-  "/posts/en introduksjon til Zettelkasten": "/posts/zettelkasten",
-  "/projects/obsidian-astro-composer": "/projects/astro-composer",
-  "/projects/obsidian-astro-suite": "/projects/vault-cms",
-  "/docs/api-reference": "/docs/api",
-  "/docs/astro-modular-configuration": "/docs/configuration",
-  "/docs/sourcetree-and-git": "/docs/sourcetree-and-git-setup"
+  "/posts/en introduksjon til Zettelkasten": "/posts/zettelkasten"
 } : {},
 image: {
     service: {
