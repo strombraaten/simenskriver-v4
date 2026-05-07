@@ -1,4 +1,5 @@
 ---
+draft: false
 date: 2023-03-04
 lastModified: 2023-05-10
 title: Akkurat nå

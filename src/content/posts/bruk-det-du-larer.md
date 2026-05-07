@@ -1,4 +1,5 @@
 ---
+draft: false
 title: Om å bruke det du lærer
 date: 2022-12-09
 description: Om du skulle tatt i bruk det du leser og hører, hvordan hadde det sett ut? Vi konsumerer mye kunnskap, men hva kommer ut på andre sida?

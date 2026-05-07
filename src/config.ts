@@ -64,8 +64,6 @@ export interface SiteConfig {
     search: {
       posts: boolean;
       pages: boolean;
-      projects: boolean;
-      docs: boolean;
     };
     sections: {
       quickActions: boolean;
@@ -108,14 +106,6 @@ export interface SiteConfig {
       slug?: string; // Only used when type is "featured"
     };
     recentPosts: {
-      enabled: boolean;
-      count: number;
-    };
-    projects: {
-      enabled: boolean;
-      count: number;
-    };
-    docs: {
       enabled: boolean;
       count: number;
     };
@@ -162,11 +152,6 @@ export interface SiteConfig {
     };
   };
   
-  // Optional Content Types
-  optionalContentTypes: {
-    projects: boolean;
-    docs: boolean;
-  };
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -262,10 +247,6 @@ export const siteConfig: SiteConfig = {
       posts: true,
       // [CONFIG:COMMAND_PALETTE_SEARCH_PAGES]
       pages: false,
-      // [CONFIG:COMMAND_PALETTE_SEARCH_PROJECTS]
-      projects: false,
-      // [CONFIG:COMMAND_PALETTE_SEARCH_DOCS]
-      docs: false,
     },
     sections: {
       // [CONFIG:COMMAND_PALETTE_SECTIONS_QUICK_ACTIONS]
@@ -333,14 +314,6 @@ export const siteConfig: SiteConfig = {
     ],
   },
 
-  // Optional Content Types - Enable/disable optional content sections (takes priority over homeOptions)
-  optionalContentTypes: {
-    // [CONFIG:OPTIONAL_CONTENT_TYPES_PROJECTS]
-    projects: false, // Enable projects section
-    // [CONFIG:OPTIONAL_CONTENT_TYPES_DOCS]
-    docs: false, // Enable documentation section
-  },
-
   // Home Options
   homeOptions: {
     featuredPost: {
@@ -356,18 +329,6 @@ export const siteConfig: SiteConfig = {
       enabled: true, // Show recent posts on homepage
       // [CONFIG:HOME_OPTIONS_RECENT_POSTS_COUNT]
       count: 500, // Number of recent posts to show
-    },
-    projects: {
-      // [CONFIG:HOME_OPTIONS_PROJECTS_ENABLED]
-      enabled: false, // Show featured projects on homepage
-      // [CONFIG:HOME_OPTIONS_PROJECTS_COUNT]
-      count: 2, // Number of projects to show
-    },
-    docs: {
-      // [CONFIG:HOME_OPTIONS_DOCS_ENABLED]
-      enabled: false, // Show featured docs on homepage
-      // [CONFIG:HOME_OPTIONS_DOCS_COUNT]
-      count: 3, // Number of docs to show
     },
     blurb: {
       // [CONFIG:HOME_OPTIONS_BLURB_PLACEMENT]
@@ -668,13 +629,6 @@ function validateSiteConfig(config: SiteConfig): { isValid: boolean; errors: str
   if (config.homeOptions.recentPosts.count < 1) {
     errors.push('Recent posts count must be at least 1. Adjust homeOptions.recentPosts.count.');
   }
-  if (config.homeOptions.projects.count < 1) {
-    errors.push('Projects count must be at least 1. Adjust homeOptions.projects.count.');
-  }
-  if (config.homeOptions.docs.count < 1) {
-    errors.push('Documentation count must be at least 1. Adjust homeOptions.docs.count.');
-  }
-
   // Content width validation
   if (!config.layout.contentWidth || !config.layout.contentWidth.match(/^\d+(\.\d+)?(rem|px|em)$/)) {
     errors.push(`Content width must be a valid CSS length value like "45rem", "800px", or "90em". Current value "${config.layout.contentWidth}" is invalid.`);
