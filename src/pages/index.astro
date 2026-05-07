@@ -3,7 +3,7 @@ import { getCollection, getEntry, render, type CollectionEntry } from 'astro:con
 import { isValidDate } from '@/utils/markdown';
 import { siteConfig } from '@/config';
 import { generateHomeSEO } from '@/utils/seo';
-import { shouldShowPost, sortPostsByDate, processPost, extractTags } from '@/utils/markdown';
+import { shouldShowPost, sortPostsByDate, processPost, extractTags, postUrl } from '@/utils/markdown';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PostCard from '@/components/PostCard.astro';
 import Icon from '@/components/Icon.astro';
@@ -214,7 +214,7 @@ const structuredData = {
                       <ul class="post-list">
                         {postsByYear[year].map((post: any) => (
                           <li>
-                            <a href={`/posts/${post.id}`} class="post-row">
+                            <a href={postUrl(post)} class="post-row">
                               <span class="post-title">{post.data.title}</span>
                               <span class="post-date">{fmtShort(post.data.date)}</span>
                             </a>
@@ -239,7 +239,7 @@ const structuredData = {
                         <ul class="post-list">
                           {postsByTag[tag].map((post: any) => (
                             <li>
-                              <a href={`/posts/${post.id}`} class="post-row">
+                              <a href={postUrl(post)} class="post-row">
                                 <span class="post-title">{post.data.title}</span>
                                 <span class="post-date">{fmtShort(post.data.date)}</span>
                               </a>
@@ -260,7 +260,7 @@ const structuredData = {
                         : new Date(post.data.date);
                       return (
                         <li>
-                          <a href={`/posts/${post.id}`} class="post-row">
+                          <a href={postUrl(post)} class="post-row">
                             <span class="post-title">{post.data.title}</span>
                             <span class="post-date">{fmtFull(d)}</span>
                           </a>
@@ -275,7 +275,7 @@ const structuredData = {
                   <ul class="post-list">
                     {utkastProcessedPosts.map((post: any) => (
                       <li>
-                        <a href={`/posts/${post.id}`} class="post-row">
+                        <a href={postUrl(post)} class="post-row">
                           <span class="post-title">{post.data.title}</span>
                           <span class="post-date">{fmtShort(post.data.date)}</span>
                         </a>
