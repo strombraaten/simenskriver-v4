@@ -1,7 +1,7 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 import { siteConfig } from "../config";
-import { shouldShowPost, sortPostsByDate } from "../utils/markdown";
+import { shouldShowPost, sortPostsByDate, postUrl } from "../utils/markdown";
 import { optimizePostImagePath } from "../utils/images";
 
 // Helper function to extract image path from Obsidian bracket syntax
@@ -52,7 +52,7 @@ export async function GET() {
   // Filter and sort posts based on environment (in dev, show all including drafts)
   const isDev = import.meta.env.DEV;
   const visiblePosts = posts.filter(
-    (post) => shouldShowPost(post, isDev)
+    (post) => shouldShowPost(post, isDev) && !post.data.noIndex
   );
   const sortedPosts = sortPostsByDate(visiblePosts);
 
@@ -63,13 +63,13 @@ export async function GET() {
     description: siteConfig.description,
     site: siteUrl,
     items: sortedPosts.map((post) => {
-      const postUrl = `${siteUrl}posts/${(post as any).id}/`;
+      const postAbsoluteUrl = `${siteUrl}${postUrl(post).slice(1)}/`;
 
       return {
         title: post.data.title,
         description: post.data.description || "",
         pubDate: post.data.date,
-        link: postUrl,
+        link: postAbsoluteUrl,
         categories: post.data.tags || [],
         author: siteConfig.author,
         // Include image if available and marked for OG

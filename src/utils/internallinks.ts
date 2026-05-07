@@ -506,7 +506,7 @@ export function remarkWikilinks() {
               postPath.endsWith("/index") && postPath.split("/").length === 2
                 ? postPath.replace("/index", "")
                 : postPath;
-            url = `/posts/${cleanPath}`;
+            url = `/${cleanPath}`;
             wikilinkData = cleanPath;
           } else if (link.includes("/")) {
             // Handle folder-based post format: folder-name/index
@@ -515,7 +515,7 @@ export function remarkWikilinks() {
             if (link.endsWith("/index") && link.split("/").length === 2) {
               // This is a folder-based post: folder-name/index -> folder-name
               const folderName = link.replace("/index", "");
-              url = `/posts/${folderName}`;
+              url = `/${folderName}`;
               wikilinkData = folderName;
             } else {
               // Other paths with slashes that don't start with posts/ are not valid for wikilinks
@@ -523,9 +523,9 @@ export function remarkWikilinks() {
             return;
             }
           } else {
-            // Handle simple slug format - ASSUMES POSTS COLLECTION
+            // Handle simple slug format - all content is now in the posts collection at root URLs
             const slugifiedLink = createSlugFromTitle(link);
-            url = `/posts/${slugifiedLink}`;
+            url = `/${slugifiedLink}`;
             wikilinkData = link.trim();
           }
 
@@ -816,13 +816,13 @@ export function remarkStandardLinks() {
                 baseUrl = `/${specialPath}`;
               }
             } else if (strippedUrl.startsWith("posts/") || strippedUrl.startsWith("/posts/")) {
-              // Posts: /posts/slug/ (accepts both with/without leading slash)
+              // Posts: /{slug}/ (all content is at root level now)
               let postPath = strippedUrl.replace(/^\/?posts\//, "");
               // Remove /index for folder-based posts
               if (postPath.endsWith("/index") && postPath.split("/").length === 2) {
                 postPath = postPath.replace(/\/index$/, "");
               }
-              baseUrl = `/posts/${postPath}`;
+              baseUrl = `/${postPath}`;
             } else if (strippedUrl.startsWith("pages/") || strippedUrl.startsWith("/pages/")) {
               // Pages: /slug/ (no /pages prefix in final URL)
               let pagePath = strippedUrl.replace(/^\/?pages\//, "");
@@ -846,20 +846,12 @@ export function remarkStandardLinks() {
               baseUrl = `/docs/${docPath}`;
             } else if (strippedUrl.startsWith("../") || strippedUrl.startsWith("./")) {
               // Relative path (e.g., Obsidian exports like `../sibling-post/index.md`).
-              // Strip leading ../ and ./ segments; resolve against the current collection.
+              // Strip leading ../ and ./ segments. All content is now in the posts collection at root URLs.
               let cleanPath = strippedUrl.replace(/^(?:\.\.\/)+/, "").replace(/^\.\//, "");
               if (cleanPath.endsWith("/index") && cleanPath.split("/").length === 2) {
                 cleanPath = cleanPath.replace(/\/index$/, "");
               }
-              // Determine collection from current file's path; default to posts.
-              let collection: "posts" | "pages" | "projects" | "docs" = "posts";
-              if (file && (file as any).path) {
-                const normalizedPath = String((file as any).path).replace(/\\/g, "/");
-                if (normalizedPath.includes("/pages/")) collection = "pages";
-                else if (normalizedPath.includes("/projects/")) collection = "projects";
-                else if (normalizedPath.includes("/docs/")) collection = "docs";
-              }
-              baseUrl = collection === "pages" ? `/${cleanPath}` : `/${collection}/${cleanPath}`;
+              baseUrl = `/${cleanPath}`;
             } else {
               // Direct .md reference without collection prefix - check for special pages first
               if (linkText === "special/home") {
@@ -879,11 +871,11 @@ export function remarkStandardLinks() {
                   let processedUrl = node.url.replace(/\.md.*$/, "");
                   // Remove /index if present
                   processedUrl = processedUrl.replace(/\/index$/, "");
-                  baseUrl = `/posts/${processedUrl}`;
+                  baseUrl = `/${processedUrl}`;
                 } else {
                   // Use linkText which should already be clean
                   let cleanLinkText = linkText.replace(/\/index$/, ""); // Extra defensive check
-                  baseUrl = `/posts/${cleanLinkText}`;
+                  baseUrl = `/${cleanLinkText}`;
                 }
               }
             }
@@ -903,7 +895,7 @@ export function remarkStandardLinks() {
             node.url = finalUrl;
           } else {
             // For non-.md URLs, apply URL mapping and handle anchors
-            // Handle posts/ prefixed URLs (without .md extension)
+            // Handle posts/ prefixed URLs (without .md extension) — normalize to root-level URLs
             if (node.url.startsWith("posts/")) {
               // Extract the path after posts/
               let postPath = node.url.replace("posts/", "");
@@ -911,7 +903,7 @@ export function remarkStandardLinks() {
               const pathWithoutAnchor = postPath.split('#')[0];
               // Remove /index if present
               const cleanPath = pathWithoutAnchor.replace(/\/index$/, "");
-              let mappedUrl = `/posts/${cleanPath}`;
+              let mappedUrl = `/${cleanPath}`;
               
               if (anchor) {
                 mappedUrl += `#${createAnchorSlug(anchor)}`;
@@ -951,9 +943,10 @@ export function remarkStandardLinks() {
             }
           }
 
-          // Add wikilink styling to internal links for visual consistency
-          // Include posts/ prefixed URLs and /posts/ URLs (but not double /posts/posts/)
-          if (node.url.startsWith("/posts/") || (node.url.startsWith("posts/") && !node.url.startsWith("posts/posts/"))) {
+          // Add wikilink styling to root-relative internal links for visual consistency
+          // All post URLs are now at root level (/{slug}), so we match any root-relative link.
+          // External links (http/https) don't reach here since isInternalLink() filters them out.
+          if (node.url.startsWith("/") && !node.url.startsWith("//")) {
             if (!node.data) {
               node.data = {};
             }
@@ -966,6 +959,12 @@ export function remarkStandardLinks() {
             node.data.hProperties.className = Array.isArray(existingClasses)
               ? [...existingClasses, "wikilink"]
               : [existingClasses, "wikilink"].filter(Boolean);
+
+            // Store the raw link text so the client-side resolver in PostLayout can
+            // look up the correct permalink at runtime (build-time plugins lack permalink access).
+            if (linkText) {
+              node.data.hProperties["data-wikilink"] = linkText;
+            }
           }
         }
       }

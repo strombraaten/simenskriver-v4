@@ -21,9 +21,9 @@ This site is built with Astro and contains a blog with posts about technology, d
 ## Content Structure
 
 The site contains:
-- Blog posts at /posts/
-- Static pages (about, etc.)
-- Tag-based organization
+- Blog posts at root level (e.g. /digital-hage, /gestalt-prinsipper)
+- Static pages accessible at /about, /contact, /privacy-policy
+- Tag-based organization under /posts/tag/
 - Reading time and word count for posts
 
 ## Features

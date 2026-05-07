@@ -436,12 +436,14 @@ async function generateGraphData() {
 
     // Process each post
     for (const post of visiblePosts) {
-      // Add post node
+      // Add post node. `url` uses permalink if present (root-level routing), otherwise falls back to id.
+      const postSlug = String(post.data.permalink ?? post.id).replace(/^\//, '');
       const postNode = {
         id: post.id,
         type: "post",
         title: post.data.title,
         slug: post.id,
+        url: `/${postSlug}`,
         date: post.data.date
           ? post.data.date.toISOString()
           : new Date().toISOString(),

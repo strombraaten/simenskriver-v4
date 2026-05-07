@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
-import { shouldShowPost } from "@/utils/markdown";
+import { shouldShowPost, postUrl } from "@/utils/markdown";
 
 export const GET: APIRoute = async () => {
   try {
@@ -13,12 +13,12 @@ export const GET: APIRoute = async () => {
       shouldShowPost(post, isDev)
     );
 
-    // Map to command palette format
+    // Map to command palette format. URLs use permalink if set, otherwise post id (root-level routing).
     const commandPaletteData = visiblePosts.map((post: any) => ({
       id: post.id,
       title: post.data.title,
       description: post.data.description,
-      url: `/posts/${post.id}`,
+      url: postUrl(post) + "/",
       type: "post" as const,
       date: post.data.date,
       tags: post.data.tags || [],

@@ -398,13 +398,15 @@ import Icon from './Icon.astro';
               if (dist < CLICK_DISTANCE && d.slug) {
                 closeModal();
 
+                // Use permalink-aware url if available, fall back to slug
+                const targetUrl = (d as any).url || `/${d.slug}`;
                 if ((window as any).swup) {
                   if ((window as any).resetLocalGraph) {
                     (window as any).resetLocalGraph();
                   }
-                  (window as any).swup.navigate(`/posts/${d.slug}`);
+                  (window as any).swup.navigate(targetUrl);
                 } else {
-                  window.location.href = `/posts/${d.slug}`;
+                  window.location.href = targetUrl;
                 }
               }
             }) as any,
