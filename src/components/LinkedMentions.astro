@@ -12,10 +12,16 @@ export interface Props {
 const { currentSlug } = Astro.props;
 const isCompact = (siteConfig.postOptions.linkedMentions as any).linkedMentionsCompact;
 
-// Get all posts and pages to find linked mentions
+// Get all posts to find linked mentions (pages collection no longer exists)
 const posts = await getCollection('posts');
-const pages = await getCollection('pages');
-const linkedMentions = findLinkedMentions(posts as any[], currentSlug, posts as any[], pages as any[]);
+const linkedMentions = findLinkedMentions(posts as any[], currentSlug, posts as any[], []);
+
+// Helper: convert a post id to its canonical URL (respects permalink field)
+function getPostUrl(slug: string): string {
+  const post = posts.find(p => p.id === slug);
+  const target = (post?.data?.permalink ?? slug) as string;
+  return '/' + target.replace(/^\//, '');
+}
 
 
 // Function to process links in excerpt text
@@ -79,7 +85,8 @@ function processExcerptLinks(text: string, targetSlug: string): string {
       const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-+|-+$/g, '');
       const resolved = posts.find(p => norm(p.id) === norm(linkText!) || norm(p.data.title) === norm(linkText!));
       if (resolved) {
-        return `<a href="/posts/${resolved.id}" class="underline underline-offset-2">${displayText}</a>`;
+        const resolvedUrl = '/' + ((resolved.data?.permalink ?? resolved.id) as string).replace(/^\//, '');
+        return `<a href="${resolvedUrl}" class="underline underline-offset-2">${displayText}</a>`;
       }
     }
     return displayText;
@@ -159,9 +166,12 @@ function processExcerptLinks(text: string, targetSlug: string): string {
     } else {
       const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-+|-+$/g, '');
       const resolved = posts.find(p => norm(p.id) === linkSlug || norm(p.data.title) === linkSlug);
-      replacement = resolved
-        ? `<a href="/posts/${resolved.id}" class="underline underline-offset-2">${displayText}</a>`
-        : displayText;
+      if (resolved) {
+        const resolvedUrl = '/' + ((resolved.data?.permalink ?? resolved.id) as string).replace(/^\//, '');
+        replacement = `<a href="${resolvedUrl}" class="underline underline-offset-2">${displayText}</a>`;
+      } else {
+        replacement = displayText;
+      }
     }
     
     wikilinkMatches.push({ index: matchIndex, match, link, display, replacement });
@@ -314,7 +324,7 @@ function processExcerptLinks(text: string, targetSlug: string): string {
         <div class="space-y-2">
           {linkedMentions.filter(mention => mention !== null).map(mention => (
             <a
-              href={`/posts/${mention.slug}`}
+              href={getPostUrl(mention.slug)}
               class="group flex items-center justify-between p-3 bg-primary-50 dark:bg-primary-800/30 rounded-lg border border-primary-200 dark:border-primary-700 hover:border-primary-300 dark:hover:border-primary-600 transition-colors block"
             >
               <span class="text-primary-900 dark:text-primary-50 group-hover:text-highlight-600 dark:group-hover:text-highlight-400 transition-colors font-medium">
@@ -330,7 +340,7 @@ function processExcerptLinks(text: string, targetSlug: string): string {
             <article class="p-4 bg-primary-50 dark:bg-primary-800/30 rounded-lg border border-primary-200 dark:border-primary-700 hover:border-primary-300 dark:hover:border-primary-600 transition-colors">
               <div class="font-medium text-primary-900 dark:text-primary-50 mb-2">
                 <a
-                  href={`/posts/${mention.slug}`}
+                  href={getPostUrl(mention.slug)}
                   class="hover:text-highlight-600 dark:hover:text-highlight-400 transition-colors"
                 >
                   {mention.title}

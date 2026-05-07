@@ -1,12 +1,11 @@
 ---
 title: About
-description: Learn more about Astro Modular and the philosophy behind its design approach.
+description: Learn more about Simen Skriver.
+permalink: about
 noIndex: false
 hideTOC: false
-draft: false
 aliases:
   - about-me
-  - about-us
 ---
 Welcome to **Astro Modular**, an Astro blog theme template designed for Obsidian users, created by [David V. Kimball](https://davidvkimball.com). This theme turns Obsidian into a powerful CMS for instant blog publishing.
 
@@ -25,21 +24,3 @@ If you use Obsidian, this theme is a natural extension of your workflow. All ric
 
 ### Modular Design
 Every feature can be toggled on or off through a single configuration file. Enable only what you need, keeping your site fast and focused on your specific use case.
-
----
-
-## Pages to Check Out
-
-- [Contact](pages/contact.md) page with a form
-- [Thank You](pages/thank-you.md) page where submitters are directed after a successful submission 
-- [Privacy Policy](pages/privacy-policy.md) page
-
----
-
-## Posts to Check Out
-- [[getting-started|Getting Started]]
-- [Astro Suite Vault (Modular) Guide](posts/astro-suite-vault-modular-guide.md) 
-
----
-![Water droplet](attachments/water.png)
-*Photo by [Herbert Goetsch](https://unsplash.com/@hg_photo?utm_source=Obsidian%20Image%20Inserter%20Plugin&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=Obsidian%20Image%20Inserter%20Plugin&utm_medium=referral)*

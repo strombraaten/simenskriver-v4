@@ -1,22 +1,23 @@
 import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
-import { shouldShowContent } from "@/utils/markdown";
+import { shouldShowPost } from "@/utils/markdown";
 
+// Returns non-draft, non-noIndex posts for use in the command palette "pages" search.
+// The pages collection no longer exists — all content lives in the posts collection.
+// Utility pages (about, contact, etc.) have noIndex: true and are excluded.
 export const GET: APIRoute = async () => {
   try {
-    const pages = await getCollection("pages");
+    const posts = await getCollection("posts");
     const isDev = import.meta.env.DEV;
-    const visiblePages = pages.filter((page: any) => {
-      return shouldShowContent(page, isDev);
-    });
+    const visiblePosts = posts.filter((post) => shouldShowPost(post, isDev) && !post.data.noIndex);
 
-    const result = visiblePages.map((page: any) => ({
-      id: page.id,
-      title: page.data.title,
-      description: page.data.description || "",
-      url: `/${page.id}`,
+    const result = visiblePosts.map((post) => ({
+      id: post.id,
+      title: post.data.title,
+      description: post.data.description || "",
+      url: "/" + ((post.data.permalink ?? post.id) as string).replace(/^\//, "") + "/",
       type: "page" as const,
-      lastModified: page.data.lastModified?.toISOString(),
+      lastModified: (post.data as any).lastModified?.toISOString(),
     }));
 
     return new Response(JSON.stringify(result), {

@@ -109,13 +109,13 @@ if (siteConfig.homeOptions.docs.enabled && siteConfig.optionalContentTypes.docs)
   }
 }
 
-// Get home blurb content from special collection
+// Get home blurb content from posts collection (draft: true, so getEntry bypasses visibility filter)
 let homeBlurbContent = null;
 let HomeBlurbContent = null;
 
 if (siteConfig.homeOptions.blurb.placement !== 'none') {
   try {
-    homeBlurbContent = await getEntry('special', 'home');
+    homeBlurbContent = await getEntry('posts', 'home');
     if (homeBlurbContent) {
       const { Content } = await render(homeBlurbContent);
       HomeBlurbContent = Content;

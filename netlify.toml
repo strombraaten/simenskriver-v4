@@ -146,36 +146,6 @@
 # Generated redirects from content aliases
 
 [[redirects]]
-  from = "/about-me"
-  to = "/about"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/about-us"
-  to = "/about"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/contact-me"
-  to = "/contact"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/contact-us"
-  to = "/contact"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/privacy"
-  to = "/privacy-policy"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/posts/hva jeg lærte av å skrive 25 artikler på 23 dager"
   to = "/posts/25-artikler-23-dager"
   status = 301
@@ -184,6 +154,12 @@
 [[redirects]]
   from = "/posts/4000 uker, og kommentarer i margen"
   to = "/posts/4000-uker"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/posts/about-me"
+  to = "/posts/about"
   status = 301
   force = true
 
@@ -274,6 +250,12 @@
 [[redirects]]
   from = "/posts/verdien av fortløpende brukertesting"
   to = "/posts/brukertesting"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/posts/contact-me"
+  to = "/posts/contact"
   status = 301
   force = true
 
@@ -710,6 +692,12 @@
   force = true
 
 [[redirects]]
+  from = "/posts/privacy"
+  to = "/posts/privacy-policy"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/posts/mitt syn på rabattkoder"
   to = "/posts/rabatt"
   status = 301
@@ -946,36 +934,6 @@
 [[redirects]]
   from = "/posts/en introduksjon til Zettelkasten"
   to = "/posts/zettelkasten"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/projects/obsidian-astro-composer"
-  to = "/projects/astro-composer"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/projects/obsidian-astro-suite"
-  to = "/projects/vault-cms"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/docs/api-reference"
-  to = "/docs/api"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/docs/astro-modular-configuration"
-  to = "/docs/configuration"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/docs/sourcetree-and-git"
-  to = "/docs/sourcetree-and-git-setup"
   status = 301
   force = true
 

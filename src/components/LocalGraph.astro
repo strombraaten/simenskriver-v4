@@ -261,7 +261,8 @@ const shouldShowGraph = true;
               document.body.style.overflow = '';
               resetLocalGraph();
 
-              const url = `/posts/${d.slug}`;
+              // Use permalink-aware url if available, fall back to slug
+              const url = (d as any).url || `/${d.slug}`;
               if ((window as any).swup) {
                 (window as any).swup.navigate(url);
               } else {

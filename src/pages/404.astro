@@ -1,16 +1,15 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { getEntry, render } from 'astro:content';
 import { siteConfig } from '@/config';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Icon from '@/components/Icon.astro';
 
-// Try to get 404 page content from special collection
+// Try to get 404 page content from posts collection (draft: true, so getEntry bypasses visibility filter)
 let pageContent = null;
 try {
-  const specialPages = await getCollection('special');
-  const notFoundPage = specialPages.find(page => page.id === '404');
-  if (notFoundPage) {
-    pageContent = await render(notFoundPage);
+  const notFoundPost = await getEntry('posts', '404');
+  if (notFoundPost) {
+    pageContent = await render(notFoundPost);
   }
 } catch (error) {
 }

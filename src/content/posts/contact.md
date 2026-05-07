@@ -1,12 +1,11 @@
 ---
 title: Contact
-description: Contact me.
-noIndex: false
-hideTOC: false
-draft: false
+description: Send me a message.
+permalink: contact
+noIndex: true
+hideTOC: true
 aliases:
   - contact-me
-  - contact-us
 ---
 Send me a message. 
 
@@ -55,4 +54,3 @@ Send me a message.
     Send Message  
   </button>  
 </form>
-

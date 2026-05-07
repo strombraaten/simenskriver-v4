@@ -81,13 +81,9 @@ export default defineConfig({
     enabled: true
   },
   redirects: (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'build') ? {
-  "/about-me": "/about",
-  "/about-us": "/about",
-  "/contact-me": "/contact",
-  "/contact-us": "/contact",
-  "/privacy": "/privacy-policy",
   "/posts/hva jeg lærte av å skrive 25 artikler på 23 dager": "/posts/25-artikler-23-dager",
   "/posts/4000 uker, og kommentarer i margen": "/posts/4000-uker",
+  "/posts/about-me": "/posts/about",
   "/posts/apper": "/posts/apper-jeg-liker",
   "/posts/assosiativ skriving": "/posts/assosiativ-skriving",
   "/posts/bærekraftig webutvikling": "/posts/barekraftig-webutvikling",
@@ -103,6 +99,7 @@ export default defineConfig({
   "/posts/bruk det du lærer": "/posts/bruk-det-du-larer",
   "/posts/Fortløpende brukertesting, og verdien av det": "/posts/brukertesting",
   "/posts/verdien av fortløpende brukertesting": "/posts/brukertesting",
+  "/posts/contact-me": "/posts/contact",
   "/posts/the cult of done": "/posts/cult-of-done",
   "/posts/cleanshot": "/posts/den-ene-funksjonen",
   "/posts/evergreen notes": "/posts/digital-hage",
@@ -175,6 +172,7 @@ export default defineConfig({
   "/posts/Parkinsons lov": "/posts/parkinsons-lov",
   "/posts/hva om favoritt-podkasten din hadde en egen chatbot": "/posts/podbot",
   "/posts/prisen av en dårlig brukeropplevelse": "/posts/prisen-av-ux",
+  "/posts/privacy": "/posts/privacy-policy",
   "/posts/mitt syn på rabattkoder": "/posts/rabatt",
   "/posts/hva er et rikt liv for deg?": "/posts/rikt-liv",
   "/posts/senke terskelen for å publisere": "/posts/senke-terskelen-for-publisering",
@@ -214,12 +212,7 @@ export default defineConfig({
   "/posts/vurdering av året": "/posts/vurdering-av-aret",
   "/posts/Write blind, edit later": "/posts/write-blind",
   "/posts/Zettelkasten": "/posts/zettelkasten",
-  "/posts/en introduksjon til Zettelkasten": "/posts/zettelkasten",
-  "/projects/obsidian-astro-composer": "/projects/astro-composer",
-  "/projects/obsidian-astro-suite": "/projects/vault-cms",
-  "/docs/api-reference": "/docs/api",
-  "/docs/astro-modular-configuration": "/docs/configuration",
-  "/docs/sourcetree-and-git": "/docs/sourcetree-and-git-setup"
+  "/posts/en introduksjon til Zettelkasten": "/posts/zettelkasten"
 } : {},
 image: {
     service: {

@@ -143,12 +143,8 @@ const specialCollection = defineCollection({
   }),
 });
 
-// Export collections
+// Export collections — single-collection architecture, all content lives in posts
 export const collections = {
   posts: postsCollection,
-  pages: pagesCollection,
-  projects: projectsCollection,
-  docs: docsCollection,
-  special: specialCollection,
 };
 

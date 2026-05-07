@@ -272,7 +272,7 @@ if (siteConfig.postOptions.graphView.enabled && siteConfig.postOptions.graphView
               {prevPost && (
                 <div class="text-left">
                   <a
-                    href={`/posts/${prevPost.id}`}
+                    href={'/' + (prevPost.data.permalink ?? prevPost.id).replace(/^\//, '')}
                     class="group block p-4 rounded-lg border border-primary-200 dark:border-primary-700 hover:border-highlight-300 dark:hover:border-highlight-600 transition-all duration-200 hover:shadow-md"
                   >
                     <h3 class="font-semibold text-primary-900 dark:text-primary-50 group-hover:text-highlight-600 dark:group-hover:text-highlight-400 transition-colors">
@@ -288,7 +288,7 @@ if (siteConfig.postOptions.graphView.enabled && siteConfig.postOptions.graphView
               {nextPost && (
                 <div class={`text-right ${!prevPost ? 'md:col-start-2' : ''}`}>
                   <a
-                    href={`/posts/${nextPost.id}`}
+                    href={'/' + (nextPost.data.permalink ?? nextPost.id).replace(/^\//, '')}
                     class="group block p-4 rounded-lg border border-primary-200 dark:border-primary-700 hover:border-highlight-300 dark:hover:border-highlight-600 transition-all duration-200 hover:shadow-md"
                   >
                     <h3 class="font-semibold text-primary-900 dark:text-primary-50 group-hover:text-highlight-600 dark:group-hover:text-highlight-400 transition-colors">
@@ -385,10 +385,11 @@ if (siteConfig.postOptions.graphView.enabled && siteConfig.postOptions.graphView
             const anchorMatch = currentHref.match(/#(.+)$/);
             const anchor = anchorMatch ? anchorMatch[1] : null;
             
+            const postUrl = '/' + (post.data.permalink ?? post.id).replace(/^\//, '');
             if (anchor) {
-              link.href = `/posts/${post.id}#${anchor}`;
+              link.href = `${postUrl}#${anchor}`;
             } else {
-              link.href = `/posts/${post.id}`;
+              link.href = postUrl;
             }
 
             // Simple logic:

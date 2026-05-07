@@ -1,8 +1,8 @@
 ---
 title: Thank You
 description: Thank you for your submission.
+permalink: thank-you
 hideTOC: true
 noIndex: true
-draft: false
 ---
 Your submission has been sent. Expect a response soon!

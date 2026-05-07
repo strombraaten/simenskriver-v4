@@ -366,8 +366,8 @@ async function syncAllImages() {
     }
   }
 
-  // Sync folder-based images for all content types
-  const contentTypes = ['posts', 'pages', 'projects', 'docs', 'special'];
+  // Sync folder-based images — only posts collection remains
+  const contentTypes = ['posts'];
   for (const contentType of contentTypes) {
     await syncFolderBasedImages(contentType);
   }
