@@ -243,6 +243,19 @@ function isDevelopmentMode(): boolean {
   return import.meta.env.DEV === true;
 }
 
+/**
+ * Returns the canonical root-level URL for a post.
+ * Uses the post's `permalink` field if set, otherwise falls back to the post's `id`.
+ * All posts are served at `/{slug}` — there is no `/posts/` prefix in the URL.
+ *
+ * This is the single source of truth for post URL generation. Use this everywhere
+ * instead of repeating `'/' + (post.data.permalink ?? post.id).replace(/^\//, '')`.
+ */
+export function postUrl(post: { id: string; data: { permalink?: string | null } }): string {
+  const slug = (post.data.permalink ?? post.id).replace(/^\//, '');
+  return `/${slug}`;
+}
+
 // Check if a post should be shown in production
 export function shouldShowPost(post: Post, isDev: boolean | undefined = undefined): boolean {
   const { draft, title, date } = post.data;

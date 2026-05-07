@@ -2,6 +2,7 @@
 import type { Post, LinkedMention } from '@/types';
 import { findLinkedMentions } from '@/utils/internallinks';
 import { getCollection } from 'astro:content';
+import { postUrl } from '@/utils/markdown';
 import { getFeature, siteConfig } from '@/config';
 import Icon from './Icon.astro';
 
@@ -16,11 +17,10 @@ const isCompact = (siteConfig.postOptions.linkedMentions as any).linkedMentionsC
 const posts = await getCollection('posts');
 const linkedMentions = findLinkedMentions(posts as any[], currentSlug, posts as any[], []);
 
-// Helper: convert a post id to its canonical URL (respects permalink field)
+// Resolve a mention slug (post id) to its canonical URL using postUrl()
 function getPostUrl(slug: string): string {
   const post = posts.find(p => p.id === slug);
-  const target = (post?.data?.permalink ?? slug) as string;
-  return '/' + target.replace(/^\//, '');
+  return post ? postUrl(post as any) : `/${slug}`;
 }
 
 
@@ -85,8 +85,7 @@ function processExcerptLinks(text: string, targetSlug: string): string {
       const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-+|-+$/g, '');
       const resolved = posts.find(p => norm(p.id) === norm(linkText!) || norm(p.data.title) === norm(linkText!));
       if (resolved) {
-        const resolvedUrl = '/' + ((resolved.data?.permalink ?? resolved.id) as string).replace(/^\//, '');
-        return `<a href="${resolvedUrl}" class="underline underline-offset-2">${displayText}</a>`;
+        return `<a href="${postUrl(resolved as any)}" class="underline underline-offset-2">${displayText}</a>`;
       }
     }
     return displayText;
@@ -167,8 +166,7 @@ function processExcerptLinks(text: string, targetSlug: string): string {
       const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-+|-+$/g, '');
       const resolved = posts.find(p => norm(p.id) === linkSlug || norm(p.data.title) === linkSlug);
       if (resolved) {
-        const resolvedUrl = '/' + ((resolved.data?.permalink ?? resolved.id) as string).replace(/^\//, '');
-        replacement = `<a href="${resolvedUrl}" class="underline underline-offset-2">${displayText}</a>`;
+        replacement = `<a href="${postUrl(resolved as any)}" class="underline underline-offset-2">${displayText}</a>`;
       } else {
         replacement = displayText;
       }

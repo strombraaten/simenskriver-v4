@@ -1,7 +1,7 @@
 import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
 import { siteConfig } from "../config";
-import { shouldShowPost } from "../utils/markdown";
+import { shouldShowPost, postUrl } from "../utils/markdown";
 
 // Helper function to normalize siteUrl - ensure it ends with a single slash
 function normalizeSiteUrl(url: string): string {
@@ -32,12 +32,12 @@ export const GET: APIRoute = async () => {
     </url>
   `);
 
-  // Individual posts — all at root level via permalink ?? id
+  // Individual posts — all at root level via postUrl()
   visiblePosts.forEach((post) => {
-    const permalink = ((post.data.permalink ?? (post as any).id) as string).replace(/^\//, '');
+    const slug = postUrl(post).slice(1); // strip leading slash; siteUrl already ends with /
     urls.push(`
       <url>
-        <loc>${siteUrl}${permalink}/</loc>
+        <loc>${siteUrl}${slug}/</loc>
         <lastmod>${post.data.date.toISOString()}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>

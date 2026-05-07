@@ -1,7 +1,7 @@
 ---
 import type { GetStaticPaths } from 'astro';
 import { getCollection } from 'astro:content';
-import { shouldShowPost } from '@/utils/markdown';
+import { shouldShowPost, postUrl } from '@/utils/markdown';
 import PostLayout from '@/layouts/PostLayout.astro';
 
 // Single posts handler — all content lives in the posts collection.
@@ -13,7 +13,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const visiblePosts = posts.filter(post => shouldShowPost(post, isDev));
 
   return visiblePosts.map(post => {
-    const slug = (post.data.permalink ?? post.id).replace(/^\//, '');
+    const slug = postUrl(post).slice(1); // postUrl returns '/{slug}', strip leading slash
     return { params: { slug }, props: { post } };
   });
 };

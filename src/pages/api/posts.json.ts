@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
-import { shouldShowPost } from "@/utils/markdown";
+import { shouldShowPost, postUrl } from "@/utils/markdown";
 
 export const GET: APIRoute = async () => {
   try {
@@ -18,7 +18,7 @@ export const GET: APIRoute = async () => {
       id: post.id,
       title: post.data.title,
       description: post.data.description,
-      url: "/" + ((post.data.permalink ?? post.id) as string).replace(/^\//, "") + "/",
+      url: postUrl(post) + "/",
       type: "post" as const,
       date: post.data.date,
       tags: post.data.tags || [],

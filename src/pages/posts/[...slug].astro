@@ -1,7 +1,7 @@
 ---
 import type { GetStaticPaths } from 'astro';
 import { getCollection } from 'astro:content';
-import { shouldShowPost } from '@/utils/markdown';
+import { shouldShowPost, postUrl } from '@/utils/markdown';
 
 // Legacy /posts/{id} URLs — issue 301 redirects to canonical root-level URLs.
 // This preserves backward compatibility for any existing links or bookmarks.
@@ -23,6 +23,6 @@ if (!post || !shouldShowPost(post, import.meta.env.DEV)) {
 }
 
 // Redirect to canonical permalink-based URL
-const targetUrl = '/' + (post.data.permalink ?? post.id).replace(/^\//, '');
+const targetUrl = postUrl(post);
 return Astro.redirect(targetUrl, 301);
 ---
