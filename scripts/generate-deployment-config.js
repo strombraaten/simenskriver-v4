@@ -343,7 +343,17 @@ async function updateAstroConfig(redirects) {
 function generateVercelConfig(redirects) {
   // Filter out self-redirects (redirecting to the same URL causes infinite loops)
   const validRedirects = redirects.filter(redirect => redirect.from !== redirect.to);
-  
+
+  // Encode characters that have special meaning in path-to-regexp but should be
+  // treated as literals in redirect source URLs (e.g. ? in Norwegian post titles)
+  function encodeVercelSource(path) {
+    return path
+      .replace(/\?/g, '%3F')
+      .replace(/\(/g, '%28')
+      .replace(/\)/g, '%29')
+      .replace(/\+/g, '%2B');
+  }
+
   // Static redirects that are always included regardless of content aliases
   const staticRedirects = [
     { source: "/index.xml", destination: "/rss.xml", permanent: true },
@@ -353,7 +363,7 @@ function generateVercelConfig(redirects) {
     redirects: [
       ...staticRedirects,
       ...validRedirects.map(redirect => ({
-        source: redirect.from,
+        source: encodeVercelSource(redirect.from),
         destination: redirect.to,
         permanent: (redirect.status || 301) === 301
       })),
