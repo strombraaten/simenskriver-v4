@@ -20,7 +20,7 @@ const processedPosts = await Promise.all(
   sortedPosts.map(async (post) => await processPost(post))
 ) as any[];
 
-const UNLISTED_POSTS = ['thank-you', 'privacy-policy', 'contact'];
+const UNLISTED_POSTS = ['takk', 'privacy-policy', 'kontakt'];
 const regularProcessedPosts = processedPosts.filter((p: any) => p.data.type !== 'utkast' && !UNLISTED_POSTS.includes(p.id));
 const utkastProcessedPosts  = processedPosts.filter((p: any) => p.data.type === 'utkast');
 
