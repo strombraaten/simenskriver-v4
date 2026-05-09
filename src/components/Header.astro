@@ -296,7 +296,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
       if (!shortcut) return;
       const isMac = /mac/i.test(navigator.platform) || /mac os x/i.test(navigator.userAgent);
       const key = shortcut.split('+').pop()?.toUpperCase() || 'K';
-      el.textContent = isMac ? `⌘${key}` : `Ctrl+${key}`;
+      el.textContent = isMac ? `cmd+${key}` : `Ctrl+${key}`;
     }
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', updateShortcutDisplay);
