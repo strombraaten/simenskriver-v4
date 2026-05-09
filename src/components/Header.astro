@@ -173,9 +173,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
               aria-label="Open command palette"
             >
               <Icon name={paletteIcon} class="w-5 h-5" />
-              <kbd class="text-xs font-medium text-primary-600 dark:text-primary-300">
-                {shortcutKey}
-              </kbd>
+              <kbd id="cmd-shortcut-display" class="hidden sm:inline text-xs font-medium text-primary-600 dark:text-primary-300"></kbd>
             </button>
           ) : (
             <button
@@ -286,6 +284,27 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
     )}
   </div>
 </header>
+
+<script is:inline>
+  (function () {
+    function updateShortcutDisplay() {
+      const el = document.getElementById('cmd-shortcut-display');
+      if (!el) return;
+      const meta = document.querySelector('meta[name="command-palette-shortcut"]');
+      if (!meta) return;
+      const shortcut = meta.getAttribute('content');
+      if (!shortcut) return;
+      const isMac = /mac/i.test(navigator.platform) || /mac os x/i.test(navigator.userAgent);
+      const key = shortcut.split('+').pop()?.toUpperCase() || 'K';
+      el.textContent = isMac ? `⌘${key}` : `Ctrl+${key}`;
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateShortcutDisplay);
+    } else {
+      updateShortcutDisplay();
+    }
+  })();
+</script>
 
 <script>
   // Mobile menu toggle
