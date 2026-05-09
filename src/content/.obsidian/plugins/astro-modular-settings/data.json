@@ -65,7 +65,7 @@
   "commandPalette": {
     "enabled": true,
     "shortcut": "",
-    "placeholder": "Søk på noe du er interessert i",
+    "placeholder": "Se hva du finner",
     "search": {
       "posts": true,
       "pages": false,

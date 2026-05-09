@@ -132,7 +132,7 @@ function getContentUrl(filePath, isPost = false) {
     if (postPath.endsWith('/index')) {
       postPath = postPath.replace('/index', '');
     }
-    return `/posts/${postPath}`;
+    return `/${postPath}`;
   } else if (normalizedPath.includes('src/content/projects/')) {
     // For projects: extract path after 'src/content/projects/' and remove '.md'
     let projectPath = normalizedPath.replace(/^.*src\/content\/projects\//, '').replace(/\.md$/, '');
@@ -192,8 +192,8 @@ async function processMarkdownFile(filePath, isPost = false) {
       // Determine redirect pattern based on content type
       let redirectFrom;
       if (isPost) {
-        // Posts: /posts/alias → /posts/actual-slug
-        redirectFrom = `/posts/${cleanAlias}`;
+        // Posts: /alias → /actual-slug (root-level URLs, no /posts/ prefix)
+        redirectFrom = `/${cleanAlias}`;
       } else if (normalizedFilePath.includes('src/content/projects/')) {
         // Projects: /projects/alias → /projects/actual-slug
         redirectFrom = `/projects/${cleanAlias}`;
@@ -343,25 +343,34 @@ async function updateAstroConfig(redirects) {
 function generateVercelConfig(redirects) {
   // Filter out self-redirects (redirecting to the same URL causes infinite loops)
   const validRedirects = redirects.filter(redirect => redirect.from !== redirect.to);
-  
+
+  // Encode characters that have special meaning in path-to-regexp but should be
+  // treated as literals in redirect source URLs (e.g. ? in Norwegian post titles)
+  function encodeVercelSource(path) {
+    return path
+      .replace(/\?/g, '%3F')
+      .replace(/\(/g, '%28')
+      .replace(/\)/g, '%29')
+      .replace(/\+/g, '%2B');
+  }
+
+  // Static redirects that are always included regardless of content aliases
+  const staticRedirects = [
+    { source: "/index.xml", destination: "/rss.xml", permanent: true },
+  ];
+
   const config = {
-    redirects: validRedirects.map(redirect => ({
-      source: redirect.from,
-      destination: redirect.to,
-      permanent: (redirect.status || 301) === 301
-    })),
+    redirects: [
+      ...staticRedirects,
+      ...validRedirects.map(redirect => ({
+        source: encodeVercelSource(redirect.from),
+        destination: redirect.to,
+        permanent: (redirect.status || 301) === 301
+      })),
+    ],
     headers: [
       {
         source: "/_assets/(.*)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable"
-          }
-        ]
-      },
-      {
-        source: "/(.*\\.(webp|jpg|jpeg|png|gif|svg))",
         headers: [
           {
             key: "Cache-Control",
@@ -916,8 +925,10 @@ async function generateRedirects() {
     log.info(`   Processed ${totalProcessedFiles} files with redirects`);
     
     // Update Astro config with redirects (only used in dev mode - instant HTTP redirects)
-    // In production builds, redirects are set to {} to prevent HTML meta refresh files
-    await updateAstroConfig(allRedirects);
+    // Vercel reads its redirects from vercel.json, so we clear the Astro redirects
+    // for that platform to avoid Vercel picking them up as a second source (with unencoded chars)
+    const astroRedirects = DEPLOYMENT_PLATFORM === 'vercel' ? [] : allRedirects;
+    await updateAstroConfig(astroRedirects);
     
     // Generate platform-specific configs
     if (VALIDATE_ONLY) {
