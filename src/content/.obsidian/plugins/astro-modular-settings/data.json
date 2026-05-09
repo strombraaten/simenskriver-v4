@@ -18,7 +18,7 @@
     "author": "Simen Strøm Braaten",
     "language": "nb-NO",
     "faviconThemeAdaptive": true,
-    "defaultOgImageAlt": "Astro Modular logo."
+    "defaultOgImageAlt": "Simen skriver logo"
   },
   "layout": {
     "contentWidth": "45rem"
@@ -29,11 +29,11 @@
   },
   "footer": {
     "enabled": true,
-    "content": "© 2026 {author}. Built with the <a href=\"https://github.com/davidvkimball/astro-modular\" target=\"_blank\">Astro Modular</a> theme.",
+    "content": "© 2026 {author}. Laga delvis sjæl, basert på <a href=\"https://github.com/davidvkimball/astro-modular\" target=\"_blank\">Astro Modular</a>.",
     "showSocialIconsInFooter": true
   },
   "seo": {
-    "defaultOgImageAlt": "Astro Modular logo."
+    "defaultOgImageAlt": "Simen skriver logo"
   },
   "navigation": {
     "showNavigation": true,
@@ -64,8 +64,8 @@
   },
   "commandPalette": {
     "enabled": true,
-    "shortcut": "ctrl+K",
-    "placeholder": "Se hva du finner",
+    "shortcut": "",
+    "placeholder": "Søk på noe du er interessert i",
     "search": {
       "posts": true,
       "pages": false,

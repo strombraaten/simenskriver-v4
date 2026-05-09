@@ -1,13 +1,15 @@
 ---
-title: Contact
-description: Send me a message.
-permalink: contact
+title: Kontakt
+description: Send meg en melding
+permalink: kontakt
 noIndex: true
 hideTOC: true
 aliases:
-  - contact-me
+  - kontakt-meg
+  - contact
 ---
-Send me a message. 
+
+Send meg en melding. 
 
 <form   
   name="contact"   
@@ -29,7 +31,7 @@ Send me a message.
     name="name"   
     required   
     class="w-full"   
-    placeholder="Name"  
+    placeholder="Navn"  
   />  
     
   <input   
@@ -38,7 +40,7 @@ Send me a message.
     name="email"   
     required   
     class="w-full"   
-    placeholder="Email"  
+    placeholder="Epost"  
   />  
     
   <textarea   
@@ -47,10 +49,10 @@ Send me a message.
     rows="4"   
     required   
     class="w-full"   
-    placeholder="Message"  
+    placeholder="Melding"  
   ></textarea>  
     
   <button type="submit" class="btn btn-primary w-full">  
-    Send Message  
+    Send melding  
   </button>  
 </form>

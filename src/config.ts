@@ -182,7 +182,7 @@ export const siteConfig: SiteConfig = {
   // [CONFIG:FAVICON_THEME_ADAPTIVE]
   faviconThemeAdaptive: true, // If true, favicon switches between favicon-dark.png and favicon-light.png based on browser's system theme preference. If false, always uses favicon.png
   // [CONFIG:DEFAULT_OG_IMAGE_ALT]
-  defaultOgImageAlt: "Astro Modular logo.", // Alt text for the default Open Graph image, public/open-graph.png
+  defaultOgImageAlt: "Simen skriver logo", // Alt text for the default Open Graph image, public/open-graph.png
 
   // Global Settings
   // [CONFIG:THEME]
@@ -219,7 +219,7 @@ export const siteConfig: SiteConfig = {
     // [CONFIG:FOOTER_ENABLED]
     enabled: true,
     // [CONFIG:FOOTER_CONTENT]
-    content: `© 2026 {author}. Built with the <a href="https://github.com/davidvkimball/astro-modular" target="_blank">Astro Modular</a> theme.`,
+    content: `© 2026 {author}. Laga delvis sjæl, basert på <a href="https://github.com/davidvkimball/astro-modular" target="_blank">Astro Modular</a>.`,
     // [CONFIG:FOOTER_SHOW_SOCIAL_ICONS]
     showSocialIconsInFooter: false,
   },
