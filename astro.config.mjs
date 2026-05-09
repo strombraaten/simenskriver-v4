@@ -27,7 +27,7 @@ import refreshContentOnChange from './src/integrations/refresh-content-on-change
 import { fileURLToPath } from 'node:url';
 
 // Deployment platform configuration
-const DEPLOYMENT_PLATFORM = process.env.DEPLOYMENT_PLATFORM || 'netlify';
+const DEPLOYMENT_PLATFORM = process.env.DEPLOYMENT_PLATFORM || 'vercel';
 
 export default defineConfig({
   site: siteConfig.site,
@@ -99,7 +99,6 @@ export default defineConfig({
   "/posts/bruk det du lærer": "/posts/bruk-det-du-larer",
   "/posts/Fortløpende brukertesting, og verdien av det": "/posts/brukertesting",
   "/posts/verdien av fortløpende brukertesting": "/posts/brukertesting",
-  "/posts/contact-me": "/posts/contact",
   "/posts/the cult of done": "/posts/cult-of-done",
   "/posts/cleanshot": "/posts/den-ene-funksjonen",
   "/posts/evergreen notes": "/posts/digital-hage",
@@ -142,6 +141,8 @@ export default defineConfig({
   "/posts/Gleden av å gi et kompliment": "/posts/jake-knapp",
   "/posts/readwise": "/posts/klisterhjerne",
   "/posts/digital klisterhjerne": "/posts/klisterhjerne",
+  "/posts/kontakt-meg": "/posts/kontakt",
+  "/posts/contact": "/posts/kontakt",
   "/posts/kultur for tilbakemelding": "/posts/kultur-for-tilbakemelding",
   "/posts/tilbakemeldingskultur": "/posts/kultur-for-tilbakemelding",
   "/posts/Hvordan passer kunstig intelligens inn i arbeidsflyten min?": "/posts/kunstig-intelligens-arbeidsflyt",
@@ -172,7 +173,6 @@ export default defineConfig({
   "/posts/Parkinsons lov": "/posts/parkinsons-lov",
   "/posts/hva om favoritt-podkasten din hadde en egen chatbot": "/posts/podbot",
   "/posts/prisen av en dårlig brukeropplevelse": "/posts/prisen-av-ux",
-  "/posts/privacy": "/posts/privacy-policy",
   "/posts/mitt syn på rabattkoder": "/posts/rabatt",
   "/posts/hva er et rikt liv for deg?": "/posts/rikt-liv",
   "/posts/senke terskelen for å publisere": "/posts/senke-terskelen-for-publisering",
@@ -187,6 +187,7 @@ export default defineConfig({
   "/posts/Snøballeffekten av læring": "/posts/snoballeffekten-av-laring",
   "/posts/starter en podkast": "/posts/starter-en-podkast",
   "/posts/de ulike stegene av et notat": "/posts/stegene-av-et-notat",
+  "/posts/takkemelding": "/posts/takk",
   "/posts/en tanke i utvikling": "/posts/tanke-i-utvikling",
   "/posts/betydningen av at noe er enkelt": "/posts/tastatur",
   "/posts/Andre notater som linker tilbake": "/posts/tilbakekoblinger",

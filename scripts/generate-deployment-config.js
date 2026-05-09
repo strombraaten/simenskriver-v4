@@ -344,12 +344,20 @@ function generateVercelConfig(redirects) {
   // Filter out self-redirects (redirecting to the same URL causes infinite loops)
   const validRedirects = redirects.filter(redirect => redirect.from !== redirect.to);
   
+  // Static redirects that are always included regardless of content aliases
+  const staticRedirects = [
+    { source: "/index.xml", destination: "/rss.xml", permanent: true },
+  ];
+
   const config = {
-    redirects: validRedirects.map(redirect => ({
-      source: redirect.from,
-      destination: redirect.to,
-      permanent: (redirect.status || 301) === 301
-    })),
+    redirects: [
+      ...staticRedirects,
+      ...validRedirects.map(redirect => ({
+        source: redirect.from,
+        destination: redirect.to,
+        permanent: (redirect.status || 301) === 301
+      })),
+    ],
     headers: [
       {
         source: "/_assets/(.*)",

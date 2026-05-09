@@ -1,0 +1,716 @@
+{
+  "redirects": [
+    {
+      "source": "/index.xml",
+      "destination": "/rss.xml",
+      "permanent": true
+    },
+    {
+      "source": "/posts/hva jeg lærte av å skrive 25 artikler på 23 dager",
+      "destination": "/posts/25-artikler-23-dager",
+      "permanent": true
+    },
+    {
+      "source": "/posts/4000 uker, og kommentarer i margen",
+      "destination": "/posts/4000-uker",
+      "permanent": true
+    },
+    {
+      "source": "/posts/about-me",
+      "destination": "/posts/about",
+      "permanent": true
+    },
+    {
+      "source": "/posts/apper",
+      "destination": "/posts/apper-jeg-liker",
+      "permanent": true
+    },
+    {
+      "source": "/posts/assosiativ skriving",
+      "destination": "/posts/assosiativ-skriving",
+      "permanent": true
+    },
+    {
+      "source": "/posts/bærekraftig webutvikling",
+      "destination": "/posts/barekraftig-webutvikling",
+      "permanent": true
+    },
+    {
+      "source": "/posts/kagi",
+      "destination": "/posts/betale-for-googling",
+      "permanent": true
+    },
+    {
+      "source": "/posts/betale for søketjenesten",
+      "destination": "/posts/betale-for-googling",
+      "permanent": true
+    },
+    {
+      "source": "/posts/hva om du hadde betalt for å google",
+      "destination": "/posts/betale-for-googling",
+      "permanent": true
+    },
+    {
+      "source": "/posts/det er noe feil med blogging som konsept",
+      "destination": "/posts/blogging-som-konsept",
+      "permanent": true
+    },
+    {
+      "source": "/posts/En hyllest til den digitale blyanten",
+      "destination": "/posts/blyanten",
+      "permanent": true
+    },
+    {
+      "source": "/posts/den digitale blyanten",
+      "destination": "/posts/blyanten",
+      "permanent": true
+    },
+    {
+      "source": "/posts/verdien av bøker du ikke har lest",
+      "destination": "/posts/boker-du-ikke-har-lest",
+      "permanent": true
+    },
+    {
+      "source": "/posts/anti-bibliotek",
+      "destination": "/posts/boker-du-ikke-har-lest",
+      "permanent": true
+    },
+    {
+      "source": "/posts/om å bruke det du lærer",
+      "destination": "/posts/bruk-det-du-larer",
+      "permanent": true
+    },
+    {
+      "source": "/posts/bruk det du lærer",
+      "destination": "/posts/bruk-det-du-larer",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Fortløpende brukertesting, og verdien av det",
+      "destination": "/posts/brukertesting",
+      "permanent": true
+    },
+    {
+      "source": "/posts/verdien av fortløpende brukertesting",
+      "destination": "/posts/brukertesting",
+      "permanent": true
+    },
+    {
+      "source": "/posts/the cult of done",
+      "destination": "/posts/cult-of-done",
+      "permanent": true
+    },
+    {
+      "source": "/posts/cleanshot",
+      "destination": "/posts/den-ene-funksjonen",
+      "permanent": true
+    },
+    {
+      "source": "/posts/evergreen notes",
+      "destination": "/posts/digital-hage",
+      "permanent": true
+    },
+    {
+      "source": "/posts/digitalt hagearbeid",
+      "destination": "/posts/digital-hage",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Ditt framtidige, fremmede jeg",
+      "destination": "/posts/ditt-fremmede-jeg",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Don't make me think",
+      "destination": "/posts/dont-make-me-think",
+      "permanent": true
+    },
+    {
+      "source": "/posts/dum ned smarttelefon",
+      "destination": "/posts/dum-ned-smarttelefonen",
+      "permanent": true
+    },
+    {
+      "source": "/posts/hvorfor du burde dumme ned smarttelefonen din",
+      "destination": "/posts/dum-ned-smarttelefonen",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Hvorfor ekspert-testing burde være en del av designprosessen",
+      "destination": "/posts/ekspert-testing",
+      "permanent": true
+    },
+    {
+      "source": "/posts/ett formål om gangen",
+      "destination": "/posts/ett-formal",
+      "permanent": true
+    },
+    {
+      "source": "/posts/få mer ut av tida di",
+      "destination": "/posts/fa-mer-ut-av-tida-du-bruker",
+      "permanent": true
+    },
+    {
+      "source": "/posts/variabler i Figma",
+      "destination": "/posts/figma-variabler",
+      "permanent": true
+    },
+    {
+      "source": "/posts/fridager med intensjon",
+      "destination": "/posts/firedagers-uke",
+      "permanent": true
+    },
+    {
+      "source": "/posts/følg nysgjerrigheten",
+      "destination": "/posts/folg-nysgjerrigheten",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Hva er forskjellen med et nyhetsbrev og å publisere på sosiale medier?",
+      "destination": "/posts/forskjellen-mellom-nyhetsbrev-og-sosiale-medier",
+      "permanent": true
+    },
+    {
+      "source": "/posts/forskjellen mellom å publisere et nyhetsbrev og å publisere på sosiale medier",
+      "destination": "/posts/forskjellen-mellom-nyhetsbrev-og-sosiale-medier",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Hvorfor jeg blir så gira av Obsidian",
+      "destination": "/posts/gira-av-obsidian",
+      "permanent": true
+    },
+    {
+      "source": "/posts/grunnleggende om git",
+      "destination": "/posts/git",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Github Publisher",
+      "destination": "/posts/github-publisher",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Fra å være en god designer til å bli en dårlig utvikler",
+      "destination": "/posts/god-designer-darlig-utvikler",
+      "permanent": true
+    },
+    {
+      "source": "/posts/fra god designer til en dårlig utvikler",
+      "destination": "/posts/god-designer-darlig-utvikler",
+      "permanent": true
+    },
+    {
+      "source": "/posts/hva basket har lært meg om å være en god kollega",
+      "destination": "/posts/god-kollega",
+      "permanent": true
+    },
+    {
+      "source": "/posts/gode spørsmål",
+      "destination": "/posts/gode-sporsmal",
+      "permanent": true
+    },
+    {
+      "source": "/posts/HTML",
+      "destination": "/posts/html",
+      "permanent": true
+    },
+    {
+      "source": "/posts/kvalitet",
+      "destination": "/posts/hva-betyr-kvalitet",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Hva betyr egentlig kvalitet?",
+      "destination": "/posts/hva-betyr-kvalitet",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Hva holder jeg på med?",
+      "destination": "/posts/hva-holder-jeg-på-med",
+      "permanent": true
+    },
+    {
+      "source": "/posts/hvor ord egentlig kommer fra",
+      "destination": "/posts/hvor-ord-kommer-fra",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Hvordan jeg bruker kunstig intelligens for å oversette",
+      "destination": "/posts/hvordan-bruke-AI-for-oversetting",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Hvordan snakker du med en maskin?",
+      "destination": "/posts/hvordan-snakke-med-en-maskin",
+      "permanent": true
+    },
+    {
+      "source": "/posts/hvordan snakker du med en maskin",
+      "destination": "/posts/hvordan-snakke-med-en-maskin",
+      "permanent": true
+    },
+    {
+      "source": "/posts/hvordan vi leser bøker",
+      "destination": "/posts/hvordan-vi-leser-boker",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Hvorfor vedlikeholder vi vaner?",
+      "destination": "/posts/hvorfor-vedlikeholde-vaner",
+      "permanent": true
+    },
+    {
+      "source": "/posts/hvorfor vi vedlikeholder vaner",
+      "destination": "/posts/hvorfor-vedlikeholde-vaner",
+      "permanent": true
+    },
+    {
+      "source": "/posts/hypotesedrevet produktutvikling",
+      "destination": "/posts/hypoteser",
+      "permanent": true
+    },
+    {
+      "source": "/posts/hypotesedrevet tilnærming",
+      "destination": "/posts/hypoteser",
+      "permanent": true
+    },
+    {
+      "source": "/posts/bedragersyndromet",
+      "destination": "/posts/imposter-syndrome",
+      "permanent": true
+    },
+    {
+      "source": "/posts/innsiktsbibliotek som eksperiment",
+      "destination": "/posts/innsiktsbibliotek",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Jake Knapp",
+      "destination": "/posts/jake-knapp",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Gleden av å gi et kompliment",
+      "destination": "/posts/jake-knapp",
+      "permanent": true
+    },
+    {
+      "source": "/posts/readwise",
+      "destination": "/posts/klisterhjerne",
+      "permanent": true
+    },
+    {
+      "source": "/posts/digital klisterhjerne",
+      "destination": "/posts/klisterhjerne",
+      "permanent": true
+    },
+    {
+      "source": "/posts/kontakt-meg",
+      "destination": "/posts/kontakt",
+      "permanent": true
+    },
+    {
+      "source": "/posts/contact",
+      "destination": "/posts/kontakt",
+      "permanent": true
+    },
+    {
+      "source": "/posts/kultur for tilbakemelding",
+      "destination": "/posts/kultur-for-tilbakemelding",
+      "permanent": true
+    },
+    {
+      "source": "/posts/tilbakemeldingskultur",
+      "destination": "/posts/kultur-for-tilbakemelding",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Hvordan passer kunstig intelligens inn i arbeidsflyten min?",
+      "destination": "/posts/kunstig-intelligens-arbeidsflyt",
+      "permanent": true
+    },
+    {
+      "source": "/posts/arbeidsflyt for kunstig intelligens",
+      "destination": "/posts/kunstig-intelligens-arbeidsflyt",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Kunstig intelligens som sparringspartner",
+      "destination": "/posts/kunstig-intelligens-som-sparringspartner",
+      "permanent": true
+    },
+    {
+      "source": "/posts/AI som sparringspartner",
+      "destination": "/posts/kunstig-intelligens-som-sparringspartner",
+      "permanent": true
+    },
+    {
+      "source": "/posts/hvordan du kan bruke kunstig intelligens som sparringspartner",
+      "destination": "/posts/kunstig-intelligens-som-sparringspartner",
+      "permanent": true
+    },
+    {
+      "source": "/posts/AI",
+      "destination": "/posts/kunstig-intelligens",
+      "permanent": true
+    },
+    {
+      "source": "/posts/å lære åpent",
+      "destination": "/posts/lare-apent",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Maggie",
+      "destination": "/posts/maggie-appleton",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Maggie Appleton",
+      "destination": "/posts/maggie-appleton",
+      "permanent": true
+    },
+    {
+      "source": "/posts/meninga med livet",
+      "destination": "/posts/meninga-med-livet",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Menneskelig vedlikehold",
+      "destination": "/posts/menneskelig-vedlikehold",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Hadde jeg hatt mer tid skulle jeg skrivi en kortere artikkel",
+      "destination": "/posts/mer-tid",
+      "permanent": true
+    },
+    {
+      "source": "/posts/rubberducking",
+      "destination": "/posts/metaforiske-mentorer",
+      "permanent": true
+    },
+    {
+      "source": "/posts/momentum skaper momentum",
+      "destination": "/posts/momentum",
+      "permanent": true
+    },
+    {
+      "source": "/posts/nå-sida",
+      "destination": "/posts/na-sida",
+      "permanent": true
+    },
+    {
+      "source": "/posts/den neste nye tingen",
+      "destination": "/posts/neste-nye",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Gjør enhver nettside til en app på macen",
+      "destination": "/posts/nettside-til-app",
+      "permanent": true
+    },
+    {
+      "source": "/posts/fra nettside til app",
+      "destination": "/posts/nettside-til-app",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Hvorfor jeg går rundt med en notatbok i lomma",
+      "destination": "/posts/notatbok",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Nyhetsbrev på 1-2-3",
+      "destination": "/posts/nyhetsbrev-pa-123",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Håndtegna notater i Obsidian",
+      "destination": "/posts/obsidian-tegning",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Obsidian",
+      "destination": "/posts/obsidian",
+      "permanent": true
+    },
+    {
+      "source": "/posts/oppfølgingsspørsmål",
+      "destination": "/posts/oppfolgingssporsmal",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Om oppmerksomhet",
+      "destination": "/posts/oppmerksomhet",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Optimalisere eller fornøydifisere",
+      "destination": "/posts/optimalisere",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Parkinsons lov",
+      "destination": "/posts/parkinsons-lov",
+      "permanent": true
+    },
+    {
+      "source": "/posts/hva om favoritt-podkasten din hadde en egen chatbot",
+      "destination": "/posts/podbot",
+      "permanent": true
+    },
+    {
+      "source": "/posts/prisen av en dårlig brukeropplevelse",
+      "destination": "/posts/prisen-av-ux",
+      "permanent": true
+    },
+    {
+      "source": "/posts/mitt syn på rabattkoder",
+      "destination": "/posts/rabatt",
+      "permanent": true
+    },
+    {
+      "source": "/posts/hva er et rikt liv for deg?",
+      "destination": "/posts/rikt-liv",
+      "permanent": true
+    },
+    {
+      "source": "/posts/senke terskelen for å publisere",
+      "destination": "/posts/senke-terskelen-for-publisering",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Simen-spørsmål",
+      "destination": "/posts/simen-sporsmal",
+      "permanent": true
+    },
+    {
+      "source": "/posts/hva er egentlig et Simen-spørsmål",
+      "destination": "/posts/simen-sporsmal",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Å skape løsningen i fellesskap",
+      "destination": "/posts/skape-løsningen-i-fellesskap",
+      "permanent": true
+    },
+    {
+      "source": "/posts/å lage løsningen i fellesskap",
+      "destination": "/posts/skape-løsningen-i-fellesskap",
+      "permanent": true
+    },
+    {
+      "source": "/posts/ansvar for egen skjermtid",
+      "destination": "/posts/skjermtid",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Skriv for deg selv, ikke for andre",
+      "destination": "/posts/skriv-for-deg-selv",
+      "permanent": true
+    },
+    {
+      "source": "/posts/hva vil du at jeg skal skrive mer om",
+      "destination": "/posts/skrive-mer-om",
+      "permanent": true
+    },
+    {
+      "source": "/posts/skriveprosessen min på 6 minutter",
+      "destination": "/posts/skriveprosessen",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Snøballeffekten av læring",
+      "destination": "/posts/snoballeffekten-av-laring",
+      "permanent": true
+    },
+    {
+      "source": "/posts/starter en podkast",
+      "destination": "/posts/starter-en-podkast",
+      "permanent": true
+    },
+    {
+      "source": "/posts/de ulike stegene av et notat",
+      "destination": "/posts/stegene-av-et-notat",
+      "permanent": true
+    },
+    {
+      "source": "/posts/takkemelding",
+      "destination": "/posts/takk",
+      "permanent": true
+    },
+    {
+      "source": "/posts/en tanke i utvikling",
+      "destination": "/posts/tanke-i-utvikling",
+      "permanent": true
+    },
+    {
+      "source": "/posts/betydningen av at noe er enkelt",
+      "destination": "/posts/tastatur",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Andre notater som linker tilbake",
+      "destination": "/posts/tilbakekoblinger",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Å tilrettelegge for tilfeldigheter",
+      "destination": "/posts/tilrettelegge-for-tilfeldigheter",
+      "permanent": true
+    },
+    {
+      "source": "/posts/tilrettelegge for tilfeldigheter",
+      "destination": "/posts/tilrettelegge-for-tilfeldigheter",
+      "permanent": true
+    },
+    {
+      "source": "/posts/tilfeldigheter",
+      "destination": "/posts/tilrettelegge-for-tilfeldigheter",
+      "permanent": true
+    },
+    {
+      "source": "/posts/TK-trikset",
+      "destination": "/posts/tk-trikset",
+      "permanent": true
+    },
+    {
+      "source": "/posts/å tørre og spørre",
+      "destination": "/posts/torre-a-sporre",
+      "permanent": true
+    },
+    {
+      "source": "/posts/utdaterte titler",
+      "destination": "/posts/utdaterte-titler",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Hva jeg har lært av utviklere om designprosessen",
+      "destination": "/posts/utviklere-om-designprosessen",
+      "permanent": true
+    },
+    {
+      "source": "/posts/vent nå litt",
+      "destination": "/posts/vent-litt",
+      "permanent": true
+    },
+    {
+      "source": "/posts/versjonslogg 0.2",
+      "destination": "/posts/versjonslogg-02",
+      "permanent": true
+    },
+    {
+      "source": "/posts/verstinger på elektronisk søppel",
+      "destination": "/posts/verstinger",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Hvorfor bruker vi ikke vertikale skjermer i større grad?",
+      "destination": "/posts/vertikale-skjermer",
+      "permanent": true
+    },
+    {
+      "source": "/posts/vertikal skjermer",
+      "destination": "/posts/vertikale-skjermer",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Vim med Colemak-layout",
+      "destination": "/posts/vim-colemak",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Bruk av Vim i obsidian",
+      "destination": "/posts/vim-obsidian",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Vim i Obsidian",
+      "destination": "/posts/vim-obsidian",
+      "permanent": true
+    },
+    {
+      "source": "/posts/et oppslagsverk for Vim",
+      "destination": "/posts/vim-oppslagsverk",
+      "permanent": true
+    },
+    {
+      "source": "/posts/en introduksjon til Vim",
+      "destination": "/posts/vim",
+      "permanent": true
+    },
+    {
+      "source": "/posts/skap en felles forståelse ved å visualisere",
+      "destination": "/posts/visualisering",
+      "permanent": true
+    },
+    {
+      "source": "/posts/årlig vurdering",
+      "destination": "/posts/vurdering-av-aret",
+      "permanent": true
+    },
+    {
+      "source": "/posts/vurdering av året",
+      "destination": "/posts/vurdering-av-aret",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Write blind, edit later",
+      "destination": "/posts/write-blind",
+      "permanent": true
+    },
+    {
+      "source": "/posts/Zettelkasten",
+      "destination": "/posts/zettelkasten",
+      "permanent": true
+    },
+    {
+      "source": "/posts/en introduksjon til Zettelkasten",
+      "destination": "/posts/zettelkasten",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/_assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.(webp|jpg|jpeg|png|gif|svg))",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.pdf)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://giscus.app https://platform.twitter.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://giscus.app; frame-src 'self' https://www.youtube.com https://giscus.app https://platform.twitter.com; object-src 'none'; base-uri 'self';"
+        }
+      ]
+    }
+  ]
+}
