@@ -3,6 +3,10 @@ import { getCollection } from "astro:content";
 import { siteConfig } from "../config";
 import { shouldShowPost, sortPostsByDate, postUrl } from "../utils/markdown";
 import { optimizePostImagePath } from "../utils/images";
+import sanitizeHtml from "sanitize-html";
+import MarkdownIt from "markdown-it";
+
+const mdParser = new MarkdownIt();
 
 // Helper function to extract image path from Obsidian bracket syntax
 function extractImagePath(image: string): string {
@@ -45,6 +49,42 @@ function normalizeSiteUrl(url: string): string {
   return url.replace(/\/+$/, '') + '/';
 }
 
+function preprocessMarkdown(
+  body: string,
+  postId: string,
+  siteUrl: string,
+  wikiLinks: Map<string, string>
+): string {
+  let content = body;
+
+  // Remove Obsidian comments: %% ... %%
+  content = content.replace(/%%.*?%%/gs, "");
+
+  // Convert Obsidian image embeds ![[image.ext]] or ![[image.ext|WxH]] to standard markdown
+  content = content.replace(/!\[\[([^\]]+)\]\]/g, (_match, raw) => {
+    // Strip optional size suffix: image.png|100x200 → image.png
+    const path = raw.replace(/\|[^\]]*$/, "").trim();
+    if (path.startsWith("http")) return `![](${path})`;
+    const optimizedPath = optimizePostImagePath(path, postId, postId);
+    const abs = `${siteUrl}${optimizedPath.startsWith("/") ? optimizedPath.slice(1) : optimizedPath}`;
+    return `![](${abs})`;
+  });
+
+  // Resolve wikilinks [[Note|alias]] / [[Note]] to markdown links or plain text
+  content = content.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (_match, link, alias) => {
+    const display = (alias || link).trim();
+    const url = wikiLinks.get(link.trim().toLowerCase());
+    return url ? `[${display}](${url})` : display;
+  });
+
+  // Simplify Obsidian callouts: > [!TYPE] Title → > **Title**
+  content = content.replace(/^> \[!\w+\]\s*(.*?)$/gm, (_match, title) =>
+    title.trim() ? `> **${title.trim()}**` : ">"
+  );
+
+  return content;
+}
+
 export async function GET() {
   // Get all posts
   const posts = await getCollection("posts");
@@ -58,6 +98,15 @@ export async function GET() {
 
   const siteUrl = normalizeSiteUrl(import.meta.env.SITE || siteConfig.site);
 
+  // Build lookup map for wikilink resolution: id / permalink / title → absolute URL
+  const wikiLinks = new Map<string, string>();
+  for (const post of sortedPosts) {
+    const url = `${siteUrl}${postUrl(post).slice(1)}/`;
+    wikiLinks.set((post as any).id.toLowerCase(), url);
+    if (post.data.permalink) wikiLinks.set(post.data.permalink.toLowerCase(), url);
+    if (post.data.title) wikiLinks.set(post.data.title.toLowerCase(), url);
+  }
+
   return rss({
     title: siteConfig.title,
     description: siteConfig.description,
@@ -68,6 +117,18 @@ export async function GET() {
       return {
         title: post.data.title,
         description: post.data.description || "",
+        content: sanitizeHtml(
+          mdParser.render(
+            preprocessMarkdown(post.body ?? "", (post as any).id, siteUrl, wikiLinks)
+          ),
+          {
+            allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
+            allowedAttributes: {
+              ...sanitizeHtml.defaults.allowedAttributes,
+              img: ["src", "alt", "title"],
+            },
+          }
+        ),
         pubDate: post.data.date,
         link: postAbsoluteUrl,
         categories: post.data.tags || [],
