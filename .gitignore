@@ -57,3 +57,4 @@ obsidian_askpass.sh
 public/_redirects
 public/_headers
 .claude/
+src/content/.obsidian/hotkeys.json
