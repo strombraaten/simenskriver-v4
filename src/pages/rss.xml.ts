@@ -125,7 +125,16 @@ export async function GET() {
             allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
             allowedAttributes: {
               ...sanitizeHtml.defaults.allowedAttributes,
-              img: ["src", "alt", "title"],
+              img: ["src", "alt", "title", "style"],
+            },
+            transformTags: {
+              img: (_tagName, attribs) => ({
+                tagName: "img",
+                attribs: {
+                  ...attribs,
+                  style: "max-width: 100%; height: auto; display: block;",
+                },
+              }),
             },
           }
         ),
