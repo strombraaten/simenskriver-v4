@@ -1,12 +1,12 @@
 ---
 draft: false
 date: 2023-04-09
-lastModified: 2026-12-13
+lastModified: 2025-12-13
 tags:
   - læring
 title: Surdeig for nybegynnere
 slug: surdeig
-description:
+description: Surdeig er en av de tingene som virker mer komplisert enn det egentlig er. Her har jeg samla alt jeg har lært etter noen år med brødbaking.
 permalink: /surdeig
 ---
 Etter også de ulike bruksområdene for tale til tekst, er det bare å sette ord på noen kjappe tanker. Spesielt til noen av meldingene som denne, eller om det er på Slack eller Teams som tilbakemelding til en kollega.
