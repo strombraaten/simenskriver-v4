@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Simen Skriver** — a personal blog and digital garden built on the [Astro Modular](https://astro-modular.netlify.app/) theme. Uses [Vault CMS](https://docs.vaultcms.org/guides/introduction/) to set up a tailored Obsidian writing environment: content is authored in Obsidian and pushed directly to the repo via the Obsidian Git plugin, triggering Vercel deploys automatically. Deployed on **Vercel**; domain (`simenskriver.no`) is registered and managed via **GoDaddy**. Content lives in `src/content/` as Markdown/MDX; wikilinks, embeds, callouts, and other Obsidian syntax are processed by custom remark/rehype plugins at build time.
+**Simen Skriver** — a personal blog and digital garden built on the [Astro Modular](https://astro-modular.netlify.app/) theme. Uses [Vault CMS](https://docs.vaultcms.org/guides/introduction/) to set up a tailored Obsidian writing environment: content is authored in Obsidian and pushed directly to the repo via the Obsidian Git plugin, triggering Vercel deploys automatically. Deployed on **Vercel**; domain (`simenskriver.no`) is registered and managed via **GoDaddy**. Content lives in `src/content/` as Markdown/MDX; wikilinks, embeds, callouts, and other Obsidian syntax are processed by custom remark/rehype plugins at build time. Newsletter distribution is handled by **Buttondown** via RSS-to-email: new posts are picked up automatically from the site's RSS feed.
 
 ## ⚠ Workflow Safety
 
@@ -18,6 +18,9 @@ Before making changes, consider whether they could break either of these two sys
 - Content is written in Obsidian and pushed to the repo via the Obsidian Git plugin, triggering Vercel deploys automatically. [Vault CMS](https://docs.vaultcms.org/guides/introduction/) configures this environment.
 - Do NOT change: content folder structure (`src/content/`), frontmatter field names/types, wikilink/embed syntax handling, or image paths — these are tightly coupled to what Obsidian and Vault CMS expect.
 - Do NOT rename or restructure the `scripts/` pipeline steps that run before the Astro build (image sync, alias processing, graph generation) — the Obsidian workflow depends on these.
+
+**Buttondown RSS-to-email newsletter**
+- New posts are automatically distributed as newsletters via Buttondown pulling the site's RSS feed. Do NOT change the RSS feed URL path, post URL structure, or remove/rename frontmatter fields used in the feed (`title`, `description`, `date`) — Buttondown depends on these.
 
 If a proposed change risks any of the above, flag it explicitly before proceeding.
 
