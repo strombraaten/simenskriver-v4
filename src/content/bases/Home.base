@@ -64,7 +64,7 @@ views:
     tagsProperty: note.tags
     customizeNewButton: true
     newNoteLocation: posts
-    cardSize: 310
+    cardSize: 360
     imageAspectRatio: 0.55
     maxTagsToShow: 2
     dateIncludeTime: false
@@ -72,6 +72,8 @@ views:
     draftStatusReverse: false
     scheduledDateProperty: note.date
     showScheduledBadge: true
+    markers: none
+    indentProperties: false
   - type: cms
     name: Pages
     filters:

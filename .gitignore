@@ -48,13 +48,17 @@ Thumbs.db
 ehthumbs.db
 .DS_Store
 
-# Obsidian workspace files
+# Obsidian workspace and plugin files
 src/content/.obsidian/workspace.json
 src/content/.obsidian/workspace-mobile.json
+src/content/.obsidian/plugins/
+src/content/.obsidian/hotkeys.json
 obsidian_askpass.sh
+
+# Local reference materials (not published)
+src/content/references/
 
 # Generated deployment platform files (GitHub Pages + Cloudflare Workers only)
 public/_redirects
 public/_headers
 .claude/
-src/content/.obsidian/hotkeys.json

@@ -5,6 +5,9 @@ lastModified: 2024-03-07
 tags:
   - tankemat
 title: Syntaks er nok mer interessant enn du tror
+aliases:
+- syntaks
+- syntaksen
 permalink: syntaks
 ---
 
