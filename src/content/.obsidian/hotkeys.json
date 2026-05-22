@@ -250,14 +250,6 @@
       "key": "O"
     }
   ],
-  "editor:swap-line-up": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "ArrowUp"
-    }
-  ],
   "astro-composer:create-content-type-posts-1765432337485": [
     {
       "modifiers": [
@@ -274,6 +266,22 @@
         "Shift"
       ],
       "key": "R"
+    }
+  ],
+  "editor:swap-line-down": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "ArrowDown"
+    }
+  ],
+  "editor:swap-line-up": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "ArrowUp"
     }
   ]
 }
