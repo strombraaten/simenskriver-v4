@@ -10,11 +10,21 @@ targetKeyword: ""
 draft: false
 aliases:
   - under panseret
+  - hva som skjer under panseret
 ---
 
-Jeg kan bruke evigheter på å skreddersy et system rundt en oppgave. Samtidig som det ville tatt meg mye mindre tid å bare gjøre selve oppgava. Men hvor er moroa i det?
+Som en selvutnevnt [dårlig utvikler](god-designer-darlig-utvikler.md) er jeg prisgitt andres arbeid, som jeg deretter kan bygge videre på for å tilpasse det sånn jeg vil ha det. Ulempa med det er at jeg ikke har forståelse for alt arbeidet som er gjort for å komme fram til det utgangspunktet. 
 
-Den tilnærmingen er i aller høyeste grad gjeldende når det kommer til det nyhetsbrevet her. Eller bloggen da. Kommer an på hvor du leser det jeg skriver. Og *akkurat* det der, at det tilsynelatende er en forskjell mellom det du leser på bloggen og nyhetsbrevet, det har jeg funnet en løsning på nå.
+I blant kan arbeidet se veldig elegant ut fra utsida, men når du dykker ned i koden for å gjøre endringer ser du at det er et virrvarr av kortsiktige løsninger. Det er gjerne det som omtales som *teknisk gjeld*. Og det bar den forrige versjonen av bloggen min sterkt preg av. Til det punktet at det var kjappere (og mer motiverende) å bygge opp alt fra bunnen av, og belage meg på rammeverk som var bedre dokumentert ([Astro](https://astro.build/)), for å oppnå det jeg ville.
+
+Simenskriver-sida for meg, handler om:
+1. Legge til rette for gleden av å skrive, tenke, og forstå noe
+2. Dele det som engasjerer meg med deg og andre som kan være interessert
+3. Å ha en leikeplass for å utforske metoder, teknologier, eller tilnærminger som jeg er nysgjerrig på.
+
+La vårs være ærlige her – jeg *kunne* bare satt meg ned for å skrive noe. Samtidig er jeg en person som kan bruke evigheter på å skreddersy et system rundt selve oppgava. Selv om det ville tatt meg mye mindre tid å bare.. gjøre det. Men hvor er moroa i det?
+
+Den tilnærmingen er i aller høyeste grad gjeldende når det kommer til det nyhetsbrevet her. Eller bloggen da. Kommer an på hvor du leser det jeg skriver. Og det er *akkurat* det der – at det tilsynelatende er en forskjell mellom det du leser på bloggen og nyhetsbrevet – som jeg har tenkt på i evigheter nå. Og nå tror jeg jammen meg at jeg har funnet en løsning.
 
 Så her er det bare å sæla på! For detta blir nerdete.
 
@@ -34,9 +44,9 @@ I bunn og grunn er det alt. Samtidig har det medført en del pirkete arbeid tidl
 
 ![referanser-bøker](attachments/referanser-bker.png)
 
-Om du vil forstå hvordan det funker kan du lese om det i [Digital klisterhjerne](posts/klisterhjerne.md). Kort fortalt er det inspirasjonskildene mine, som ofte sparker i gang nye skriverier.
+Om du vil forstå hvordan det funker kan du lese om det i [digital klisterhjerne](klisterhjerne.md)). Kort fortalt er det inspirasjonskildene mine, som ofte sparker i gang nye skriverier.
 
-Når jeg da har skrevet noe ferdig, eller at det er "ferdig nok" for øyeblikket (ref [Digitalt hagearbeid](posts/digital-hage.md)), trykker jeg på en hurtigtast – `cmd+shift+s` for å være spesifikk — og dermed publiseres den fila til Github. Takket være [en plugin som heter Obsidian git](https://community.obsidian.md/plugins/obsidian-git). 
+Når jeg da har skrevet noe ferdig, eller at det er "ferdig nok" for øyeblikket (ref [digitalt hagearbeid](digital-hage.md)), trykker jeg på en hurtigtast – `cmd+shift+s` for å være spesifikk — og dermed publiseres den fila til Github. Takket være [en plugin som heter Obsidian git](https://community.obsidian.md/plugins/obsidian-git). 
 
 [Git](https://github.com/git-guides) gir meg også en historikk over alle endringene som er gjort. Som f. eks når jeg har klart å slette alt jeg noensinne har publisert på bloggen, uten å vite *hvordan* jeg gjorde det, og desperat ønsker å gå tilbake i tid. Da er det kjekt med git. Og du skulle tro jeg lærer fra mine feil, men akkurat den feilen der har jeg faktisk gjort flere ganger, i et evig forsøk på å gjøre arbeidsflyten enklere (og ikke *helt* forstå hva jeg driver med).
 
