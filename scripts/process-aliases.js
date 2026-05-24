@@ -41,35 +41,40 @@ function parseFrontmatter(content) {
   let currentKey = null;
   let currentValue = [];
   let inArray = false;
-  
+  let currentIsArray = false;
+
   for (const line of lines) {
     const trimmed = line.trim();
-    
+
     if (trimmed === '' || trimmed.startsWith('#')) {
       continue;
     }
-    
+
     if (trimmed.includes(':') && (!inArray || !trimmed.startsWith('  '))) {
       // Save previous key-value pair
       if (currentKey) {
-        if (currentValue.length === 1) {
+        if (currentIsArray) {
+          frontmatter[currentKey] = currentValue;
+        } else if (currentValue.length === 1) {
           frontmatter[currentKey] = currentValue[0];
         } else {
           frontmatter[currentKey] = currentValue;
         }
       }
-      
+
       // Start new key-value pair
       const colonIndex = trimmed.indexOf(':');
       currentKey = trimmed.substring(0, colonIndex).trim();
       const value = trimmed.substring(colonIndex + 1).trim();
-      
+
       // Reset array state when starting a new key
       inArray = false;
-      
+      currentIsArray = false;
+
       if (value.startsWith('[')) {
         // Array value
         inArray = true;
+        currentIsArray = true;
         currentValue = [];
         if (value !== '[') {
           // Single line array
@@ -101,6 +106,7 @@ function parseFrontmatter(content) {
         // Empty value, might be start of array
         currentValue = [];
         inArray = true;
+        currentIsArray = true;
       }
     } else if (inArray && trimmed.startsWith('-')) {
       // Array item - preserve quotes for Obsidian bracket syntax
@@ -123,7 +129,9 @@ function parseFrontmatter(content) {
   
   // Save last key-value pair
   if (currentKey) {
-    if (currentValue.length === 1) {
+    if (currentIsArray) {
+      frontmatter[currentKey] = currentValue;
+    } else if (currentValue.length === 1) {
       frontmatter[currentKey] = currentValue[0];
     } else {
       frontmatter[currentKey] = currentValue;
@@ -235,7 +243,7 @@ async function processMarkdownFile(filePath) {
       delete frontmatter.aliases;
     } else {
       // Update frontmatter with cleaned aliases
-      frontmatter.aliases = cleanAliases.length === 1 ? cleanAliases[0] : cleanAliases;
+      frontmatter.aliases = cleanAliases;
     }
     
     // Only write back if we made changes (removed aliases or cleaned them)
