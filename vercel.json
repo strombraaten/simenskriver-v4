@@ -286,6 +286,11 @@
       "permanent": true
     },
     {
+      "source": "/fra-i-phone-til-android",
+      "destination": "/iphone-til-android",
+      "permanent": true
+    },
+    {
       "source": "/Jake Knapp",
       "destination": "/jake-knapp",
       "permanent": true
@@ -536,6 +541,11 @@
       "permanent": true
     },
     {
+      "source": "/syntaksen",
+      "destination": "/syntaks",
+      "permanent": true
+    },
+    {
       "source": "/takkemelding",
       "destination": "/takk",
       "permanent": true
@@ -578,6 +588,16 @@
     {
       "source": "/å tørre og spørre",
       "destination": "/torre-a-sporre",
+      "permanent": true
+    },
+    {
+      "source": "/under panseret",
+      "destination": "/under-panseret",
+      "permanent": true
+    },
+    {
+      "source": "/hva-som-skjer-under-panseret-på-simenskriverno",
+      "destination": "/under-panseret",
       "permanent": true
     },
     {

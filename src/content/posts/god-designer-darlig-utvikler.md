@@ -8,6 +8,7 @@ tags:
 aliases:
   - Fra å være en god designer til å bli en dårlig utvikler
   - fra god designer til en dårlig utvikler
+  - dårlig utvikler
 title: Fra å være en god designer til å bli en dårlig utvikler
 permalink: god-designer-darlig-utvikler
 ---
