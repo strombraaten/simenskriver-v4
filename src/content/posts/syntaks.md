@@ -6,11 +6,9 @@ tags:
   - tankemat
 title: Syntaks er nok mer interessant enn du tror
 aliases:
-- syntaks
-- syntaksen
+  - syntaksen
 permalink: syntaks
 ---
-
 Syntaks er et ord jeg utelukkende forbinder med programmering, med kode. Med andre ord, ting jeg ikke kan.
 
 Som designer derimot er det naturlig at mange av samtalene mine i løpet av en dag, er med de folka som får designet til å funke – nemlig utviklere (som skriver kode). Og de, de forholder seg til syntaks! Jeg derimot, gjør ikke det. Or so I thought.

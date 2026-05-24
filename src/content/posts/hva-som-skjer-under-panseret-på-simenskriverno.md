@@ -1,5 +1,5 @@
 ---
-title: Under panseret
+title: Hva som skjer under panseret på Simenskriver.no
 date: 2026-05-22
 permalink: under-panseret
 description: En steg-for-steg beskrivelse av arbeidsflyten min fra skriving til publisering
@@ -8,7 +8,10 @@ tags:
 hideTOC: false
 targetKeyword: ""
 draft: false
+aliases:
+  - under panseret
 ---
+
 Jeg kan bruke evigheter på å skreddersy et system rundt en oppgave. Samtidig som det ville tatt meg mye mindre tid å bare gjøre selve oppgava. Men hvor er moroa i det?
 
 Den tilnærmingen er i aller høyeste grad gjeldende når det kommer til det nyhetsbrevet her. Eller bloggen da. Kommer an på hvor du leser det jeg skriver. Og *akkurat* det der, at det tilsynelatende er en forskjell mellom det du leser på bloggen og nyhetsbrevet, det har jeg funnet en løsning på nå.

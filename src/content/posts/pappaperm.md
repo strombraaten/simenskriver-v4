@@ -12,4 +12,6 @@ Etter 145 dager med pappaperm har jeg lært litt av hvert. Ikke at dette er sån
 
 1. Planlegg uka du har foran deg på søndag kveld eller mandag. Legg planene dine i kalenderen, på samme måte som du ville gjort på jobb. Små og store planer hører hjemme. Det gir deg en følelse av kontroll i en hverdag som ellers må være fleksibel.
 2. Har du mulighet til å få avlasting i løpet av uka eller måneden? Spør de som kan være relevant om "Kan jeg friste med litt barnepass i nærmeste framtid?". På den måten kan du også planlegge aktiviteter du ikke ville kunne gjort ellers, og sørge for du ikke blir så rådvill når du plutselig står der med fritid på henda.
-3. Avhengig av om du tar 100- eller 80% perm så har du enten x eller y uker foran deg.
+3. Fokusér på kortere perioder med tid
+	1. Avhengig av om du tar 100- eller 80% perm så har du enten x eller y uker foran deg.
+	2. Etter å ha jobba "sprintbasert" over lengre tid 
