@@ -43,9 +43,12 @@ views:
     filters:
       and:
         - file.folder.startsWith("posts")
+        - draft != true
     sort:
       - property: draft
         direction: ASC
+      - property: date
+        direction: DESC
     imageProperty: note.image
     fallbackToEmbeds: never
     propertyDisplay1: formula.Slug

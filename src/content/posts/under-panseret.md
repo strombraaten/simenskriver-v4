@@ -12,6 +12,7 @@ aliases:
   - under panseret
   - hva som skjer under panseret
 ---
+## Hva som skjer under panseret på Simenskriver.no
 
 Som en selvutnevnt [dårlig utvikler](god-designer-darlig-utvikler.md) er jeg prisgitt andres arbeid, som jeg deretter kan bygge videre på for å tilpasse det sånn jeg vil ha det. Ulempa med det er at jeg ikke har forståelse for alt arbeidet som er gjort for å komme fram til det utgangspunktet. 
 
@@ -63,6 +64,8 @@ Mens i rss-feeden ser nøyaktig det samme sånn her ut:
 Og én gang i uka [sjekker Buttondown (automatisk) om det har dukket opp noe nytt](https://docs.buttondown.com/rss-to-email) i den rss-fila. Og da opprettes et utkast på nyhetsbrev i Buttondown, med kun det nye innholdet som dukka opp i rss-feeden. Ikke bare det, men de sørger også for [automatisk komprimering av bildene](https://buttondown.com/blog/images-in-newsletters) som er der.
 
 I tillegg legges det på en avslutning for å pakke det mer inn som et nyhetsbrev. Det eneste jeg trenger å gjøre da er å se gjennom, og trykke på send, for at du skal få det servert på et sølvfat i innboksen din.
+
+### Bilde-optimalisering
 
 Den automatiske komprimeringa av bildene har jeg også automatisert i publiseringa til nettsida, selv om den kan nok justeres enda mer. For øyeblikket fungerer det sånn her:
 
