@@ -56,9 +56,11 @@ Fra Github publiseres ting automatisk til [simenskriver.no](https://www.simenskr
 Det fører også til at [rss-feeden min](https://www.simenskriver.no/rss.xml) oppdateres, som bare betyr at bloggposten i sin enkleste form er inkludert i den fila. 
 
 For å vise deg et eksempel ser et blogginnlegg sånn her ut på nettsida:
+
 ![](attachments/under-panseret-bloggeksempel.png)
 
 Mens i rss-feeden ser nøyaktig det samme sånn her ut:
+
 ![under-panseret-rss-eksempel](attachments/under-panseret-rss-eksempel.png)
 
 Og én gang i uka [sjekker Buttondown (automatisk) om det har dukket opp noe nytt](https://docs.buttondown.com/rss-to-email) i den rss-fila. Og da opprettes et utkast på nyhetsbrev i Buttondown, med kun det nye innholdet som dukka opp i rss-feeden. Ikke bare det, men de sørger også for [automatisk komprimering av bildene](https://buttondown.com/blog/images-in-newsletters) som er der.
