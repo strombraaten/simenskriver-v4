@@ -1,12 +1,12 @@
 ---
-title: "eierskap"
+title: eierskap
 date: 2026-05-14
-permalink: "eierskap"
+permalink: eierskap
 description: ""
 tags: []
 hideTOC: false
 targetKeyword: ""
-draft: false
+draft: true
 ---
 Eierskap er noe jeg har tenkt mye på i det siste. Fra ulike vinklinger. Eierskap til musikken jeg hører på. Eierskap til bøkene jeg leser. Dataen jeg bruker. For Spotify, Tidal, og alle slags strømmetjenester kan når som helst fjerne musikken du har samla opp gjennom årene. Jeg merker det spesielt på de eldste spillelistene mine, eller hvis jeg har hatt remixer av andre sanger, så er det flere sanger som har blitt borte. Høyst sannsynlig fordi de ikke lenger har lisens til å vise den eller de sangene. Da er det lett å tenke "Men jeg har jo fremdeles betalt for tjenesten hver måned?" Og det er akkurat det. Jeg har betalt for tjenesten, for muligheten til å spille av sangene. Derimot har jeg ikke *kjøpt* musikken.
 
