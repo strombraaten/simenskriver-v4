@@ -77,6 +77,31 @@ function preprocessMarkdown(
     return url ? `[${display}](${url})` : display;
   });
 
+  // Resolve VaultCMS-style markdown links [text](note.md) to absolute post URLs
+  // VaultCMS uses standard markdown links instead of wikilinks by default
+  content = content.replace(/(?<!!)\[([^\]]*)\]\(([^)]+)\)/g, (_match, text, href) => {
+    if (href.startsWith("http://") || href.startsWith("https://") || href.startsWith("#")) {
+      return `[${text}](${href})`;
+    }
+    const [pathPart, fragment] = href.split("#");
+    if (!pathPart.endsWith(".md")) return `[${text}](${href})`;
+    const key = pathPart.replace(/\.md$/, "").replace(/^.*\//, "").toLowerCase();
+    const resolved = wikiLinks.get(key);
+    if (!resolved) return `[${text}](${href})`;
+    return `[${text}](${fragment ? `${resolved}#${fragment}` : resolved})`;
+  });
+
+  // Convert regular markdown images with relative paths to absolute URLs
+  // (Obsidian ![[...]] images are already handled above; this catches plain ![alt](path) syntax)
+  content = content.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_match, alt, src) => {
+    if (src.startsWith("http://") || src.startsWith("https://") || src.startsWith("/")) {
+      return `![${alt}](${src})`;
+    }
+    const optimizedPath = optimizePostImagePath(src, postId, postId);
+    const abs = `${siteUrl}${optimizedPath.startsWith("/") ? optimizedPath.slice(1) : optimizedPath}`;
+    return `![${alt}](${abs})`;
+  });
+
   // Simplify Obsidian callouts: > [!TYPE] Title → > **Title**
   content = content.replace(/^> \[!\w+\]\s*(.*?)$/gm, (_match, title) =>
     title.trim() ? `> **${title.trim()}**` : ">"
