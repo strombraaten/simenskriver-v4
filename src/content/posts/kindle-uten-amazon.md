@@ -26,7 +26,8 @@ Dessuten, om jeg virkelig klarte å kødde det til, så er det en god unnskyldni
 
 ## Problemet derimot
 
-Når jeg har lest ferdig en bok har jeg tidligere søkt opp en annen bok jeg har hørt om, på Kindle-butikken, hvor de har sin notoriske ett-klikks-funksjon. Og voila! Noen få minutter seinere er jeg klar til å lese en ny bok.  ![Kindles ett-klikks-funksjon](https://p.kagi.com/proxy/buy-book.jpg?c=S5M2z2xcVqa_thqiXtQ9LAE6QgjpiaJ1oXysPUDR_pot_6OSJk2yhFEtIGVLW5uatURS1yo89vJnUF0OWKfWxRoacQUSOEiAdojX0nG3lXBrLC3U2rAeZCS58OfjomicMkc0s66qJnLplE1UPS7eELvAFtJPUzCYypxYhYjklyGDj8xxvJ97WbDD8egK22su4ZeS4c4zxAR8Elvqa7lewWViKhhaV0QJV3wJndhEe0w%3D)
+Når jeg har lest ferdig en bok har jeg tidligere søkt opp en annen bok jeg har hørt om, på Kindle-butikken, hvor de har sin notoriske ett-klikks-funksjon. Og voila! Noen få minutter seinere er jeg klar til å lese en ny bok. 
+![kindle-uten-amazon - one-click](attachments/kindle-uten-amazon-one-click.png)
 
 Nå derimot, i dette nye livet som er mer i tråd med mine egne verdier så må jeg altså:
 
