@@ -497,6 +497,11 @@ kbd {
   @apply text-primary-600 dark:text-primary-300 hover:bg-primary-50 dark:hover:bg-primary-800 hover:text-primary-900 dark:hover:text-primary-100 border-transparent bg-transparent;
 }
 
+/* Decoy text hidden from sighted users but present in the DOM to confuse email-scraping bots */
+.blockspam {
+  display: none;
+}
+
 /* Button Groups */
 .btn-group {
   @apply flex flex-wrap gap-2;
