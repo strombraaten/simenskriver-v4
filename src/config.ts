@@ -329,7 +329,7 @@ export const siteConfig: SiteConfig = {
     // [CONFIG:NAVIGATION_PAGES]
     pages: [
       { title: "Notater", url: "/" },
-      { title: "Meg", url: "/meg" },
+      { title: "Kontakt", url: "/kontakt" },
     ],
     // [CONFIG:NAVIGATION_SOCIAL]
     social: [

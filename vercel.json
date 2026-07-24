@@ -201,6 +201,11 @@
       "permanent": true
     },
     {
+      "source": "/dårlig utvikler",
+      "destination": "/god-designer-darlig-utvikler",
+      "permanent": true
+    },
+    {
       "source": "/hva basket har lært meg om å være en god kollega",
       "destination": "/god-kollega",
       "permanent": true
@@ -596,7 +601,7 @@
       "permanent": true
     },
     {
-      "source": "/hva-som-skjer-under-panseret-på-simenskriverno",
+      "source": "/hva som skjer under panseret",
       "destination": "/under-panseret",
       "permanent": true
     },
