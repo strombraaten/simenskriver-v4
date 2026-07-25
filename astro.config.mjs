@@ -23,6 +23,7 @@ import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { siteConfig } from './src/config.ts';
 import swup from '@swup/astro';
+import pagefind from 'astro-pagefind';
 import refreshContentOnChange from './src/integrations/refresh-content-on-change.ts';
 import { fileURLToPath } from 'node:url';
 
@@ -97,6 +98,7 @@ image: {
     tailwind(),
     sitemap(),
     mdx(),
+    pagefind(),
     swup({
       theme: false,
       animationClass: 'transition-swup-',
@@ -200,7 +202,14 @@ image: {
     optimizeDeps: {
       exclude: ['astro:content']
     },
-    exclude: ['**/_redirects']
+    exclude: ['**/_redirects'],
+    build: {
+      rollupOptions: {
+        // Pagefind's search bundle is generated into public/dist AFTER this build step
+        // by the astro-pagefind integration, so it can never be resolved at bundle time.
+        external: ['/pagefind/pagefind.js']
+      }
+    }
   },
   build: {
     assets: '_assets'
