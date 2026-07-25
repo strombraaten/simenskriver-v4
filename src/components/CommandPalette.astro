@@ -245,6 +245,7 @@ import Icon from './Icon.astro';
     type: 'post' | 'page' | 'action';
     score?: number; // Score for search relevance
     tags?: string[]; // Tags for posts
+    preHighlighted?: boolean; // True when description already contains <mark> markup (Pagefind excerpts)
   }
 
   // Command Palette Class Definition
@@ -265,7 +266,7 @@ import Icon from './Icon.astro';
     private filteredItems: CommandPaletteItem[] = []; // Holds items after filtering by search query
     private searchTimeout: number | null = null; // For debouncing
     private cache: Map<string, CommandPaletteItem[]> = new Map(); // Search result cache
-    private fuse: any = null; // Fuse.js instance for fuzzy search
+    private pagefind: any = null; // Pagefind instance for full-text post search
     private searchHistory: string[] = []; // Track search history for suggestions
     private currentContext: string = 'all'; // Current search context
     private readonly MAX_RESULTS = 50; // Increased for better UX
@@ -370,124 +371,101 @@ import Icon from './Icon.astro';
     }
 
     private async preloadData() {
-      // Preload posts data in the background for faster search
-      this.loadPosts();
+      // Preload page data (if enabled) and warm up the Pagefind index in the background
+      this.loadPageItems();
+
+      const searchConfig = (window as any).siteConfig?.commandPalette?.search || {
+        posts: true,
+        pages: false,
+      };
+      if (searchConfig.posts) {
+        this.initializePagefind();
+      }
     }
 
-    private async loadPosts() {
+    private async loadPageItems() {
       // Only load if not already loaded
       if (this.items.length > 0) {
         return;
       }
 
       try {
-        // Get search configuration from the global config
         const searchConfig = (window as any).siteConfig?.commandPalette?.search || {
           posts: true,
           pages: false,
         };
 
-        const allItems = [];
-        const promises = [];
-
-        // Load posts if enabled in search config
-        if (searchConfig.posts) {
-          promises.push(
-            fetch('/api/posts.json').then(response =>
-              response.ok ? response.json() : []
-            )
-          );
-        } else {
-          promises.push(Promise.resolve([]));
-        }
-
-        // Load pages if enabled in search config
+        // Only pages need to be preloaded here - post content is searched via Pagefind
         if (searchConfig.pages) {
-          promises.push(
-            fetch('/api/pages.json').then(response => {
-              return response.ok ? response.json() : [];
-            }).catch(error => {
-              return [];
-            })
-          );
+          const response = await fetch('/api/pages.json');
+          this.items = response.ok ? await response.json() : [];
         } else {
-          promises.push(Promise.resolve([]));
+          this.items = [];
         }
-
-        // Wait for all API calls to complete
-        const [posts, pages] = await Promise.all(promises);
-
-        // Add items to the array
-        allItems.push(...posts, ...pages);
-
-        this.items = allItems;
-        // Don't initialize Fuse.js immediately - wait until first search
       } catch (error) {
         // Fallback to empty array
         this.items = [];
       }
     }
 
-    private async initializeFuseSearch() {
+    private async initializePagefind() {
+      // Only initialize once
+      if (this.pagefind) return;
+
       try {
-        // Add a small delay to ensure the module is ready
-        await new Promise(resolve => setTimeout(resolve, 100));
-        
-        // Try to load Fuse.js with better error handling
-        const fuseModule = await import('fuse.js');
-        const Fuse = fuseModule.default || fuseModule;
-        
-        if (typeof Fuse === 'function') {
-          this.fuse = new Fuse(this.items, {
-            keys: [
-              { name: 'title', weight: 0.5 },
-              { name: 'description', weight: 0.2 },
-              { name: 'tags', weight: 0.3 }
-            ],
-            threshold: 0.3, // Lower threshold for more fuzzy matching
-            includeScore: true,
-            includeMatches: true,
-            minMatchCharLength: 1,
-            shouldSort: true,
-            findAllMatches: true,
-            ignoreLocation: true,
-            useExtendedSearch: true
-          });
-        } else {
-          throw new Error('Fuse.js not properly loaded');
-        }
+        // Pagefind's bundle is generated at build time into /pagefind, so it can't be
+        // statically resolved by Vite - this must stay a runtime URL import.
+        const pagefindModule = await import(/* @vite-ignore */ '/pagefind/pagefind.js');
+        await pagefindModule.init();
+        this.pagefind = pagefindModule;
       } catch (error) {
-        // Fallback to basic search if Fuse.js fails to load
-        this.fuse = null;
+        // Pagefind bundle isn't available (e.g. dev server before the first build) - fail closed
+        this.pagefind = null;
       }
     }
 
-    // Advanced search using Fuse.js with fallback to basic search
+    // Full-text search across post content, powered by Pagefind's build-time index
+    private async searchPosts(query: string): Promise<CommandPaletteItem[]> {
+      if (!this.pagefind) {
+        await this.initializePagefind();
+      }
+      if (!this.pagefind) return [];
+
+      try {
+        const search = await this.pagefind.search(query);
+        const results = await Promise.all(
+          search.results.slice(0, this.MAX_RESULTS).map((r: any) => r.data())
+        );
+
+        return results.map((result: any, index: number) => ({
+          id: result.url,
+          title: result.meta?.title || result.url,
+          description: result.excerpt,
+          url: result.url,
+          type: 'post' as const,
+          score: this.MAX_RESULTS - index,
+          preHighlighted: true,
+        }));
+      } catch (error) {
+        return [];
+      }
+    }
+
+    // Combines full-text post search (Pagefind) with simple page-title matching
     private async searchItems(query: string): Promise<CommandPaletteItem[]> {
       if (!query.trim()) return [];
 
-      // Initialize Fuse.js lazily on first search
-      if (!this.fuse && this.items.length > 0) {
-        await this.initializeFuseSearch();
-      }
+      const searchConfig = (window as any).siteConfig?.commandPalette?.search || {
+        posts: true,
+        pages: false,
+      };
 
-      // Use Fuse.js if available, otherwise fallback to basic search
-      if (this.fuse) {
-        return this.fuzzySearch(query);
-      } else {
-        return this.basicSearch(query);
-      }
-    }
+      const [postResults, pageResults] = await Promise.all([
+        searchConfig.posts ? this.searchPosts(query) : Promise.resolve([]),
+        Promise.resolve(searchConfig.pages ? this.basicSearch(query) : [])
+      ]);
 
-    private fuzzySearch(query: string): CommandPaletteItem[] {
-      const results = this.fuse.search(query);
-      return results
-        .slice(0, this.MAX_RESULTS)
-        .map((result: any) => ({
-          ...result.item,
-          score: result.score ? (1 - result.score) * 1000 : 0, // Convert Fuse score to our scale
-          matches: result.matches
-        }));
+      return [...postResults, ...pageResults].slice(0, this.MAX_RESULTS);
     }
 
     private basicSearch(query: string): CommandPaletteItem[] {
@@ -720,8 +698,8 @@ import Icon from './Icon.astro';
         return;
       }
 
-      // Ensure posts are loaded
-      await this.loadPosts();
+      // Ensure page items are loaded (post content is searched live via Pagefind)
+      await this.loadPageItems();
 
       // Use improved search algorithm
       this.filteredItems = await this.searchItems(trimmedQuery);
@@ -988,7 +966,11 @@ import Icon from './Icon.astro';
       if (item.description) {
         const descriptionPara = document.createElement('div');
         descriptionPara.className = 'text-sm text-primary-600 dark:text-primary-300 mt-1 truncate';
-        descriptionPara.innerHTML = this.highlightSearchTerm(item.description, this.input.value);
+        // Pagefind excerpts already contain <mark> highlighting (and pre-encoded entities);
+        // re-running our own highlighter on them would double-escape the markup.
+        descriptionPara.innerHTML = item.preHighlighted
+          ? item.description
+          : this.highlightSearchTerm(item.description, this.input.value);
         contentDiv.appendChild(descriptionPara);
       }
 
