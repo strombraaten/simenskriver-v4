@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import type {
   Post,
   Page,
@@ -17,6 +19,22 @@ import {
 function getDefaultOGImage(): OpenGraphImage {
   return {
     url: "/open-graph.png",
+    alt: siteConfig.defaultOgImageAlt,
+    width: 1200,
+    height: 630,
+  };
+}
+
+// Per-post OG images are generated at build time by scripts/generate-og-images.js
+// (logo + post title) for any post that doesn't set a custom image + imageOG.
+function getGeneratedPostOGImage(postId: string): OpenGraphImage | undefined {
+  const filename = `${postId.replace(/\//g, "--")}.png`;
+  const filePath = path.join(process.cwd(), "public", "og", filename);
+
+  if (!fs.existsSync(filePath)) return undefined;
+
+  return {
+    url: `/og/${filename}`,
     alt: siteConfig.defaultOgImageAlt,
     width: 1200,
     height: 630,
@@ -73,8 +91,9 @@ export function generatePostSEO(post: Post, url: string): SEOData {
       height: 630,
     };
   } else {
-    // Use default OG image
-    ogImage = getDefaultOGImage();
+    // Use a per-post generated OG image (logo + title) when available,
+    // otherwise fall back to the generic site default.
+    ogImage = getGeneratedPostOGImage(post.id) || getDefaultOGImage();
     ogImage = {
       ...ogImage,
       url: `${siteConfig.site}${ogImage.url}`,

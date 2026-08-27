@@ -267,6 +267,8 @@ import Icon from './Icon.astro';
     private searchTimeout: number | null = null; // For debouncing
     private cache: Map<string, CommandPaletteItem[]> = new Map(); // Search result cache
     private pagefind: any = null; // Pagefind instance for full-text post search
+    private pagefindUnavailable: boolean = false; // True once Pagefind init has definitively failed
+    private postItems: CommandPaletteItem[] = []; // Post metadata, used as fallback when Pagefind is unavailable
     private searchHistory: string[] = []; // Track search history for suggestions
     private currentContext: string = 'all'; // Current search context
     private readonly MAX_RESULTS = 50; // Increased for better UX
@@ -403,14 +405,14 @@ import Icon from './Icon.astro';
           this.items = [];
         }
       } catch (error) {
-        // Fallback to empty array
+        console.warn('[CommandPalette] Could not load page items.', error);
         this.items = [];
       }
     }
 
     private async initializePagefind() {
-      // Only initialize once
-      if (this.pagefind) return;
+      // Only initialize once, and don't retry once it has definitively failed
+      if (this.pagefind || this.pagefindUnavailable) return;
 
       try {
         // Pagefind's bundle is generated at build time into /pagefind, so it can't be
@@ -419,9 +421,31 @@ import Icon from './Icon.astro';
         await pagefindModule.init();
         this.pagefind = pagefindModule;
       } catch (error) {
-        // Pagefind bundle isn't available (e.g. dev server before the first build) - fail closed
+        // Pagefind is unavailable (no build output in dev, or its WASM was blocked at
+        // runtime). Search degrades to title/description/tag matching instead of dying,
+        // but the cause must stay visible - silent failure here looks like "no results".
+        console.warn(
+          '[CommandPalette] Pagefind unavailable - falling back to metadata-only search.',
+          error
+        );
         this.pagefind = null;
+        this.pagefindUnavailable = true;
       }
+    }
+
+    // Post metadata, fetched only when Pagefind can't serve full-text search
+    private async loadPostItems(): Promise<CommandPaletteItem[]> {
+      if (this.postItems.length > 0) return this.postItems;
+
+      try {
+        const response = await fetch('/api/posts.json');
+        this.postItems = response.ok ? await response.json() : [];
+      } catch (error) {
+        console.warn('[CommandPalette] Could not load /api/posts.json for fallback search.', error);
+        this.postItems = [];
+      }
+
+      return this.postItems;
     }
 
     // Full-text search across post content, powered by Pagefind's build-time index
@@ -429,7 +453,7 @@ import Icon from './Icon.astro';
       if (!this.pagefind) {
         await this.initializePagefind();
       }
-      if (!this.pagefind) return [];
+      if (!this.pagefind) return this.searchPostMetadata(query);
 
       try {
         const search = await this.pagefind.search(query);
@@ -447,8 +471,16 @@ import Icon from './Icon.astro';
           preHighlighted: true,
         }));
       } catch (error) {
-        return [];
+        console.warn('[CommandPalette] Pagefind query failed - falling back to metadata.', error);
+        return this.searchPostMetadata(query);
       }
+    }
+
+    // Degraded search: titles, descriptions and tags only, no post body content.
+    // Keeps the palette useful when the full-text index can't be reached.
+    private async searchPostMetadata(query: string): Promise<CommandPaletteItem[]> {
+      const posts = await this.loadPostItems();
+      return this.basicSearch(query, posts);
     }
 
     // Combines full-text post search (Pagefind) with simple page-title matching
@@ -468,11 +500,11 @@ import Icon from './Icon.astro';
       return [...postResults, ...pageResults].slice(0, this.MAX_RESULTS);
     }
 
-    private basicSearch(query: string): CommandPaletteItem[] {
+    private basicSearch(query: string, items: CommandPaletteItem[] = this.items): CommandPaletteItem[] {
       const queryLower = query.toLowerCase();
       const queryWords = queryLower.split(/\s+/).filter(word => word.length > 0);
 
-      return this.items
+      return items
         .map(item => {
           const title = item.title.toLowerCase();
           const description = (item.description || '').toLowerCase();
