@@ -227,3 +227,9 @@ views:
     imageAspectRatio: 0.55
     maxTagsToShow: 2
     hideQuickEditIcon: true
+  - type: cms
+    name: Drafts
+    filters:
+      and:
+        - draft == true
+    cardSize: 360

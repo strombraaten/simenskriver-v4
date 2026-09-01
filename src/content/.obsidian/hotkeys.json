@@ -25,24 +25,6 @@
       "key": "M"
     }
   ],
-  "app:toggle-left-sidebar": [
-    {
-      "modifiers": [
-        "Alt",
-        "Mod"
-      ],
-      "key": "Z"
-    }
-  ],
-  "app:toggle-right-sidebar": [
-    {
-      "modifiers": [
-        "Alt",
-        "Mod"
-      ],
-      "key": "X"
-    }
-  ],
   "obsidian-git:push": [
     {
       "modifiers": [
@@ -290,6 +272,38 @@
         "Alt"
       ],
       "key": "H"
+    }
+  ],
+  "editor:focus-left": [
+    {
+      "modifiers": [
+        "Ctrl"
+      ],
+      "key": "N"
+    }
+  ],
+  "editor:focus-right": [
+    {
+      "modifiers": [
+        "Ctrl"
+      ],
+      "key": "O"
+    }
+  ],
+  "app:toggle-right-sidebar": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "R"
+    }
+  ],
+  "app:toggle-left-sidebar": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "L"
     }
   ]
 }
