@@ -70,7 +70,7 @@ I praksis betyr det at jeg bruker Jelly Star-telefonen til egentlig alt, men akk
 
 Det vil også si at jeg *har* fremdeles en iPhone 13 mini liggende, men nå bruker jeg den egentlig bare for å gjøre oppdateringer eller endringer på apple-klokka.
 
-Eventuelt de sjeldne tilfellene hvor jeg tar et skippertak på bankoverføringer og må bruke bankID eller faceID mange ganger. Hopper nemlig Bulder (personlig bruk), DNB (fellesøkonomi med kona), og Kron for langsiktig sparing. 
+Eventuelt de sjeldne tilfellene hvor jeg tar et skippertak på bankoverføringer og må bruke bankID eller faceID mange ganger. Hopper nemlig mellom Bulder (personlig bruk), DNB (fellesøkonomi med kona), og Kron for langsiktig sparing. 
 
 Du *kan* gjøre alt sammen fra Jelly Star og, men det skader jo ikke å bruke et bedre verktøy for en mer krevende oppgave akkurat.
 
@@ -92,9 +92,21 @@ Takk til den trivelige dama hos Telia som lot være å mansplaine det her, som j
 
 ### Det negative
 
-Den ene tingen som jeg syns har fungert dårligst er fingeravtrykkleseren på baksida av telefonen. 
+Mine mest negative erfaringer er:
+1. Fingeravtrykkleseren
+2. "Vibrasjonsmotoren" (altså når telefonen står på lydløs)
 
-Jeg opplever at jeg må prøve 5-8 ganger før jeg får det til å funke. Det finnes faceID og, men såvidt jeg kan se kan man ikke velge å bruke det framfor fingeravtrykkleseren, så bank-apper osv. "velger" fremdeles fingeravtrykk (by default) framfor faceID for autentisering.
+#### Fingeravtrykksleseren
+
+Fingeravtrykkleseren på baksida av telefonen er så dårlig at jeg må prøve 5-8 ganger før jeg får det til å funke.
+
+Det *finnes* faceID og, men såvidt jeg kan se kan man ikke velge å bruke det framfor fingeravtrykkleseren, så bank-apper osv. "velger" fremdeles fingeravtrykk (by default) framfor faceID for autentisering.
+
+#### Vibrasjonsmotoren
+
+Kort fortalt så kan jeg ikke ha telefonen på lydløs, hvis jeg genuint trenger å få med meg hva som skjer. Den vibrerer så svakt at selv om jeg har telefonen i lomma merker jeg aldri at noen ringer eller sender en melding.
+
+> [!todo] Legg inn en film for å vise hvor svak vibrasjonen er
 
 ## Hva jeg savner fra iPhone-dagene
 
@@ -109,7 +121,7 @@ For at det skal fungere må du være logget inn med Apple-kontoen for å sende d
 ![[attachments/imessage-innlogging.png]]
 Det som er verdt å tenke over da er at hvis venninna di sender deg en melding så sendes den som iMessage hvis den kan, og tekstmelding hvis det er *helt* nødvendig.
 
-Problemet da er at så lenge du har en Apple-enhet som er logga iMessage, vil alle andre iPhoner eller Apple-enheter også prøve å sende meldinger til deg *som iMessage* før de sender tekstmelding. 
+Problemet da er at så lenge du har en Apple-enhet som er logga på iMessage, vil alle andre iPhoner eller Apple-enheter også prøve å sende meldinger til deg *som iMessage* før de sender tekstmelding. 
 
 Det skjedde med meg iallefall, og da havna jeg i en uforutsigbar limbo hvor meldingene går til iphonen, men ikke til Jelly Star som var den telefonen jeg *egentlig* brukte. Som betyr at jeg måtte bruke begge telefonene i det daglige for å føle meg trygg på at jeg ikke gikk glipp av meldinger eller telefonsamtaler.
 
@@ -120,6 +132,9 @@ Det som også er kjipt er at når du skrur av iMessage kan du heller ikke ringe 
 ## Så hva gjør man da?
 
 Det er lett å tenke at man er avhengig av de tjenestene her, eller hvor lett det gjør hverdagen, men det finnes såklart alternativer.
+
+> [!NOTE] Alternativ som jeg ikke har testet
+> Det *kan* hende du kan beholde facetime og iMessage ved å [sette opp noe som heter OpenBubbles](https://openbubbles.app/). Det har jeg ikke prøvd sjøl, men er veldig interessert i å høre om erfaringer hvis du ender opp med å gi det et forsøk.
 
 ### Videosamtaler
 
