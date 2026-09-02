@@ -1,12 +1,12 @@
 ---
-title: dim-lights-plugin
-date: 2026-07-24
-permalink: dim-lights-plugin
+title: Hvordan jeg lagde min første plugin til Obsidian
+date: 2026-09-02
+permalink: plugin-obsidian
 description: ""
 tags: []
 hideTOC: false
 targetKeyword: ""
-draft: true
+draft: false
 ---
 _Dette er et utkast. Sannsynligvis kommer jeg til å utdype det mer seinere, så det føles mer "ferdig", men kanskje ikke._
 
