@@ -6,10 +6,10 @@ tags:
   - apper
 aliases:
   - apper
+  - apper-jeg-liker
 title: Appene jeg bruker
 permalink: apper
 ---
-
 
 ## Mac
 
