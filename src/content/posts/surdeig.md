@@ -9,9 +9,6 @@ slug: surdeig
 description: Surdeig er en av de tingene som virker mer komplisert enn det egentlig er. Her har jeg samla alt jeg har lært etter noen år med brødbaking.
 permalink: /surdeig
 ---
-Etter også de ulike bruksområdene for tale til tekst, er det bare å sette ord på noen kjappe tanker. Spesielt til noen av meldingene som denne, eller om det er på Slack eller Teams som tilbakemelding til en kollega.
-
-Det krever ikke så mye tankearbeid, det er bare å dokumentere det jeg har sagt.
 ## Surdeig for nybegynnere
 
 Surdeig er en av de tinga som virker mer komplisert enn det er. I praksis slenger du bare mel og vann i et syltetøyglass, fram til du har en havregrøt-lignende konsistens. Det er ikke verre.
