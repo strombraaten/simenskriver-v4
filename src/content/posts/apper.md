@@ -23,9 +23,10 @@ For å ta notater, skrive, bearbeide tanker, og så mye, mye mer. Elsker hvor my
 
 ### [[klisterhjerne|Readwise]]
 
-- For å sende det jeg har markert i en podcast (gjennom Snipd), eller markert i en bok på [kindle](https://www.amazon.com/Amazon-Kindle-Ereader-Family/b?node=6669702011) inn til [[obsidian]]
-	- For [å lese artikler](https://readwise.io/read) jeg har spart til seinere
-	- Les [[digital klisterhjerne]] hvis du vil forstå hvordan det fungerer
+1. For å sende det jeg har markert i en podcast (gjennom Snipd), eller markert i en bok på [kindle](https://www.amazon.com/Amazon-Kindle-Ereader-Family/b?node=6669702011) inn til [[obsidian]]
+2. For [å lese artikler](https://readwise.io/read) jeg har spart til seinere
+
+Les [[digital klisterhjerne]] hvis du vil forstå hvordan det fungerer
 
 ### [[den-ene-funksjonen|Cleanshot]]
 
@@ -45,7 +46,7 @@ For å holde orden i skjermbilder og organisere alt av visuell inspirasjon.
 
 For å kjapt finne en emoji, uavhengig av hvilken meldings-app jeg er i.
 
-### [1 Password](https://1password.com/)
+### [1Password](https://1password.com/)
 
 Først og fremst for å holde styr på alt av passord, men også for å lage nye passord så jeg ikke bruker de samme 3-4 overalt (jeg ser på deg, svigermor 👀)
 
@@ -122,6 +123,8 @@ Derfor prøver jeg å gå over til Ghostty, som ikke bare er lynkjapt, men også
 ### [Synology photos](https://www.synology.com/en-global/dsm/feature/photos)
 
 Til å backe opp bildene mine til NASen jeg har hjemme.
+
+Litt skamfullt så betaler jeg fremdeles for icloud-lagring, for å synce bilder mellom macen og ipaden, men det der må jeg nøste opp i på en eller annen måte. Liker hvor kjapt jeg kan se bilder på macen, men da får jeg ikke synca over alt fra telefonen f. eks. Så på macen bruker jeg delvis Apple Photos og delvis web-grensesnittet til Synology photos på macen. Men ja. Det der er ikke perfekt.
 
 ### Tjenestene jeg helst ikke skulle brukt, men må av ymse årsaker
 
