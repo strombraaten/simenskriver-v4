@@ -5,4 +5,8 @@ draft: true
 noIndex: true
 ---
 
-Jeg heter Simen, og jeg er en UX-designer som brenner for å gjøre kompliserte ting enkle og forståelige. Her samler jeg tanker, notater og refleksjoner om design, teknologi, læring og alt det andre som opptar meg — behandlet som en digital hage mer enn en tradisjonell blogg.
+Heisann! Simen heter jeg 👋 Jobber som UX-designer, men lever av å nerde om ting og tang.
+
+Eller det blir kanskje ikke heeelt riktig, men her får jeg iallefall dokumentert mye av nerdinga mi. Enten om det er refleksjoner rundt teknologi, arbeidsflyt, eller bare det å leve et godt liv. 
+
+PS: Det er gode sjanser for å snuble over uferdige tanker her og der, siden jeg ser på dette mer som en [digital hage](digital-hage.md) enn en tradisjonell blogg.
