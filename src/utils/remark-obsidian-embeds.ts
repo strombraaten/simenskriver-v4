@@ -100,6 +100,12 @@ const YOUTUBE_PATTERNS = [
   /^https?:\/\/(?:www\.)?youtube\.com\/embed\/([^&\n?#]+)/
 ];
 
+// Vimeo URL patterns
+const VIMEO_PATTERNS = [
+  /^https?:\/\/(?:www\.)?vimeo\.com\/(\d+)/,
+  /^https?:\/\/player\.vimeo\.com\/video\/(\d+)/
+];
+
 
 // Twitter/X URL patterns
 const TWITTER_PATTERNS = [
@@ -127,6 +133,17 @@ function isExternalUrl(url: string): boolean {
 // Helper function to extract YouTube video ID
 function extractYouTubeVideoId(url: string): string | null {
   for (const pattern of YOUTUBE_PATTERNS) {
+    const match = url.match(pattern);
+    if (match) {
+      return match[1];
+    }
+  }
+  return null;
+}
+
+// Helper function to extract Vimeo video ID
+function extractVimeoVideoId(url: string): string | null {
+  for (const pattern of VIMEO_PATTERNS) {
     const match = url.match(pattern);
     if (match) {
       return match[1];
@@ -194,6 +211,24 @@ export const remarkObsidianEmbeds: Plugin<[], Root> = () => {
   <iframe
     src="https://www.youtube.com/embed/${youtubeVideoId}?rel=0&modestbranding=1"
     title="${alt || 'YouTube video player'}"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy"
+    class="w-full h-full"
+  ></iframe>
+</div>`;
+          parent.children[index] = createHtmlNode(html);
+          return;
+        }
+
+        // Check for Vimeo
+        const vimeoVideoId = extractVimeoVideoId(url);
+        if (vimeoVideoId) {
+          const html = `
+<div class="vimeo-embed aspect-video overflow-hidden rounded-xl my-8">
+  <iframe
+    src="https://player.vimeo.com/video/${vimeoVideoId}"
+    title="${alt || 'Vimeo video player'}"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen
     loading="lazy"
@@ -518,13 +553,21 @@ export const remarkObsidianEmbeds: Plugin<[], Root> = () => {
       parent.children[index] = createHtmlNode(html);
     });
 
-    // Visit link nodes (covers ![](url) syntax for web embeds)
+    // Visit link nodes (covers bare autolinked URLs for web embeds)
     visit(tree, 'link', (node: Link, index, parent) => {
       if (!node.url || !parent || typeof index !== 'number') return;
 
+      // Only auto-embed "bare" links — where the visible text is just the URL
+      // itself (GFM autolinking of a pasted URL). A deliberately titled
+      // [text](url) link should stay a normal inline link, not be replaced.
+      const isBareLink =
+        node.children?.length === 1 &&
+        node.children[0].type === 'text' &&
+        node.children[0].value.trim() === node.url.trim();
+      if (!isBareLink) return;
+
       const url = node.url;
       const title = node.title || '';
-
 
       // Handle YouTube embeds
       const youtubeVideoId = extractYouTubeVideoId(url);
@@ -544,7 +587,23 @@ export const remarkObsidianEmbeds: Plugin<[], Root> = () => {
         return;
       }
 
-
+      // Handle Vimeo embeds
+      const vimeoVideoId = extractVimeoVideoId(url);
+      if (vimeoVideoId) {
+        const html = `
+<div class="vimeo-embed aspect-video overflow-hidden rounded-xl my-8">
+  <iframe
+    src="https://player.vimeo.com/video/${vimeoVideoId}"
+    title="${title || 'Vimeo video player'}"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy"
+    class="w-full h-full"
+  ></iframe>
+</div>`;
+        parent.children[index] = createHtmlNode(html);
+        return;
+      }
     });
   };
 };

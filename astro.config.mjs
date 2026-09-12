@@ -73,6 +73,7 @@ export default defineConfig({
       resources: [
         "'self'",
         "https://www.youtube.com",
+        "https://player.vimeo.com",
         "https://giscus.app",
         "https://platform.twitter.com"
       ]

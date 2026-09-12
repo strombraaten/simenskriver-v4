@@ -1417,6 +1417,20 @@ svg:has(text:contains("mermaid version")) {
   border: 0;
 }
 
+/* Vimeo embeds */
+.vimeo-embed {
+  @apply aspect-video overflow-hidden rounded-xl my-8;
+  position: relative;
+}
+
+.vimeo-embed iframe {
+  @apply w-full h-full;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+}
+
 /* Twitter/X embeds */
 .twitter-embed {
   @apply my-8;
@@ -1493,7 +1507,8 @@ svg:has(text:contains("mermaid version")) {
 
   .audio-embed,
   .video-embed,
-  .youtube-embed {
+  .youtube-embed,
+  .vimeo-embed {
     @apply my-6;
   }
 }
