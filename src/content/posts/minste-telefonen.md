@@ -31,19 +31,24 @@ Med andre er den 1 cm høyere enn et bankkort.
 
 ![[attachments/jelly-star-unboxing.jpg]]
 
-Jelly Star, tross det tullete navnet, er bare nok en Android-telefon. Forskjellen mellom dem riktignok, utover størrelsen, er at om du kjøper den aller nyeste Samsung-telefon f. eks i 2025, så bruker den Android 16-operativsystemet, mens Jelly Star bruker Android 13.
+Jelly Star, tross det tullete navnet, er bare nok en Android-telefon. 
+
+Forskjellen mellom dem riktignok, utover størrelsen, er at om du kjøper den aller nyeste Samsung-telefon f. eks i 2025, så bruker den Android 16-operativsystemet, mens Jelly Star bruker Android 13.
+
+> [!tip] Oppdatering, 12.09.2026
+> [Android 16 kommer faktisk til Jelly Star](https://www.unihertz.com/blogs/news/jelly-star-upgrades-to-android-16) i løpet av denne måneden 🥳
+
 
 ### Hvorfor er det verdt å vite?
 
 Android 16 blei lansert i juni 2025, mens Android 13 kom ut i august 2022 ([kilde](https://en.wikipedia.org/wiki/Android_version_history)). Det vil si at når du får en splitter ny Jelly Star i postkassa di, starter du med et operativsystem som er tre år gammelt. Fordi de tekniske byggeklossene som telefonen er satt sammen av (hardware, med andre ord) ikke er i stand til å bruke Android 14, 15, eller 16.
 
-Når du starter den opp for første gang ser den sånn her ut:
-
-![[attachments/jelly-star-android.JPG]]
-
 Per i dag, desember 2025, er Android 13 den eldste versjonen som fortsatt får sikkerhetsoppdateringer fra Google (som drifter Android). Men såvidt jeg skjønner kan man fremdeles fortsette å bruke en telefon som ikke lenger får sikkerhetsoppdateringer, men da handler det jo om hva du er personlig komfortabel med.
 
 ## Hvilke tilpasninger jeg har gjort
+
+Når du starter den opp for første gang ser den sånn her ut:
+![[attachments/jelly-star-android.JPG]]
 
 Dette kommer jeg til å gå litt fort gjennom, men her har du et før-og-etter-bildet.
 
@@ -65,6 +70,10 @@ Nå har jeg brukt denne lille telefonen i det daglige siden slutten av oktober, 
 Noe av det som overraska meg mest er bare hvor kjapp telefonen føles i bruk. En dum-telefon vil aldri kunne *føles* så kjapp etter min mening.
 
 I praksis betyr det at jeg bruker Jelly Star-telefonen til egentlig alt, men akkurat betalinger er jeg vant til å gjøre med apple-klokka mi, så jeg har ikke gått over til Google Pay ennå.
+
+
+> [!tip] Oppdatering, 12.09.2026
+> Har gått over til Google Pay nå, og bytta ut Apple Watch med Pixel Watch 4, så den tegninga under her gjelder ikke lenger, men jeg lar den være for historikkens skyld.
 
 ![[attachments/telefon-daglig-bruk.webp]]
 
@@ -166,7 +175,7 @@ I praksis sjonglerer jeg altså begge delene. Det er ikke noe perfekt system akk
 
 Personlig har jeg fått en mye bedre opplevelse med telefonen jeg bruker i det daglige. Til tross for mangelen av facetime, meldinger som sendes sømløst fra dataen til andres telefoner, og som jeg kan fortsette med på ipaden.
 
-Om jeg ser på skjermtida mi på Jelly Star-telefonen nå, som faktisk har blitt den eneste telefonen jeg bruker, er det et gjennomsnitt på ca 45 minutter per dag. For å være presis ligger jeg mellom 29 minutter på en god dag, og rundt 1 time på en mer aktiv dag.
+Om jeg ser på skjermtida mi på[]() Jelly Star-telefonen nå, som faktisk har blitt den eneste telefonen jeg bruker, er det et gjennomsnitt på ca 45 minutter per dag. For å være presis ligger jeg mellom 29 minutter på en god dag, og rundt 1 time på en mer aktiv dag.
 
 Noe mindre enn det tror jeg nesten ikke er mulig i dag. Med tanke på at du bruker telefonen til å reise kollektivt, høre på podkast, musikk, sende meldinger osv. 
 
