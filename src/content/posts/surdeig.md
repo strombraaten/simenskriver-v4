@@ -23,30 +23,10 @@ Jeg tar utgangspunkt i at du har fått henda dine på en surdeigsstarter fra en 
 Du kan definitivt lage det helt fra bunnen, men om du aldri har gjort det før kan det være nyttig med drahjelp til å starte med. Bare så du veit at du starter med et godt utgangspunkt.
 
 Utover det er det to deler å tenke på:
-1. Hvordan holder du den i live?
-2. Hvordan bruker du den faktisk i baking?
+1. Hvordan bruker du den faktisk i baking?
+2. Hvordan holder du den i live?
 
-## Hvordan holde den i live
-
-For å senke terskelen så mye som mulig, kan du mate den én gang i uka. Gitt at du lar den stå i kjøleskapet resten av uka. Dersom du lar den stå på kjøkkenbenken i romtemperatur må du mate den oftere.
-
-### Hvordan mate surdeigen?
-
-Før du skal mate den bør du sørge for at surdeigsstarteren har sånn ca romtemperatur. Min står alltid i kjøleskapet (for å begrense vedlikeholdet), så da tar jeg den ut to-tre timer før jeg skal mate den. Typisk sett gjør jeg det før jeg spiser middag. Da blir det en naturlig rutine å mate den før jeg legger meg.
-
-Når vi snakker om mating består det av:
-1. Finne fram et nytt og reint glass
-2. Overfør én-til-to spiseskjeer med surdeigsstarter til det nye glasset
-3. Legg til 40 gram mel, og 40 gram vann
-	- Økologisk mel funker mye bedre enn ikke-økologisk (veit ikke hvorfor)
-4. Rør rundt
-	- Det som er viktigst er at det ser ut som en fuktig grøtlignende konsistens.
-		- Ærlig talt så tar jeg detta på slump nå. Og slenger oppi et par skjeer mel, og så mye vann som jeg trenger rett fra krana. Trenger ikke være rakettforskning akkurat.
-5. Sett det nye glasset i kjøleskapet, eller vent ca 12 timer til å se at den lever
-
-Det som gjenstår av surdeigsstarteren din kan du bruke til bakst med en gang, gi til en venn, lag en backup-starter, eller bare tøm det ut i vasken.
-
-## Selve bakinga
+## 1. Selve bakinga
 
 Surdeigen skal gjerne boble når du tar den i bruk. Sånn som det her:
 
@@ -146,6 +126,26 @@ Det ække det at jeg angrer nødvendigvis, men det er mye vanskeligere å skjær
 2. Når det er 10 minutter igjen av den totale steiketida kan du ta brødet ut av brødformen, snu det rundt, så det ligger på "hodet", og steik det videre i 10 minutter til
 3. Når brødet er ferdigstekt, og det bare skal kjøle seg ned, blir bunnen mer crispy dersom det ikke ligger rett på benken.
 	1. Legg det heller på en rist, helst en høy rist, sånn at det kan kjøle seg ned med luft fra undersida og. Oh yes. Nå er det avansert!
+
+## 2. Hvordan holde den i live
+
+For å senke terskelen så mye som mulig, kan du mate den én gang i uka. Gitt at du lar den stå i kjøleskapet resten av uka. Dersom du lar den stå på kjøkkenbenken i romtemperatur må du mate den oftere.
+
+### Hvordan mate surdeigen?
+
+Før du skal mate den bør du sørge for at surdeigsstarteren har sånn ca romtemperatur. Min står alltid i kjøleskapet (for å begrense vedlikeholdet), så da tar jeg den ut to-tre timer før jeg skal mate den. Typisk sett gjør jeg det før jeg spiser middag. Da blir det en naturlig rutine å mate den før jeg legger meg.
+
+Når vi snakker om mating består det av:
+1. Finne fram et nytt og reint glass
+2. Overfør én-til-to spiseskjeer med surdeigsstarter til det nye glasset
+3. Legg til 40 gram mel, og 40 gram vann
+	- Økologisk mel funker mye bedre enn ikke-økologisk (veit ikke hvorfor)
+4. Rør rundt
+	- Det som er viktigst er at det ser ut som en fuktig grøtlignende konsistens.
+		- Ærlig talt så tar jeg detta på slump nå. Og slenger oppi et par skjeer mel, og så mye vann som jeg trenger rett fra krana. Trenger ikke være rakettforskning akkurat.
+5. Sett det nye glasset i kjøleskapet, eller vent ca 12 timer til å se at den lever
+
+Det som gjenstår av surdeigsstarteren din kan du bruke til bakst med en gang, gi til en venn, lag en backup-starter, eller bare tøm det ut i vasken.
 
 ## Avslutning
 
