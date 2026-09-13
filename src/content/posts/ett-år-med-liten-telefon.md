@@ -95,12 +95,12 @@ Her er forresten telefonene rangert fra minst til størst, men her har jeg lent 
 
 | **Modell**              | **Dimensjoner (Høyde × Bredde × Tykkelse)** |
 | ----------------------- | ------------------------------------------- |
-| **Jelly Star**          | 95.1 × 49.6 × 18.7 mm                       |
-| **Titan 2 Elite**       | 117.8 × 75.0 × 10.4 mm                      |
-| **Minimal Phone 2**     | 122.6 × 72.0 × 9.48 mm                      |
-| **Jelly Max**           | 128.7 × 62.7 × 16.3 mm                      |
-| **Clicks Communicator** | 130.5 × 78.6 × 12.0 mm                      |
-| **iPhone 13 mini**      | 131.5 × 64.2 × 7.65 mm                      |
+| **[Jelly Star](https://www.unihertz.com/products/jelly-star)**          | 95.1 × 49.6 × 18.7 mm                       |
+| **[Titan 2 Elite](https://www.unihertz.com/products/titan-2-elite)**       | 117.8 × 75.0 × 10.4 mm                      |
+| **[Minimal Phone 2](https://www.kickstarter.com/projects/minimalcompany/minimal-phone-2-the-modern-qwerty-phone)**     | 122.6 × 72.0 × 9.48 mm                      |
+| **[Jelly Max](https://www.kickstarter.com/projects/jellyphone/jelly-max-the-smallest-5g-smartphone)**           | 128.7 × 62.7 × 16.3 mm                      |
+| **[Clicks Communicator](https://clicks.tech/communicator)** | 130.5 × 78.6 × 12.0 mm                      |
+| **[iPhone 13 mini](https://www.apple.com/shop/buy-iphone/iphone-13)**      | 131.5 × 64.2 × 7.65 mm                      |
 
 Verdt å vite at selv om iphonen desidert er størst (til tross for mini-navnet), er jo Jelly Star mer enn dobbelt så tjukk. Så du merker jo fremdeles at den er i lomma, men ikke i nærheten på samme måte.
 
