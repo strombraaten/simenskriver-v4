@@ -1,0 +1,12 @@
+{
+  "cssTheme": "Oxygen",
+  "showViewHeader": true,
+  "showRibbon": false,
+  "enabledCssSnippets": [
+    "astro-modular-styling"
+  ],
+  "theme": "obsidian",
+  "accentColor": "",
+  "baseFontSize": 22,
+  "textFontFamily": "Atkinson Hyperlegible"
+}

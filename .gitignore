@@ -50,10 +50,10 @@ ehthumbs.db
 .DS_Store
 
 # Obsidian workspace and plugin files
-src/content/.obsidian/workspace.json
-src/content/.obsidian/workspace-mobile.json
-src/content/.obsidian/plugins/
-src/content/.obsidian/hotkeys.json
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/plugins/*/data.json
+.obsidian/hotkeys.json
 obsidian_askpass.sh
 
 # Local reference materials (not published)

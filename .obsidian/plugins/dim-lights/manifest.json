@@ -1,0 +1,10 @@
+{
+	"id": "dim-lights",
+	"name": "Dim Lights",
+	"version": "1.0.3",
+	"minAppVersion": "1.13.0",
+	"description": "Dims inactive panes to keep focus on the one you're writing in.",
+	"author": "Simen Strøm Braaten",
+	"authorUrl": "https://github.com/strombraaten",
+	"isDesktopOnly": false
+}

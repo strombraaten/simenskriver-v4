@@ -1,0 +1,8 @@
+.workspace {
+	--dim-lights-light-level: 0.15;
+}
+
+.dim-lights-dimmed {
+	opacity: var(--dim-lights-light-level);
+	transition: opacity 150ms ease;
+}
