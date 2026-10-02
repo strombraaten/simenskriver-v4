@@ -27,7 +27,7 @@ For på lik linje som en iPhone 13 eller 17, Samsung S24, Pixel 10 eller alt ann
 
 Selve boksen den kommer i er faktisk på størrelse med to airpods oppå hverandre. For den er altså 9,5 cm høy, 5 cm bred, 1,9 cm tjukk.
 
-Med andre er den 1 cm høyere enn et bankkort.
+Med andre ord er den 1 cm høyere enn et bankkort.
 
 ![[attachments/jelly-star-unboxing.jpg]]
 
@@ -35,9 +35,8 @@ Jelly Star, tross det tullete navnet, er bare nok en Android-telefon.
 
 Forskjellen mellom dem riktignok, utover størrelsen, er at om du kjøper den aller nyeste Samsung-telefon f. eks i 2025, så bruker den Android 16-operativsystemet, mens Jelly Star bruker Android 13.
 
-> [!tip] Oppdatering, 12.09.2026
-> [Android 16 kommer faktisk til Jelly Star](https://www.unihertz.com/blogs/news/jelly-star-upgrades-to-android-16) i løpet av denne måneden 🥳
-
+> [!tip] Oppdatering, 02.10.2026
+> [Jelly Star kan nå oppgraderes til Android 16](https://www.unihertz.com/blogs/news/jelly-star-upgrades-to-android-16) fra og med september/oktober 2026 🥳
 
 ### Hvorfor er det verdt å vite?
 
@@ -102,14 +101,17 @@ Takk til den trivelige dama hos Telia som lot være å mansplaine det her, som j
 ### Det negative
 
 Mine mest negative erfaringer er:
-1. Fingeravtrykkleseren
+1. ~~Fingeravtrykkleseren~~
 2. "Vibrasjonsmotoren" (altså når telefonen står på lydløs)
 
 #### Fingeravtrykksleseren
 
-Fingeravtrykkleseren på baksida av telefonen er så dårlig at jeg må prøve 5-8 ganger før jeg får det til å funke.
+~~Fingeravtrykkleseren på baksida av telefonen er så dårlig at jeg må prøve 5-8 ganger før jeg får det til å funke.~~
 
-Det *finnes* faceID og, men såvidt jeg kan se kan man ikke velge å bruke det framfor fingeravtrykkleseren, så bank-apper osv. "velger" fremdeles fingeravtrykk (by default) framfor faceID for autentisering.
+~~Det *finnes* faceID og, men såvidt jeg kan se kan man ikke velge å bruke det framfor fingeravtrykkleseren, så bank-apper osv. "velger" fremdeles fingeravtrykk (by default) framfor faceID for autentisering.~~
+
+> [!success] 02.10.2026 - Oppdatering
+> Etter at [min gode venn Hallvar](https://hallvar.no/) fikk henda sine på en Jelly Star tipsa han meg om å bare legge inn fingeravtrykket flere ganger. Så for øyeblikket har jeg lagt inn samme finger 5 ganger, og da fungerer fingerleseren forbausende bra! Hurra!
 
 #### Vibrasjonsmotoren
 

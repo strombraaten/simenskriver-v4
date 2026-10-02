@@ -28,7 +28,11 @@ Skal sies at det kun er meldinger og telefoner som gir meg varsel med lyd (etter
 
 ### Fingeravtrykk-leser
 
-Fingeravtrykksleseren er ubrukelig. Tar 5-8 forsøk før jeg får det til å fungere, og det nytter ikke. Bruker pin-kode på alt. Riktignok går det ofte videre til 1password uansett for min del, så det går i grunn greit.
+~~Fingeravtrykksleseren er ubrukelig. Tar 5-8 forsøk før jeg får det til å fungere, og det nytter ikke. Bruker pin-kode på alt. Riktignok går det ofte videre til 1password uansett for min del, så det går i grunn greit.~~
+
+> [!success] 02.10.2026 - Oppdatering
+> Etter at [min gode venn Hallvar](https://hallvar.no/) fikk henda sine på en Jelly Star tipsa han meg om å bare legge inn fingeravtrykket flere ganger. Så for øyeblikket har jeg lagt inn samme finger 5 ganger, og da fungerer fingerleseren forbausende bra! Hurra!
+
 
 ### Kameraet
 
