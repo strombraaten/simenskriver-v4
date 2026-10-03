@@ -31,7 +31,7 @@ const allSectionsDisabled = !siteConfig.commandPalette.sections.quickActions &&
 const paletteIcon = allSectionsDisabled ? 'search' : 'command';
 ---
 
-<header id="main-header" class="sticky top-0 z-40 w-full bg-white dark:bg-primary-950 transition-shadow duration-200">
+<header id="main-header" class="sticky top-0 z-40 w-full bg-surface-base transition-shadow duration-200">
   <div class="mx-auto px-4 sm:px-6 lg:px-8" style={`max-width: ${siteConfig.layout.contentWidth}`}>
     <div class="flex items-center justify-between h-16">
       <!-- Logo / Site Title / Profile Picture -->
@@ -44,7 +44,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
               class={getHeaderProfilePictureClasses(profilePicture.style)}
             />
           ) : (
-            <SiteLogo class="h-10 w-auto text-primary-900 dark:text-primary-50" />
+            <SiteLogo class="h-10 w-auto text-ink-prominent" />
           )}
         </a>
       </div>
@@ -169,11 +169,11 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
           hasShortcut ? (
             <button
               id="command-palette-trigger"
-              class="flex items-center space-x-2 px-3 py-2 text-sm text-primary-500 dark:text-primary-400 bg-primary-50 dark:bg-primary-800 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-700 transition-colors"
+              class="flex items-center space-x-2 px-3 py-2 text-sm text-ink-subtle bg-surface-tinted rounded-lg hover:bg-surface-dyed transition-colors"
               aria-label="Open command palette"
             >
               <Icon name={paletteIcon} class="w-5 h-5" />
-              <kbd id="cmd-shortcut-display" class="hidden sm:inline text-xs font-medium text-primary-600 dark:text-primary-300"></kbd>
+              <kbd id="cmd-shortcut-display" class="hidden sm:inline text-xs font-medium text-ink-default"></kbd>
             </button>
           ) : (
             <button
@@ -190,7 +190,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
         {siteConfig.navigation.showNavigation && siteConfig.navigation.showMobileMenu && (
           <button
             id="mobile-menu-toggle"
-            class="md:hidden p-2 text-primary-500 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-800 rounded-lg transition-colors"
+            class="md:hidden p-2 text-ink-subtle hover:bg-surface-tinted rounded-lg transition-colors"
             aria-label="Toggle mobile navigation menu"
             aria-expanded="false"
           >

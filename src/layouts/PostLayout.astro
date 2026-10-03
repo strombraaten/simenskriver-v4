@@ -205,11 +205,11 @@ if (siteConfig.postOptions.graphView.enabled && siteConfig.postOptions.graphView
         <div class={`p-6 ${siteConfig.postOptions.showPostCardCoverImages !== 'none' && post.data.image && post.data.hideCoverImage !== true ? 'rounded-b-lg' : 'rounded-lg'}`}>
           <!-- Post header -->
           <header class="mb-4">
-          <h1 class="text-xl font-bold text-primary-900 dark:text-primary-50 mb-6 leading-tight">
+          <h1 class="text-xl font-bold text-ink-prominent mb-6 leading-tight">
             {post.data.title}
           </h1>
 
-          <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-primary-600 dark:text-primary-300 mb-6">
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-ink-subtle mb-6">
             <time datetime={post.data.date.toISOString()} class="font-medium">
               <span class="hidden sm:inline">
                 {formatDate(post.data.date)}
@@ -275,13 +275,13 @@ if (siteConfig.postOptions.graphView.enabled && siteConfig.postOptions.graphView
                 <div class="text-left">
                   <a
                     href={postUrl(prevPost as any)}
-                    class="group block p-4 rounded-lg border border-primary-200 dark:border-primary-700 hover:border-highlight-300 dark:hover:border-highlight-600 transition-all duration-200 hover:shadow-md"
+                    class="group block p-4 rounded-lg border border-line-subtle hover:border-accent transition-all duration-200 hover:shadow-md"
                   >
-                    <h3 class="font-semibold text-primary-900 dark:text-primary-50 group-hover:text-highlight-600 dark:group-hover:text-highlight-400 transition-colors">
+                    <h3 class="font-semibold text-ink-prominent group-hover:text-ink-link transition-colors">
                       {prevPost.data.title}
                     </h3>
                     <div class="flex justify-start mt-2">
-                      <Icon name="arrow-left" class="w-5 h-5 text-primary-500 dark:text-primary-400 group-hover:text-highlight-500 dark:group-hover:text-highlight-400 transition-colors" />
+                      <Icon name="arrow-left" class="w-5 h-5 text-ink-subtle group-hover:text-accent transition-colors" />
                     </div>
                   </a>
                 </div>
@@ -291,13 +291,13 @@ if (siteConfig.postOptions.graphView.enabled && siteConfig.postOptions.graphView
                 <div class={`text-right ${!prevPost ? 'md:col-start-2' : ''}`}>
                   <a
                     href={postUrl(nextPost as any)}
-                    class="group block p-4 rounded-lg border border-primary-200 dark:border-primary-700 hover:border-highlight-300 dark:hover:border-highlight-600 transition-all duration-200 hover:shadow-md"
+                    class="group block p-4 rounded-lg border border-line-subtle hover:border-accent transition-all duration-200 hover:shadow-md"
                   >
-                    <h3 class="font-semibold text-primary-900 dark:text-primary-50 group-hover:text-highlight-600 dark:group-hover:text-highlight-400 transition-colors">
+                    <h3 class="font-semibold text-ink-prominent group-hover:text-ink-link transition-colors">
                       {nextPost.data.title}
                     </h3>
                     <div class="flex justify-end mt-2">
-                      <Icon name="arrow-right" class="w-5 h-5 text-primary-500 dark:text-primary-400 group-hover:text-highlight-500 dark:group-hover:text-highlight-400 transition-colors" />
+                      <Icon name="arrow-right" class="w-5 h-5 text-ink-subtle group-hover:text-accent transition-colors" />
                     </div>
                   </a>
                 </div>

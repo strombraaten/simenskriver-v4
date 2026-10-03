@@ -39,7 +39,25 @@ export default {
           800: 'rgb(var(--color-highlight-800) / <alpha-value>)',
           900: 'rgb(var(--color-highlight-900) / <alpha-value>)',
           950: 'rgb(var(--color-highlight-950) / <alpha-value>)',
-        }
+        },
+        // Role colors from src/styles/palette.css; they switch with .dark on their own
+        surface: {
+          base: 'rgb(var(--surface-base) / <alpha-value>)',
+          raised: 'rgb(var(--surface-raised) / <alpha-value>)',
+          tinted: 'rgb(var(--surface-tinted) / <alpha-value>)',
+          dyed: 'rgb(var(--surface-dyed) / <alpha-value>)',
+        },
+        ink: {
+          subtle: 'rgb(var(--ink-subtle) / <alpha-value>)',
+          default: 'rgb(var(--ink-default) / <alpha-value>)',
+          prominent: 'rgb(var(--ink-prominent) / <alpha-value>)',
+          link: 'rgb(var(--ink-link) / <alpha-value>)',
+        },
+        line: {
+          subtle: 'var(--border-subtle)',
+          default: 'var(--border-default)',
+        },
+        accent: 'rgb(var(--accent) / <alpha-value>)',
       },
       typography: {
         DEFAULT: {
