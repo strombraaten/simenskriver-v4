@@ -352,15 +352,18 @@ const scrollbarClass = siteConfig.hideScrollBar ? '' : 'show-scrollbars';
       return configTheme;
     }
 
-    // Initialize theme before page renders to prevent flash
-    async function initTheme() {
-      // Handle dark/light mode
-      const storedMode = localStorage.getItem('theme');
-      const systemMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      const mode = storedMode || systemMode;
-
+    function applySystemMode() {
+      const mode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       document.documentElement.classList.remove('light', 'dark');
       document.documentElement.classList.add(mode);
+      return mode;
+    }
+
+    // Initialize theme before page renders to prevent flash
+    async function initTheme() {
+      // Dark/light mode always follows the reader's system setting; drop any choice saved by the old toggle
+      localStorage.removeItem('theme');
+      applySystemMode();
 
       // Handle theme selection (color scheme)
       const theme = getThemeWithoutClearing();
@@ -424,16 +427,8 @@ const scrollbarClass = siteConfig.hideScrollBar ? '' : 'show-scrollbars';
 
     // Listen for system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      if (window.location.hostname === 'localhost' || window.location.hostname.includes('localhost')) {
-      }
-      if (!localStorage.getItem('theme')) {
-        const newTheme = e.matches ? 'dark' : 'light';
-        localStorage.setItem('theme', newTheme);
-        initTheme();
-      } else {
-        if (window.location.hostname === 'localhost' || window.location.hostname.includes('localhost')) {
-        }
-      }
+      const mode = applySystemMode();
+      window.dispatchEvent(new CustomEvent('themechange', { detail: { mode } }));
       // Only update favicon if theme adaptive is enabled
       const faviconThemeAdaptive = window.siteConfig?.faviconThemeAdaptive ?? true;
       if (faviconThemeAdaptive) {
