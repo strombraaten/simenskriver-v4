@@ -4,7 +4,7 @@ import Icon from './Icon.astro';
 <!-- Theme toggle component -->
 <button
   id="theme-toggle"
-  class="p-2 text-primary-500 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-800 rounded-lg transition-colors duration-200"
+  class="p-2 text-ink-subtle hover:bg-surface-tinted rounded-lg transition-colors duration-200"
   aria-label="Toggle between light and dark theme"
 >
   <Icon name="sun" class="w-5 h-5 dark:hidden" />
@@ -18,8 +18,13 @@ import Icon from './Icon.astro';
     const isDark = html.classList.contains('dark');
     const newTheme = isDark ? 'light' : 'dark';
 
-    // Update theme
-    localStorage.setItem('theme', newTheme);
+    // Choosing the system's own mode drops the override, so later system changes apply again
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    if (newTheme === systemTheme) {
+      localStorage.removeItem('theme');
+    } else {
+      localStorage.setItem('theme', newTheme);
+    }
     html.classList.remove('light', 'dark');
     html.classList.add(newTheme);
 

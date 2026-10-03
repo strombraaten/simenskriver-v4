@@ -20,15 +20,15 @@ import Icon from './Icon.astro';
   aria-labelledby="command-palette-title"
 >
   <div class="flex min-h-full items-start justify-center p-4 sm:p-8">
-    <div class="w-full max-w-2xl bg-white dark:bg-primary-900 rounded-xl shadow-2xl border border-primary-200 dark:border-primary-700 animate-scale-in">
+    <div class="w-full max-w-2xl bg-surface-raised rounded-xl shadow-2xl border border-line-subtle animate-scale-in">
       <!-- Header -->
-      <div class="flex items-center justify-between p-4 border-b border-primary-200 dark:border-primary-700">
-        <h2 id="command-palette-title" class="text-lg font-semibold text-primary-900 dark:text-primary-50">
+      <div class="flex items-center justify-between p-4 border-b border-line-subtle">
+        <h2 id="command-palette-title" class="text-lg font-semibold text-ink-prominent">
           Command Palette
         </h2>
         <button 
           id="command-palette-close"
-          class="p-1 text-primary-500 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-200 transition-colors"
+          class="p-1 text-ink-subtle hover:text-ink-prominent transition-colors"
           aria-label="Close command palette"
         >
           <Icon name="x" class="w-5 h-5" />
@@ -42,13 +42,13 @@ import Icon from './Icon.astro';
             id="command-palette-input"
             type="text"
             placeholder={siteConfig.commandPalette.placeholder}
-            class="w-full pl-4 pr-10 py-3 bg-primary-50 dark:bg-primary-800 border border-primary-200 dark:border-primary-600 rounded-lg text-primary-900 dark:text-primary-50 placeholder-primary-500 dark:placeholder-primary-400 focus:outline-none focus:ring-2 focus:ring-highlight-500 focus:border-transparent"
+            class="w-full pl-4 pr-10 py-3 bg-surface-tinted border border-transparent rounded-lg text-ink-prominent placeholder-ink-subtle focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
             autocomplete="off"
             spellcheck="false"
           >
           <!-- Search icon -->
           <div class="absolute right-3 top-1/2 transform -translate-y-1/2">
-            <Icon name="search" class="w-4 h-4 text-primary-500 dark:text-primary-400" />
+            <Icon name="search" class="w-4 h-4 text-ink-subtle" />
           </div>
           <!-- Inline loading indicator -->
           <div id="command-palette-inline-loading" class="absolute right-3 top-1/2 transform -translate-y-1/2 hidden">
@@ -225,8 +225,8 @@ import Icon from './Icon.astro';
       </div>
 
       <!-- Footer -->
-      <div class="p-3 border-t border-primary-200 dark:border-primary-700 bg-primary-50 dark:bg-primary-800 rounded-b-xl">
-        <div class="flex items-center justify-between text-xs text-primary-500 dark:text-primary-400">
+      <div class="p-3 border-t border-line-subtle bg-surface-tinted rounded-b-xl">
+        <div class="flex items-center justify-between text-xs text-ink-subtle">
           <span>Use ↑↓ to navigate, ↵ to select, ESC to close</span>
           <!-- <span>Press <kbd class="px-1 py-0.5 bg-white dark:bg-primary-700 rounded border">{siteConfig.commandPalette.shortcut.replace('ctrl', '⌘').replace('+', '').toUpperCase()}</kbd> to return</span> -->
         </div>
@@ -842,7 +842,7 @@ import Icon from './Icon.astro';
           container.className = 'p-2';
 
           const header = document.createElement('div');
-          header.className = 'px-3 py-2 text-xs font-medium text-primary-500 dark:text-primary-400 uppercase tracking-wide';
+          header.className = 'px-3 py-2 text-xs font-medium text-ink-subtle uppercase tracking-wide';
 
           // Format section titles
           const sectionTitles = {
@@ -942,7 +942,7 @@ import Icon from './Icon.astro';
       const anchor = document.createElement('a');
       anchor.href = item.url;
       anchor.dataset.index = index.toString();
-      anchor.className = `command-palette-item w-full flex items-start space-x-3 px-3 py-3 hover:bg-primary-50 dark:hover:bg-primary-800 rounded-lg transition-colors group ${index === this.selectedIndex ? 'bg-primary-50 dark:bg-primary-800' : ''}`;
+      anchor.className = `command-palette-item w-full flex items-start space-x-3 px-3 py-3 hover:bg-surface-dyed rounded-lg transition-colors group ${index === this.selectedIndex ? 'bg-surface-dyed' : ''}`;
       
       // Add click handler to close the palette when clicked
       anchor.addEventListener('click', (e) => {
@@ -967,7 +967,7 @@ import Icon from './Icon.astro';
       
       // Add icon based on content type
       const iconDiv = document.createElement('div');
-      iconDiv.className = 'w-4 h-4 text-primary-500 dark:text-primary-400 group-hover:text-highlight-500 mt-0.5';
+      iconDiv.className = 'w-4 h-4 text-ink-subtle group-hover:text-accent mt-0.5';
       
       let iconPath = '';
       switch (item.type) {
@@ -990,14 +990,14 @@ import Icon from './Icon.astro';
 
       // Add post title with highlighting
       const titleSpan = document.createElement('div');
-      titleSpan.className = 'text-primary-900 dark:text-primary-50 font-medium';
+      titleSpan.className = 'text-ink-prominent font-medium';
       titleSpan.innerHTML = this.highlightSearchTerm(item.title, this.input.value);
       contentDiv.appendChild(titleSpan);
 
       // Add post description if it exists with highlighting
       if (item.description) {
         const descriptionPara = document.createElement('div');
-        descriptionPara.className = 'text-sm text-primary-600 dark:text-primary-300 mt-1 truncate';
+        descriptionPara.className = 'text-sm text-ink-default mt-1 truncate';
         // Pagefind excerpts already contain <mark> highlighting (and pre-encoded entities);
         // re-running our own highlighter on them would double-escape the markup.
         descriptionPara.innerHTML = item.preHighlighted
@@ -1015,7 +1015,7 @@ import Icon from './Icon.astro';
       if (!searchTerm.trim()) return text;
       
       const regex = new RegExp(`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-      return text.replace(regex, '<mark class="bg-highlight-200 dark:bg-highlight-800 text-highlight-900 dark:text-highlight-100 px-1 rounded">$1</mark>');
+      return text.replace(regex, '<mark>$1</mark>');
     }
 
     private handleKeyDown(e: KeyboardEvent) {
@@ -1066,11 +1066,11 @@ import Icon from './Icon.astro';
       items.forEach((item, index) => {
         // Add highlight class to the selected item, remove from others
         if (index === this.selectedIndex) {
-          item.classList.add('bg-primary-50', 'dark:bg-primary-800');
+          item.classList.add('bg-surface-dyed');
           // Scroll the selected item into view
           this.scrollIntoView(item);
         } else {
-          item.classList.remove('bg-primary-50', 'dark:bg-primary-800');
+          item.classList.remove('bg-surface-dyed');
         }
       });
     }

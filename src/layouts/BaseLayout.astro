@@ -352,15 +352,19 @@ const scrollbarClass = siteConfig.hideScrollBar ? '' : 'show-scrollbars';
       return configTheme;
     }
 
-    // Initialize theme before page renders to prevent flash
-    async function initTheme() {
-      // Handle dark/light mode
-      const storedMode = localStorage.getItem('theme');
-      const systemMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      const mode = storedMode || systemMode;
+    function getSystemMode() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
 
+    function applyMode(mode) {
       document.documentElement.classList.remove('light', 'dark');
       document.documentElement.classList.add(mode);
+    }
+
+    // Initialize theme before page renders to prevent flash
+    async function initTheme() {
+      // The system setting decides unless the reader has picked a mode with the toggle
+      applyMode(localStorage.getItem('theme') || getSystemMode());
 
       // Handle theme selection (color scheme)
       const theme = getThemeWithoutClearing();
@@ -424,15 +428,10 @@ const scrollbarClass = siteConfig.hideScrollBar ? '' : 'show-scrollbars';
 
     // Listen for system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      if (window.location.hostname === 'localhost' || window.location.hostname.includes('localhost')) {
-      }
       if (!localStorage.getItem('theme')) {
-        const newTheme = e.matches ? 'dark' : 'light';
-        localStorage.setItem('theme', newTheme);
-        initTheme();
-      } else {
-        if (window.location.hostname === 'localhost' || window.location.hostname.includes('localhost')) {
-        }
+        const mode = getSystemMode();
+        applyMode(mode);
+        window.dispatchEvent(new CustomEvent('themechange', { detail: { mode } }));
       }
       // Only update favicon if theme adaptive is enabled
       const faviconThemeAdaptive = window.siteConfig?.faviconThemeAdaptive ?? true;
@@ -447,8 +446,12 @@ const scrollbarClass = siteConfig.hideScrollBar ? '' : 'show-scrollbars';
       const isDark = html.classList.contains('dark');
       const newMode = isDark ? 'light' : 'dark';
 
-      // Update dark/light mode
-      localStorage.setItem('theme', newMode);
+      // Choosing the system's own mode drops the override, so later system changes apply again
+      if (newMode === getSystemMode()) {
+        localStorage.removeItem('theme');
+      } else {
+        localStorage.setItem('theme', newMode);
+      }
       html.classList.remove('light', 'dark');
       html.classList.add(newMode);
 
@@ -1093,7 +1096,7 @@ const scrollbarClass = siteConfig.hideScrollBar ? '' : 'show-scrollbars';
 
 </head>
 
-<body class={`min-h-screen bg-white dark:bg-primary-950 text-primary-900 dark:text-primary-50 text-selection-highlight transition-colors duration-200 ${scrollbarClass} ${bodyClass}`}>
+<body class={`min-h-screen bg-surface-base text-ink-prominent text-selection-highlight transition-colors duration-200 ${scrollbarClass} ${bodyClass}`}>
   <!-- Skip to main content -->
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 btn-primary px-4 py-2 rounded-md z-50">
     Skip to main content

@@ -1,6 +1,7 @@
 
 /* KaTeX Math Rendering - Must be first */
 @import 'katex/dist/katex.css';
+@import './palette.css';
 
 @tailwind base;
 
@@ -214,7 +215,7 @@ p:has(.katex-display) {
 
 /* Base Styles */
 * {
-  @apply border-primary-200 dark:border-primary-700;
+  @apply border-line-subtle;
 }
 
 html {
@@ -223,7 +224,7 @@ html {
 }
 
 body {
-  @apply bg-primary-50 dark:bg-primary-900 text-primary-900 dark:text-primary-100;
+  @apply bg-surface-base text-ink-prominent;
   font-family: var(--font-prose, 'Inter'), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-feature-settings: "rlig" 1, "calt" 1;
   text-rendering: optimizeLegibility;
@@ -322,7 +323,7 @@ code ::-moz-selection,
 
 /* Focus Styles */
 :focus-visible {
-  @apply outline-2 outline-highlight-500 dark:outline-highlight-400 outline-offset-2;
+  @apply outline-2 outline-accent outline-offset-2;
 }
 
 /* Typography - Dynamic fonts will be applied via CSS custom properties */
@@ -350,15 +351,6 @@ a:hover {
 
 .wikilink:hover {
   @apply text-highlight-700 dark:text-highlight-300 opacity-80 no-underline;
-}
-
-/* Ensure wikilink styling applies even inside .prose */
-.prose a.wikilink {
-  @apply text-highlight-600 dark:text-highlight-400 font-medium no-underline border-b border-dashed border-highlight-500/50 transition-all duration-200 !important;
-}
-
-.prose a.wikilink:hover {
-  @apply text-highlight-700 dark:text-highlight-300 opacity-80 no-underline !important;
 }
 
 /* EXCLUDE heading links from wikilink styling */
@@ -767,13 +759,13 @@ textarea {
 
 /* Prose Styles */
 .prose {
-  @apply text-primary-700 dark:text-primary-300;
+  @apply text-ink-default;
   font-family: var(--font-prose, 'Inter'), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-display: var(--font-display, swap);
 }
 
 .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
-  @apply font-semibold text-primary-900 dark:text-primary-50;
+  @apply font-semibold text-ink-prominent;
   font-family: var(--font-heading, 'Inter'), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   scroll-margin-top: 8rem;
   font-display: var(--font-display, swap);
@@ -787,28 +779,44 @@ textarea {
 .prose h6 { @apply text-base mt-4 mb-2; }
 
 .prose h1 a, .prose h2 a, .prose h3 a, .prose h4 a, .prose h5 a, .prose h6 a {
-  @apply text-primary-900 dark:text-primary-50 no-underline transition-colors duration-200;
+  @apply text-ink-prominent no-underline transition-colors duration-200;
 }
 
 .prose h1 a:hover, .prose h2 a:hover, .prose h3 a:hover, .prose h4 a:hover, .prose h5 a:hover, .prose h6 a:hover {
-  @apply text-highlight-600 dark:text-highlight-400 no-underline;
+  @apply text-ink-link no-underline;
 }
 
-.prose a {
-  @apply text-highlight-600 dark:text-highlight-400 font-medium no-underline transition-colors duration-200;
+/* Body links and wikilinks share one style; heading anchors keep the plain heading look */
+.prose a:not(.anchor-link):not(:is(h1, h2, h3, h4, h5, h6) a) {
+  color: rgb(var(--ink-link));
+  font-weight: 500;
+  text-decoration: underline 1px rgb(var(--link-line));
+  text-underline-offset: 3px;
+  background-color: rgb(var(--link-bg));
+  padding: 1px 4px;
+  border: 0;
+  border-radius: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  transition: background-color 200ms;
 }
 
-.prose a:hover {
-  @apply text-highlight-700 dark:text-highlight-300 no-underline;
+.prose a:not(.anchor-link):not(:is(h1, h2, h3, h4, h5, h6) a):hover {
+  color: rgb(var(--ink-link));
+  background-color: rgb(var(--link-bg-hover));
+  opacity: 1;
 }
-
 
 .prose strong {
-  @apply text-primary-900 dark:text-primary-200 font-semibold;
+  @apply text-ink-prominent font-semibold;
+}
+
+.prose a strong {
+  color: inherit;
 }
 
 .prose blockquote {
-  @apply border-l-4 border-primary-300 dark:border-primary-600 pl-6 py-2 bg-primary-50 dark:bg-primary-800/30 rounded-lg;
+  @apply border-l-4 border-line-default pl-6 py-2 bg-surface-tinted rounded-lg;
 }
 
 /* Default image styling */
@@ -842,10 +850,6 @@ textarea {
 /* Hide <br> elements after obsidian-sized images to prevent unwanted gaps */
 .prose img.obsidian-sized + br {
   display: none;
-}
-
-.prose mark {
-  @apply bg-highlight-100 dark:bg-highlight-900/30 text-highlight-800 dark:text-highlight-200 px-1 py-0.5 rounded;
 }
 
 /* Lists */

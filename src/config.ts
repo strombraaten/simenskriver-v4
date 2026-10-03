@@ -222,7 +222,7 @@ export const siteConfig: SiteConfig = {
   // [CONFIG:CUSTOM_THEME_FILE]
   customThemeFile: "custom", // Only used if theme is set to "custom" above. Filename in src/themes/custom/ (without .ts extension)
   // [CONFIG:AVAILABLE_THEMES]
-  availableThemes: "default", // "default" to show all built-in themes, or array of theme names like ["oxygen", "minimal", "obsidianite"] to limit choices (can include custom theme filenames)
+  availableThemes: ["custom"], // "default" to show all built-in themes, or array of theme names like ["oxygen", "minimal", "obsidianite"] to limit choices (can include custom theme filenames)
   fonts: {
     // [CONFIG:FONT_SOURCE]
     source: "cdn", // "local" for self-hosted @fontsource fonts, "cdn" for Google Fonts CDN
@@ -296,7 +296,7 @@ export const siteConfig: SiteConfig = {
       // [CONFIG:COMMAND_PALETTE_QUICK_ACTIONS_GRAPH_VIEW]
       graphView: true,
       // [CONFIG:COMMAND_PALETTE_QUICK_ACTIONS_CHANGE_THEME]
-      changeTheme: true,
+      changeTheme: false,
     },
   },
 
