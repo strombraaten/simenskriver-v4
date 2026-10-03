@@ -1,0 +1,17 @@
+/* Search hits: one style for both our title highlighter and Pagefind's unclassed <mark> excerpts */
+#command-palette-results mark {
+  background-color: #ffeaad;
+  color: #0b0b0c;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  text-decoration-color: #cead43;
+  padding: 0 3px;
+  border-radius: 3px;
+}
+
+.dark #command-palette-results mark {
+  background-color: #483d19;
+  color: #fff7df;
+  text-decoration-color: #bb9d3a;
+}

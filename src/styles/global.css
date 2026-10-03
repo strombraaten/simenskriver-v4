@@ -1,6 +1,7 @@
 
 /* KaTeX Math Rendering - Must be first */
 @import 'katex/dist/katex.css';
+@import './palette.css';
 
 @tailwind base;
 

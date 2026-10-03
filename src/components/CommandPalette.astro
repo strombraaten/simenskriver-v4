@@ -1015,7 +1015,7 @@ import Icon from './Icon.astro';
       if (!searchTerm.trim()) return text;
       
       const regex = new RegExp(`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-      return text.replace(regex, '<mark class="bg-highlight-200 dark:bg-highlight-800 text-highlight-900 dark:text-highlight-100 px-1 rounded">$1</mark>');
+      return text.replace(regex, '<mark>$1</mark>');
     }
 
     private handleKeyDown(e: KeyboardEvent) {
