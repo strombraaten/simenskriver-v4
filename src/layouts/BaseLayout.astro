@@ -352,18 +352,19 @@ const scrollbarClass = siteConfig.hideScrollBar ? '' : 'show-scrollbars';
       return configTheme;
     }
 
-    function applySystemMode() {
-      const mode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    function getSystemMode() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function applyMode(mode) {
       document.documentElement.classList.remove('light', 'dark');
       document.documentElement.classList.add(mode);
-      return mode;
     }
 
     // Initialize theme before page renders to prevent flash
     async function initTheme() {
-      // Dark/light mode always follows the reader's system setting; drop any choice saved by the old toggle
-      localStorage.removeItem('theme');
-      applySystemMode();
+      // The system setting decides unless the reader has picked a mode with the toggle
+      applyMode(localStorage.getItem('theme') || getSystemMode());
 
       // Handle theme selection (color scheme)
       const theme = getThemeWithoutClearing();
@@ -427,8 +428,11 @@ const scrollbarClass = siteConfig.hideScrollBar ? '' : 'show-scrollbars';
 
     // Listen for system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      const mode = applySystemMode();
-      window.dispatchEvent(new CustomEvent('themechange', { detail: { mode } }));
+      if (!localStorage.getItem('theme')) {
+        const mode = getSystemMode();
+        applyMode(mode);
+        window.dispatchEvent(new CustomEvent('themechange', { detail: { mode } }));
+      }
       // Only update favicon if theme adaptive is enabled
       const faviconThemeAdaptive = window.siteConfig?.faviconThemeAdaptive ?? true;
       if (faviconThemeAdaptive) {
@@ -442,8 +446,12 @@ const scrollbarClass = siteConfig.hideScrollBar ? '' : 'show-scrollbars';
       const isDark = html.classList.contains('dark');
       const newMode = isDark ? 'light' : 'dark';
 
-      // Update dark/light mode
-      localStorage.setItem('theme', newMode);
+      // Choosing the system's own mode drops the override, so later system changes apply again
+      if (newMode === getSystemMode()) {
+        localStorage.removeItem('theme');
+      } else {
+        localStorage.setItem('theme', newMode);
+      }
       html.classList.remove('light', 'dark');
       html.classList.add(newMode);
 
