@@ -180,7 +180,11 @@ async function processMarkdownFile(filePath, isPost = false) {
       ? frontmatter.aliases 
       : [frontmatter.aliases];
     
-    const targetUrl = getContentUrl(filePath, isPost);
+    // Posts are served at their permalink when set (see postUrl in src/utils/markdown.ts)
+    const permalink = typeof frontmatter.permalink === 'string' ? frontmatter.permalink.trim() : '';
+    const targetUrl = isPost && permalink
+      ? `/${permalink.replace(/^\//, '')}`
+      : getContentUrl(filePath, isPost);
     const redirects = [];
     
     for (const alias of aliasesArray) {
