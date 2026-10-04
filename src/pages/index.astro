@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry, render, type CollectionEntry } from 'astro:content';
 import { isValidDate } from '@/utils/markdown';
+import { formatIsoDate } from '@/utils/date';
 import { siteConfig } from '@/config';
 import { generateHomeSEO } from '@/utils/seo';
 import { shouldShowPost, sortPostsByDate, processPost, extractTags, postUrl } from '@/utils/markdown';
@@ -88,12 +89,6 @@ const lastModifiedPosts = [...regularProcessedPosts].sort((a: any, b: any) => {
   return dateB.getTime() - dateA.getTime();
 });
 
-// Date helpers
-const fmtShort = (d: Date | string) =>
-  new Date(d).toLocaleDateString('nb-NO', { day: 'numeric', month: 'short', year: 'numeric' });
-const fmtFull = (d: Date | string) =>
-  new Date(d).toLocaleDateString('nb-NO', { day: 'numeric', month: 'long', year: 'numeric' });
-
 // ── End four-view data ───────────────────────────────────────────────────────
 
 // Determine which content types are being displayed
@@ -157,7 +152,7 @@ const structuredData = {
             <!-- Page header -->
             {homeBlurbContent?.data.title && (
               <header class="mb-4">
-                <h1 class="text-xl font-bold text-primary-900 dark:text-primary-50 mb-6 leading-tight">
+                <h1 class="type-title text-primary-900 dark:text-primary-50 mb-6">
                   {homeBlurbContent.data.title}
                 </h1>
               </header>
@@ -173,7 +168,7 @@ const structuredData = {
         <>
           <!-- Home blurb above posts -->
           {siteConfig.homeOptions.blurb.placement === 'above' && HomeBlurbContent && (
-            <section class="prose prose-xl dark:prose-dark max-w-none mb-16">
+            <section class="prose dark:prose-dark max-w-none mb-16">
               <HomeBlurbContent />
             </section>
           )}
@@ -197,11 +192,11 @@ const structuredData = {
 
               <!-- View tabs -->
               <div class="view-tabs" role="tablist">
-                <button data-view-btn="year"     class="view-tab" role="tab" aria-selected="true">År</button>
-                <button data-view-btn="tag"      class="view-tab" role="tab">Tema</button>
-                <button data-view-btn="modified" class="view-tab" role="tab">Sist endret</button>
+                <button data-view-btn="year"     class="view-tab type-meta" role="tab" aria-selected="true">År</button>
+                <button data-view-btn="tag"      class="view-tab type-meta" role="tab">Tema</button>
+                <button data-view-btn="modified" class="view-tab type-meta" role="tab">Sist endret</button>
                 {utkastProcessedPosts.length > 0 && (
-                  <button data-view-btn="utkast" class="view-tab" role="tab">Utkast</button>
+                  <button data-view-btn="utkast" class="view-tab type-meta" role="tab">Utkast</button>
                 )}
               </div>
 
@@ -211,13 +206,13 @@ const structuredData = {
                 <div class="view-section view-year">
                   {years.map(year => (
                     <div class="group-block">
-                      <h2 class="group-heading">{year}</h2>
+                      <h2 class="group-heading type-label">{year}</h2>
                       <ul class="post-list">
                         {postsByYear[year].map((post: any) => (
                           <li>
                             <a href={postUrl(post)} class="post-row">
-                              <span class="post-title">{post.data.title}</span>
-                              <span class="post-date">{fmtShort(post.data.date)}</span>
+                              <span class="post-title type-list-item">{post.data.title}</span>
+                              <span class="post-date type-meta">{formatIsoDate(post.data.date)}</span>
                             </a>
                           </li>
                         ))}
@@ -231,18 +226,18 @@ const structuredData = {
                   {allTags.map(tag => (
                     postsByTag[tag].length > 0 && (
                       <div class="group-block">
-                        <h2 class="group-heading">
+                        <h2 class="group-heading type-label">
                           <a href={`/posts/tag/${encodeURIComponent(tag)}`} class="tag-heading-link">{tag}</a>
                         </h2>
-                        <p class="tag-count">
+                        <p class="tag-count type-small">
                           {postsByTag[tag].length} {postsByTag[tag].length === 1 ? 'notat' : 'notater'} med denne emneknaggen
                         </p>
                         <ul class="post-list">
                           {postsByTag[tag].map((post: any) => (
                             <li>
                               <a href={postUrl(post)} class="post-row">
-                                <span class="post-title">{post.data.title}</span>
-                                <span class="post-date">{fmtShort(post.data.date)}</span>
+                                <span class="post-title type-list-item">{post.data.title}</span>
+                                <span class="post-date type-meta">{formatIsoDate(post.data.date)}</span>
                               </a>
                             </li>
                           ))}
@@ -262,8 +257,8 @@ const structuredData = {
                       return (
                         <li>
                           <a href={postUrl(post)} class="post-row">
-                            <span class="post-title">{post.data.title}</span>
-                            <span class="post-date">{fmtFull(d)}</span>
+                            <span class="post-title type-list-item">{post.data.title}</span>
+                            <span class="post-date type-meta">{formatIsoDate(d)}</span>
                           </a>
                         </li>
                       );
@@ -277,8 +272,8 @@ const structuredData = {
                     {utkastProcessedPosts.map((post: any) => (
                       <li>
                         <a href={postUrl(post)} class="post-row">
-                          <span class="post-title">{post.data.title}</span>
-                          <span class="post-date">{fmtShort(post.data.date)}</span>
+                          <span class="post-title type-list-item">{post.data.title}</span>
+                          <span class="post-date type-meta">{formatIsoDate(post.data.date)}</span>
                         </a>
                       </li>
                     ))}
@@ -291,7 +286,7 @@ const structuredData = {
 
           <!-- Home blurb below posts -->
           {siteConfig.homeOptions.blurb.placement === 'below' && HomeBlurbContent && (
-            <section class="prose prose-xl dark:prose-dark max-w-none mt-16">
+            <section class="prose dark:prose-dark max-w-none mt-16">
               <HomeBlurbContent />
             </section>
           )}
@@ -372,7 +367,6 @@ const structuredData = {
   }
 
   .view-tab {
-    @apply text-sm font-medium;
     padding: 0.375rem 0.75rem;
     border: none;
     background: none;
@@ -418,10 +412,8 @@ const structuredData = {
     margin-bottom: 2rem;
   }
 
+  /* Size, weight and letter-spacing come from .type-label */
   .group-heading {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
     text-transform: uppercase;
     @apply text-ink-subtle;
     margin-bottom: 0.375rem;
@@ -436,7 +428,6 @@ const structuredData = {
   }
 
   .tag-count {
-    font-size: 0.7rem;
     @apply text-ink-subtle;
     margin-bottom: 0.375rem;
   }
@@ -464,12 +455,7 @@ const structuredData = {
     @apply text-ink-link;
   }
 
-  .post-title {
-    font-size: 0.875rem;
-  }
-
   .post-date {
-    font-size: 0.75rem;
     flex-shrink: 0;
     @apply text-ink-subtle;
   }

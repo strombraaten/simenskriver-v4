@@ -528,6 +528,8 @@ export function getFontFamily(
 ): string {
   // Convert font name to CSS font-family with fallbacks
   const fontMap: Record<string, string> = {
+    "Atkinson Hyperlegible Next":
+      "'Atkinson Hyperlegible Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
     Inter:
       "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
     Roboto:
@@ -572,60 +574,34 @@ export function getFontFamily(
   );
 }
 
+/**
+ * Bygger Google Fonts-URL for fontene i fonts.families.
+ * Snittene er låst til det typografisystemet bruker (se docs/typografi.md),
+ * så vi ikke laster vekter som aldri vises. Legg til snitt her og i
+ * typography.css samtidig, aldri bare ett av stedene.
+ */
 export function getGoogleFontsUrl(
   headingFont: string,
   bodyFont: string,
+  monoFont?: string,
 ): string {
-  // Google Fonts that are commonly used and available
-  const googleFonts = [
-    "Inter",
-    "Roboto",
-    "Open Sans",
-    "Lato",
-    "Poppins",
-    "Source Sans Pro",
-    "Nunito",
-    "Montserrat",
-    "Playfair Display",
-    "Merriweather",
-    "Lora",
-    "Crimson Text",
-    "PT Serif",
-    "Libre Baskerville",
-    "Fira Code",
-    "JetBrains Mono",
-    "Source Code Pro",
-    "IBM Plex Mono",
-    "Cascadia Code",
-  ];
+  // Snitt per font, i Google Fonts sitt ital,wght-format.
+  // Fonter som ikke står her lastes ikke fra Google.
+  const axes: Record<string, string> = {
+    "Atkinson Hyperlegible Next": "ital,wght@0,400;0,500;0,700;1,400;1,700",
+    "JetBrains Mono": "ital,wght@0,400;0,500;1,400",
+  };
 
-  const fonts = new Set<string>();
+  const fonts = [...new Set([headingFont, bodyFont, monoFont].filter(Boolean))]
+    .filter((font) => axes[font as string]) as string[];
 
-  // Add fonts if they're Google Fonts
-  if (googleFonts.includes(headingFont)) {
-    fonts.add(headingFont);
-  }
-  if (googleFonts.includes(bodyFont)) {
-    fonts.add(bodyFont);
-  }
+  if (fonts.length === 0) return "";
 
-  // If no Google Fonts are needed, return empty string
-  if (fonts.size === 0) {
-    return "";
-  }
+  const families = fonts
+    .map((font) => `family=${font.replace(/\s+/g, "+")}:${axes[font]}`)
+    .join("&");
 
-  // Generate Google Fonts URL
-  const fontList = Array.from(fonts)
-    .map((font) => {
-      // Add common weights for each font
-      const weights = font.includes("Mono")
-        ? "300;400;500;600;700"
-        : "300;400;500;600;700";
-      return `${font.replace(/\s+/g, "+")}:wght@${weights}`;
-    })
-    .join("&family=");
-
-  return `https://fonts.googleapis.com/css2?family=${fontList}&display=swap`;
+  return `https://fonts.googleapis.com/css2?${families}&display=${siteConfig.fonts.display ?? "swap"}`;
 }
 
 // Font loading utilities

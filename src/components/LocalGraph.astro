@@ -338,7 +338,11 @@ const shouldShowGraph = true;
       .text((d) => d.name ?? d.id)
       .attr("text-anchor", "middle")
       .attr("dy", (d) => d.radius + 8)
-      .style("font-size", "8px")
+      // Mono like .type-label, but kept small: the local graph is compact and
+      // step -2 (13–14px) makes labels overlap. 11px is the floor.
+      .style("font-family", "var(--type-mono)")
+      .style("font-weight", "500")
+      .style("font-size", "11px")
       .style("fill", colors.postText)
       .style("pointer-events", "none")
       .style("opacity", 0.6); // Start with slightly faded labels
