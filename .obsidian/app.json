@@ -35,7 +35,7 @@
     "editor:configure-toolbar"
   ],
   "newFileLocation": "folder",
-  "newFileFolderPath": "posts",
+  "newFileFolderPath": "src/content/posts",
   "newLinkFormat": "relative",
   "mobileQuickRibbonItem": "",
   "vimMode": false,
