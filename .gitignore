@@ -53,6 +53,7 @@ ehthumbs.db
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/plugins/*/data.json
+!.obsidian/plugins/templater-obsidian/data.json
 .obsidian/hotkeys.json
 obsidian_askpass.sh
 
