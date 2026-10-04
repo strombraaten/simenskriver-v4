@@ -26,6 +26,6 @@ if (!title) {
   if (file.basename !== slug && !app.vault.getAbstractFileByPath(target)) {
     await app.fileManager.renameFile(file, target);
   }
-  new Notice(`Publisert som /posts/${slug}/ – push med Cmd+Shift+S`);
+  new Notice(`Publisert som /${slug}/ – push med Cmd+Shift+S`);
 }
 -%>
