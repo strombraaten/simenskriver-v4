@@ -9,20 +9,4 @@ aliases:
 date: 2026-05-07
 draft: true
 ---
-Welcome to **Astro Modular**, an Astro blog theme template designed for Obsidian users, created by [David V. Kimball](https://davidvkimball.com). This theme turns Obsidian into a powerful CMS for instant blog publishing.
-
-## Philosophy
-
-Great content deserves great presentation without complexity. This blog theme is built on four core principles:
-
-### Clarity First
-Content should be the star, not the design. Every element is carefully crafted to enhance readability and focus attention on what matters most - your ideas and writing.
-
-### Highly Performant
-Fast loading times and smooth interactions are not optional. Every aspect of this theme has been optimized to deliver exceptional performance across all devices.
-
-### Works with Obsidian
-If you use Obsidian, this theme is a natural extension of your workflow. All rich markdown and extended markdown features, including Wikilinks, callouts, and other embedded features, display seamlessly between your vault and published site.
-
-### Modular Design
-Every feature can be toggled on or off through a single configuration file. Enable only what you need, keeping your site fast and focused on your specific use case.
+Simen heter jeg, Simen Strøm Braaten for å være presis.

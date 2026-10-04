@@ -14,7 +14,7 @@ _Det vil si at du som leser det her rett i rss-leseren din (som jeg setter særd
 
 ---
 
-Her om dagen lagde jeg min første plugin til [obsidian](obsidian.md). Og det er jeg ganske stolt over. Samtidig føles det ikke ut som *jeg* har gjort så mye, for det var jo Claude som gjorde alt. Jeg var bare konkret i hva jeg ønska meg. Og det var nøyaktig det du kan se her:
+Her om dagen lagde jeg min første plugin til [obsidian](obsidian.md). Og det er jeg stolt over. Samtidig føles det ikke ut som *jeg* har gjort så mye, for det var jo Claude som gjorde alt. Jeg var bare konkret i hva jeg ønska meg. Og det var nøyaktig det du kan se her:
 
 ![demo av dim-lights-plugin](attachments/simens-skjermbilder-24-07-2026-kl120613-converted.mp4)
 
@@ -27,6 +27,7 @@ Personlig liker jeg ofte å ha to notater åpne, hvor det ene er der jeg skriver
 Akkurat det problemet løser denne pluginen, som jeg har kalt "Dim lights", for det er i grunn det jeg vil gjøre — å dimme ned lyset på alt annet enn det jeg fokuserer på.
 
 ## Hvordan jeg lagde den
+
 
 
 > [!todo] Utdype mer om dette punktet
