@@ -21,13 +21,18 @@
       "permanent": true
     },
     {
-      "source": "/apper",
-      "destination": "/apper-jeg-liker",
+      "source": "/apper-jeg-liker",
+      "destination": "/apper",
       "permanent": true
     },
     {
       "source": "/assosiativ skriving",
       "destination": "/assosiativ-skriving",
+      "permanent": true
+    },
+    {
+      "source": "/Bærekraftig webutvikling",
+      "destination": "/barekraftig-webutvikling",
       "permanent": true
     },
     {
@@ -52,6 +57,11 @@
     },
     {
       "source": "/det er noe feil med blogging som konsept",
+      "destination": "/blogging-som-konsept",
+      "permanent": true
+    },
+    {
+      "source": "/Det er noe feil med blogging som konsept",
       "destination": "/blogging-som-konsept",
       "permanent": true
     },
@@ -147,7 +157,7 @@
     },
     {
       "source": "/få mer ut av tida di",
-      "destination": "/fa-mer-ut-av-tida-du-bruker",
+      "destination": "/tida-du-bruker",
       "permanent": true
     },
     {
@@ -158,6 +168,11 @@
     {
       "source": "/fridager med intensjon",
       "destination": "/firedagers-uke",
+      "permanent": true
+    },
+    {
+      "source": "/Følg nysgjerrigheten",
+      "destination": "/folg-nysgjerrigheten",
       "permanent": true
     },
     {
@@ -327,12 +342,7 @@
     },
     {
       "source": "/kultur for tilbakemelding",
-      "destination": "/kultur-for-tilbakemelding",
-      "permanent": true
-    },
-    {
-      "source": "/tilbakemeldingskultur",
-      "destination": "/kultur-for-tilbakemelding",
+      "destination": "/tilbakemeldingskultur",
       "permanent": true
     },
     {
@@ -411,6 +421,11 @@
       "permanent": true
     },
     {
+      "source": "/Den neste nye tingen",
+      "destination": "/neste-nye",
+      "permanent": true
+    },
+    {
       "source": "/den neste nye tingen",
       "destination": "/neste-nye",
       "permanent": true
@@ -458,6 +473,16 @@
     {
       "source": "/Optimalisere eller fornøydifisere",
       "destination": "/optimalisere",
+      "permanent": true
+    },
+    {
+      "source": "/en nerdete tilnærming til pappaperm",
+      "destination": "/pappaperm",
+      "permanent": true
+    },
+    {
+      "source": "/en-nerdete-tilnærming-til-pappaperm",
+      "destination": "/pappaperm",
       "permanent": true
     },
     {
@@ -587,7 +612,7 @@
     },
     {
       "source": "/TK-trikset",
-      "destination": "/tk-trikset",
+      "destination": "/tk",
       "permanent": true
     },
     {

@@ -1,6 +1,7 @@
 import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
 import { siteConfig } from "../config";
+import { postUrl } from "../utils/markdown";
 
 // Helper function to normalize siteUrl - ensure it ends with a single slash
 function normalizeSiteUrl(url: string): string {
@@ -36,7 +37,8 @@ export const GET: APIRoute = async () => {
       (post) => `
   <entry>
     <title>${post.data.title}</title>
-    <link href="${siteUrl}posts/${(post as any).id}/"/>
+    <link href="${siteUrl}${postUrl(post).slice(1)}/"/>
+    <!-- id is kept on the old /posts/ form so feed readers don't treat entries as new -->
     <id>${siteUrl}posts/${(post as any).id}/</id>
     <published>${new Date(post.data.date).toISOString()}</published>
     <updated>${new Date(post.data.date).toISOString()}</updated>
