@@ -10,7 +10,8 @@ export default {
       fontFamily: {
         'sans': getFontFamily(siteConfig.fonts.families.body).split(', '),
         'heading': getFontFamily(siteConfig.fonts.families.heading).split(', '),
-        'prose': getFontFamily(siteConfig.fonts.families.body).split(', ')
+        'prose': getFontFamily(siteConfig.fonts.families.body).split(', '),
+        'mono': getFontFamily(siteConfig.fonts.families.mono).split(', ')
       },
       colors: {
         // Dynamic theme colors using CSS custom properties
@@ -70,7 +71,7 @@ export default {
             },
             'h1, h2, h3, h4, h5, h6': {
               fontFamily: getFontFamily(siteConfig.fonts.families.heading),
-              fontWeight: '600',
+              fontWeight: '700',
               scrollMarginTop: '2rem',
             },
             a: {
@@ -116,15 +117,10 @@ export default {
               lineHeight: 'inherit',
             },
             blockquote: {
-              fontWeight: '400',
-              fontStyle: 'normal',
               color: 'inherit',
-              borderLeftWidth: '0.25rem',
-              borderLeftColor: '#e2e8f0',
               quotes: '"\\201C""\\201D""\\2018""\\2019"',
               marginTop: '1.6em',
               marginBottom: '1.6em',
-              paddingLeft: '1em',
             },
             'blockquote p:first-of-type::before': {
               content: '""',
@@ -139,10 +135,6 @@ export default {
             color: '#e2e8f0',
             code: {
               backgroundColor: 'rgb(30 41 59 / 0.8)',
-            },
-            blockquote: {
-              borderLeftColor: '#475569',
-              color: '#94a3b8',
             },
           }
         }

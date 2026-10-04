@@ -1,0 +1,162 @@
+/* ============================================================================
+   typography.css — én kilde til sannhet for typografi på simenskriver.no
+   ----------------------------------------------------------------------------
+   Samme logikk som colors.css: komponenter bruker ROLLER (.type-*), ikke
+   Tailwind-størrelser (text-sm, text-xl …) eller faste px-verdier.
+
+   To fonter, tre bruksområder:
+   - Atkinson Hyperlegible Next  All lesetekst og alle titler. Valgt for
+     leselighet: tegn som ofte forveksles (Il1, O0) er tydelig forskjellige.
+   - JetBrains Mono              Metadata, navigasjon, etiketter og kode.
+                                 Gir et notatbok-/arkivpreg rundt teksten uten
+                                 å konkurrere med den.
+   - JetBrains Mono kursiv       KUN sitater (.prose blockquote). Holdes
+                                 eksklusiv, så kursiv mono alltid betyr
+                                 «dette er noen andres ord».
+
+   Logoen (SiteLogo.astro, Simens håndskrift) og og-bildet er ikke en del av
+   typografisystemet og skal ikke erstattes av noen font.
+
+   Fontene lastes fra Google Fonts. Se config-endringer.md. Uten den endringen
+   lastes ingen av fontene, og sida faller tilbake til systemfonter.
+
+   SKALA
+   Trinn 0 = brødtekst: 18 px på 360 px skjerm, 21 px på 1280 px skjerm.
+   Hvert trinn opp ganges med 1,2 (mobil) og 1,333 (desktop), så kontrasten
+   mellom størrelsene øker på store skjermer. Mellom 360 og 1280 px skalerer
+   verdien lineært med clamp(). Under 360 / over 1280 står den stille.
+   Trinn −2 er låst til 13–14 px: ren skala ville gitt mindre tekst på desktop
+   enn på mobil, og 13 px er nedre grense for lesbar mono.
+   ============================================================================ */
+
+:root {
+  /* --- Fontstakker ------------------------------------------------------- */
+  /* BaseLayout setter --font-prose / --font-heading / --font-mono fra
+     config.ts. Fallback-stakkene her brukes hvis de mangler.               */
+  --type-sans: var(--font-prose, 'Atkinson Hyperlegible Next'), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --type-mono: var(--font-mono, 'JetBrains Mono'), ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* --- Skala · mobil px → desktop px ------------------------------------- */
+  --step-4: clamp(2.3328rem, 1.6241rem + 3.1499vw, 4.144rem);                  /* 37,32 → 66,3 px */
+  --step-3: clamp(1.944rem, 1.4882rem + 2.0257vw, 3.1088rem);                  /* 31,1 → 49,74 px */
+  --step-2: clamp(1.62rem, 1.3413rem + 1.2386vw, 2.3322rem);                   /* 25,92 → 37,31 px */
+  --step-1: clamp(1.35rem, 1.1936rem + 0.6949vw, 1.7496rem);                   /* 21,6 → 27,99 px */
+  --step-0: clamp(1.125rem, 1.0516rem + 0.3261vw, 1.3125rem);                  /* 18 → 21 px */
+  --step--1: clamp(0.9375rem, 0.9191rem + 0.0819vw, 0.9846rem);                /* 15 → 15,75 px */
+  --step--2: clamp(0.8125rem, 0.788rem + 0.1087vw, 0.875rem);                  /* 13 → 14 px */
+
+  /* --- Linjehøyde -------------------------------------------------------- */
+  --leading-none:   1;     /* display: ett ord, ingen linjeskift           */
+  --leading-tight:  1.1;   /* store titler                                 */
+  --leading-snug:   1.25;  /* mellomtitler                                 */
+  --leading-normal: 1.5;   /* metadata, små tekster                        */
+  --leading-body:   1.65;  /* brødtekst: luftig nok for lange avsnitt      */
+
+  /* --- Linjelengde ------------------------------------------------------- */
+  /* 30em ≈ 60 tegn i Atkinson. Ikke ch: den måler sifferet 0, som er bredere
+     enn en gjennomsnittlig bokstav, og 60ch ville gitt ~70 tegn.           */
+  --measure: 30em;
+}
+
+@layer components {
+  /* 404-tallet. Bare der. trinn 4 · 37,32 → 66,3 px */
+  .type-display {
+    font-family: var(--type-sans);
+    font-size: var(--step-4);
+    font-weight: 700;
+    line-height: var(--leading-none);
+    letter-spacing: -0.02em;
+  }
+  /* Innleggstittel, hilsen på forsida, .prose h1. trinn 3 · 31,1 → 49,74 px */
+  .type-title {
+    font-family: var(--type-sans);
+    font-size: var(--step-3);
+    font-weight: 700;
+    line-height: var(--leading-tight);
+    letter-spacing: -0.015em;
+  }
+  /* Sidetitler: tagg-side, Om meg. trinn 2 · 25,92 → 37,31 px */
+  .type-page-title {
+    font-family: var(--type-sans);
+    font-size: var(--step-2);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  /* Mellomtitler i innhold. trinn 1 · 21,6 → 27,99 px */
+  .type-h2 {
+    font-family: var(--type-sans);
+    font-size: var(--step-1);
+    font-weight: 700;
+    line-height: var(--leading-snug);
+    letter-spacing: -0.005em;
+  }
+  /* Undertitler, forrige/neste, PostCard-tittel, 404-undertittel. trinn 0 · 18 → 21 px */
+  .type-h3 {
+    font-family: var(--type-sans);
+    font-size: var(--step-0);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+  /* Brødtekst og lister. trinn 0 · 18 → 21 px */
+  .type-body {
+    font-family: var(--type-sans);
+    font-size: var(--step-0);
+    font-weight: 400;
+    line-height: var(--leading-body);
+    max-width: var(--measure);
+  }
+  /* Innleggstitler i lister (forside, Tema-visning), søketreff. trinn 0 · 18 → 21 px */
+  .type-list-item {
+    font-family: var(--type-sans);
+    font-size: var(--step-0);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  /* Bildetekster, søkeutdrag, «N notater med denne emneknaggen», bunntekst. trinn -1 · 15 → 15,75 px */
+  .type-small {
+    font-family: var(--type-sans);
+    font-size: var(--step--1);
+    font-weight: 400;
+    line-height: var(--leading-normal);
+  }
+  /* Knapper og skjemaelementer. trinn -1 · 15 → 15,75 px */
+  .type-ui {
+    font-family: var(--type-sans);
+    font-size: var(--step--1);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  /* Sitater. Eneste sted kursiv mono brukes. trinn 0 · 18 → 21 px */
+  .type-quote {
+    font-family: var(--type-mono);
+    font-size: var(--step-0);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.6;
+  }
+  /* Dato (2022-12-01), emneknagger, navigasjon, faner. trinn -2 · 13 → 14 px */
+  .type-meta {
+    font-family: var(--type-mono);
+    font-size: var(--step--2);
+    font-weight: 400;
+    line-height: var(--leading-normal);
+  }
+  /* Gruppeoverskrifter (år, tema), seksjonstitler i søk, kbd, grafnoder. trinn -2 · 13 → 14 px */
+  .type-label {
+    font-family: var(--type-mono);
+    font-size: var(--step--2);
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.06em;
+  }
+  /* Inline-kode og kodeblokker. Relativ til omgivende tekst. 0,875em */
+  .type-code {
+    font-family: var(--type-mono);
+    font-size: 0.875em;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+}
+/* .type-label setter ikke text-transform. Store bokstaver beholdes der de
+   brukes i dag (.group-heading), resten skrives som i innholdet.           */

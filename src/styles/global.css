@@ -2,6 +2,7 @@
 /* KaTeX Math Rendering - Must be first */
 @import 'katex/dist/katex.css';
 @import './palette.css';
+@import './typography.css';
 
 @tailwind base;
 
@@ -225,7 +226,9 @@ html {
 
 body {
   @apply bg-surface-base text-ink-prominent;
-  font-family: var(--font-prose, 'Inter'), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--type-sans);
+  font-size: var(--step-0);
+  line-height: var(--leading-body);
   font-feature-settings: "rlig" 1, "calt" 1;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -328,8 +331,8 @@ code ::-moz-selection,
 
 /* Typography - Dynamic fonts will be applied via CSS custom properties */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading, 'Inter'), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-weight: 500;
+  font-family: var(--type-sans);
+  font-weight: 700;
   line-height: 1.3;
   color: rgb(var(--color-foreground));
   font-display: var(--font-display, swap);
@@ -377,7 +380,7 @@ a:hover {
 
 /* Monospace font support */
 code, pre, .astro-code, kbd, .font-mono {
-  font-family: var(--font-mono, 'JetBrains Mono'), 'Monaco', 'Consolas', 'Courier New', monospace;
+  font-family: var(--type-mono);
   font-display: var(--font-display, swap);
 }
 
@@ -398,7 +401,8 @@ pre.astro-code {
   padding: 1rem !important;
   border-radius: 0.5rem !important;
   overflow-x: auto !important;
-  font-size: 0.875rem !important;
+  /* em, not rem: code blocks scale with body text */
+  font-size: 0.875em !important;
 }
 
 
@@ -448,12 +452,12 @@ pre::-webkit-scrollbar-thumb:hover, .prose pre::-webkit-scrollbar-thumb:hover,
 
 /* Keyboard Shortcuts */
 kbd {
-  @apply inline-flex items-center px-2 py-1 text-xs font-medium bg-primary-100 dark:bg-primary-800 text-primary-800 dark:text-primary-200 border border-primary-300 dark:border-primary-600 rounded shadow-sm;
+  @apply type-label inline-flex items-center px-2 py-1 bg-primary-100 dark:bg-primary-800 text-primary-800 dark:text-primary-200 border border-primary-300 dark:border-primary-600 rounded shadow-sm;
 }
 
 /* Button Styles - Consolidated */
 .btn {
-  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer border no-underline;
+  @apply type-ui inline-flex items-center justify-center px-4 py-2 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer border no-underline;
   text-decoration: none !important;
   user-select: none;
   vertical-align: middle;
@@ -760,23 +764,26 @@ textarea {
 /* Prose Styles */
 .prose {
   @apply text-ink-default;
-  font-family: var(--font-prose, 'Inter'), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--type-sans);
+  font-size: var(--step-0);
+  line-height: var(--leading-body);
   font-display: var(--font-display, swap);
 }
 
+/* Line length applies to running text only. Images, tables, code blocks
+   and embeds keep the full content width. */
+.prose p, .prose li { max-width: var(--measure); }
+
 .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
-  @apply font-semibold text-ink-prominent;
-  font-family: var(--font-heading, 'Inter'), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  @apply text-ink-prominent;
+  font-family: var(--type-sans);
   scroll-margin-top: 8rem;
   font-display: var(--font-display, swap);
 }
 
-.prose h1 { @apply text-xl mt-8 mb-6; }
-.prose h2 { @apply text-lg mt-8 mb-4; }
-.prose h3 { @apply text-base mt-6 mb-3; }
-.prose h4 { @apply text-base mt-5 mb-2; }
-.prose h5 { @apply text-base mt-4 mb-2; }
-.prose h6 { @apply text-base mt-4 mb-2; }
+.prose h1 { @apply type-title mt-8 mb-6; }
+.prose h2 { @apply type-h2 mt-8 mb-4; }
+.prose h3, .prose h4, .prose h5, .prose h6 { @apply type-h3 mt-6 mb-3; }
 
 .prose h1 a, .prose h2 a, .prose h3 a, .prose h4 a, .prose h5 a, .prose h6 a {
   @apply text-ink-prominent no-underline transition-colors duration-200;
@@ -817,7 +824,10 @@ textarea {
 
 .prose blockquote {
   @apply border-l-4 border-line-default pl-6 py-2 bg-surface-tinted rounded-lg;
+  @apply type-quote;
 }
+/* Paragraphs inside quotes inherit the quote font instead of .prose p */
+.prose blockquote p { font: inherit; }
 
 /* Default image styling */
 .prose img {
@@ -1148,8 +1158,8 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
 img + p em {
   display: block;
   text-align: center;
+  @apply type-small;
   font-style: italic;
-  font-size: 0.875rem;
   color: rgb(75 85 99);
   margin-top: 0.25rem;
 }
@@ -1165,8 +1175,8 @@ img + p em {
 }
 
 .image-caption-container em {
+  @apply type-small;
   font-style: italic;
-  font-size: 0.875rem;
   color: rgb(75 85 99);
   display: block;
 }
