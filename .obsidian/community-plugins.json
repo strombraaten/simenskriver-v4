@@ -1,7 +1,6 @@
 [
   "astro-modular-settings",
   "bases-cms",
-  "editing-toolbar",
   "image-manager",
   "oxygen-settings",
   "property-over-file-name",
@@ -19,5 +18,6 @@
   "url-into-selection",
   "dim-lights",
   "obsidian-linter",
-  "obsidian-hider"
+  "obsidian-hider",
+  "templater-obsidian"
 ]

@@ -6,7 +6,7 @@
     "astro-modular-styling"
   ],
   "theme": "obsidian",
-  "accentColor": "",
+  "accentColor": "#44c5b0",
   "baseFontSize": 22,
   "textFontFamily": "Atkinson Hyperlegible"
 }
