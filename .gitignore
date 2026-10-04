@@ -54,7 +54,6 @@ ehthumbs.db
 .obsidian/workspace-mobile.json
 .obsidian/plugins/*/data.json
 !.obsidian/plugins/templater-obsidian/data.json
-.obsidian/hotkeys.json
 obsidian_askpass.sh
 
 # Local reference materials (not published)
