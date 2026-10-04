@@ -132,7 +132,7 @@ const structuredData = {
               <ImageWrapper
                 src={imageSrc}
                 basePath={imageBasePath}
-                alt={page.data.imageAlt || `Featured image for page: ${page.data.title}`}
+                alt={page.data.imageAlt || `Forsidebilde for siden: ${page.data.title}`}
                 class="w-full h-full object-cover"
                 width={800}
                 height={450}
@@ -146,7 +146,7 @@ const structuredData = {
         })()}
 
         <!-- Page content wrapper -->
-        <div class={`p-6 ${page.data.image ? 'rounded-b-lg' : 'rounded-lg'}`}>
+        <div class={`py-6 ${page.data.image ? 'rounded-b-lg' : 'rounded-lg'}`}>
           <!-- Page header -->
           <header class="mb-4">
             <h1 class="text-xl font-bold text-primary-900 dark:text-primary-50 mb-6 leading-tight">

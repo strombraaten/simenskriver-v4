@@ -48,21 +48,21 @@ function getIconSVG(iconName: string): string {
 }
 
 const calloutMappings: Record<string, CalloutMapping> = {
-  note: { type: 'note', icon: 'info', title: 'Note' },
-  tip: { type: 'tip', icon: 'lightbulb', title: 'Tip' },
-  important: { type: 'important', icon: 'star', title: 'Important' },
-  warning: { type: 'warning', icon: 'triangle-alert', title: 'Warning' },
-  caution: { type: 'caution', icon: 'circle-alert', title: 'Caution' },
-  danger: { type: 'caution', icon: 'circle-x', title: 'Danger' },
+  note: { type: 'note', icon: 'info', title: 'Merk' },
+  tip: { type: 'tip', icon: 'lightbulb', title: 'Tips' },
+  important: { type: 'important', icon: 'star', title: 'Viktig' },
+  warning: { type: 'warning', icon: 'triangle-alert', title: 'Advarsel' },
+  caution: { type: 'caution', icon: 'circle-alert', title: 'Forsiktig' },
+  danger: { type: 'caution', icon: 'circle-x', title: 'Fare' },
   info: { type: 'note', icon: 'info', title: 'Info' },
-  question: { type: 'important', icon: 'circle-help', title: 'Question' },
-  success: { type: 'tip', icon: 'circle-check', title: 'Success' },
-  failure: { type: 'caution', icon: 'circle-x', title: 'Failure' },
-  bug: { type: 'caution', icon: 'bug', title: 'Bug' },
-  example: { type: 'tip', icon: 'code', title: 'Example' },
-  quote: { type: 'note', icon: 'quote', title: 'Quote' },
-  abstract: { type: 'important', icon: 'file-text', title: 'Abstract' },
-  summary: { type: 'important', icon: 'file-text', title: 'Summary' },
+  question: { type: 'important', icon: 'circle-help', title: 'Spørsmål' },
+  success: { type: 'tip', icon: 'circle-check', title: 'Vellykket' },
+  failure: { type: 'caution', icon: 'circle-x', title: 'Mislykket' },
+  bug: { type: 'caution', icon: 'bug', title: 'Feil' },
+  example: { type: 'tip', icon: 'code', title: 'Eksempel' },
+  quote: { type: 'note', icon: 'quote', title: 'Sitat' },
+  abstract: { type: 'important', icon: 'file-text', title: 'Sammendrag' },
+  summary: { type: 'important', icon: 'file-text', title: 'Oppsummering' },
   tldr: { type: 'important', icon: 'file-text', title: 'TL;DR' }
 };
 
@@ -169,7 +169,7 @@ const remarkCallouts: Plugin<[], Root> = () => {
       
       // Generate toggle button HTML if collapsible
       const toggleButton = isCollapsible ? 
-        `<button class="callout-toggle" aria-expanded="${!isCollapsed}" aria-label="Toggle callout content">
+        `<button class="callout-toggle" aria-expanded="${!isCollapsed}" aria-label="Vis eller skjul innhold">
           <svg class="callout-toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="6,9 12,15 18,9"></polyline>
           </svg>

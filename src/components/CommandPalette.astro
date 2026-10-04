@@ -24,12 +24,12 @@ import Icon from './Icon.astro';
       <!-- Header -->
       <div class="flex items-center justify-between p-4 border-b border-line-subtle">
         <h2 id="command-palette-title" class="text-lg font-semibold text-ink-prominent">
-          Command Palette
+          Kommandopalett
         </h2>
         <button 
           id="command-palette-close"
           class="p-1 text-ink-subtle hover:text-ink-prominent transition-colors"
-          aria-label="Close command palette"
+          aria-label="Lukk kommandopaletten"
         >
           <Icon name="x" class="w-5 h-5" />
         </button>
@@ -62,7 +62,7 @@ import Icon from './Icon.astro';
         <!-- Loading state -->
         <div id="command-palette-loading" class="hidden p-4 text-center">
           <div class="inline-flex items-center justify-center space-x-2 text-primary-500 dark:text-primary-400">
-            <span>Searching...</span>
+            <span>Søker …</span>
             <div class="animate-spin rounded-full h-4 w-4 border-2 border-primary-300 dark:border-primary-600 border-t-highlight-500"></div>
           </div>
         </div>
@@ -70,8 +70,8 @@ import Icon from './Icon.astro';
         <!-- No results -->
         <div id="command-palette-no-results" class="hidden p-8 text-center">
           <Icon name="search-x" class="w-8 h-8 text-primary-400 dark:text-primary-500 mx-auto mb-2" />
-          <p class="text-primary-600 dark:text-primary-300">No results found</p>
-          <p class="type-small text-primary-500 dark:text-primary-400 mt-1">Try a different search term</p>
+          <p class="text-primary-600 dark:text-primary-300">Ingen treff</p>
+          <p class="type-small text-primary-500 dark:text-primary-400 mt-1">Prøv et annet søkeord</p>
         </div>
 
         <!-- Default items (shown when no search) -->
@@ -83,7 +83,7 @@ import Icon from './Icon.astro';
             siteConfig.commandPalette.quickActions.changeTheme) && (
             <div class="p-2">
               <div class="px-3 py-2 type-label text-primary-500 dark:text-primary-400">
-                Quick Actions
+                Snarveier
               </div>
               {siteConfig.commandPalette.quickActions.toggleMode && (
                 <button 
@@ -91,7 +91,7 @@ import Icon from './Icon.astro';
                   class="w-full flex items-center space-x-3 px-3 py-2 text-left hover:bg-primary-50 dark:hover:bg-primary-800 rounded-lg transition-colors group"
                 >
                   <Icon name="sun-moon" class="w-4 h-4 text-primary-500 dark:text-primary-400 group-hover:text-highlight-500" />
-                  <span class="text-primary-900 dark:text-primary-50">Toggle Light/Dark Mode</span>
+                  <span class="text-primary-900 dark:text-primary-50">Bytt mellom lyst og mørkt</span>
                 </button>
               )}
               
@@ -101,7 +101,7 @@ import Icon from './Icon.astro';
                   class="w-full flex items-center space-x-3 px-3 py-2 text-left hover:bg-primary-50 dark:hover:bg-primary-800 rounded-lg transition-colors group"
                 >
                   <Icon name="git-fork" class="w-4 h-4 text-primary-500 dark:text-primary-400 group-hover:text-highlight-500" />
-                  <span class="text-primary-900 dark:text-primary-50">Graph View</span>
+                  <span class="text-primary-900 dark:text-primary-50">Grafvisning</span>
                 </button>
               )}
               
@@ -111,7 +111,7 @@ import Icon from './Icon.astro';
                   class="w-full flex items-center space-x-3 px-3 py-2 text-left hover:bg-primary-50 dark:hover:bg-primary-800 rounded-lg transition-colors group"
                 >
                   <Icon name="palette" class="w-4 h-4 text-primary-500 dark:text-primary-400 group-hover:text-highlight-500" />
-                  <span class="text-primary-900 dark:text-primary-50">Change Theme</span>
+                  <span class="text-primary-900 dark:text-primary-50">Bytt tema</span>
                 </button>
               )}
             </div>
@@ -121,7 +121,7 @@ import Icon from './Icon.astro';
           {siteConfig.commandPalette.sections.pages && siteConfig.navigation.pages.length > 0 && (
             <div class="p-2">
               <div class="px-3 py-2 type-label text-primary-500 dark:text-primary-400">
-                Pages
+                Sider
               </div>
               {siteConfig.navigation.pages.map(page => {
                 const hasChildren = page.children && page.children.length > 0;
@@ -190,7 +190,7 @@ import Icon from './Icon.astro';
           {siteConfig.commandPalette.sections.social && (siteConfig.navigation.social || []).filter((social) => social && social.url && social.icon).length > 0 && (
             <div class="p-2">
               <div class="px-3 py-2 type-label text-primary-500 dark:text-primary-400">
-                Social
+                Sosialt
               </div>
               {(siteConfig.navigation.social || []).filter((social) => social && social.url && social.icon).map(social => (
                 <a 
@@ -215,7 +215,7 @@ import Icon from './Icon.astro';
         <div id="command-palette-theme-selection" class="hidden divide-y divide-primary-200 dark:divide-primary-700">
           <div class="p-2">
             <div class="px-3 py-2 type-label text-primary-500 dark:text-primary-400">
-              Choose Theme
+              Velg tema
             </div>
             <div id="theme-list" class="space-y-1">
               <!-- Themes will be populated here -->
@@ -227,7 +227,7 @@ import Icon from './Icon.astro';
       <!-- Footer -->
       <div class="p-3 border-t border-line-subtle bg-surface-tinted rounded-b-xl">
         <div class="flex items-center justify-between type-meta text-ink-subtle">
-          <span>Use ↑↓ to navigate, ↵ to select, ESC to close</span>
+          <span>Bruk ↑↓ for å navigere, ↵ for å velge, ESC for å lukke</span>
           <!-- <span>Press <kbd class="px-1 py-0.5 bg-white dark:bg-primary-700 rounded border">{siteConfig.commandPalette.shortcut.replace('ctrl', '⌘').replace('+', '').toUpperCase()}</kbd> to return</span> -->
         </div>
       </div>
@@ -846,8 +846,8 @@ import Icon from './Icon.astro';
 
           // Format section titles
           const sectionTitles = {
-            posts: 'Posts',
-            pages: 'Pages',
+            posts: 'Innlegg',
+            pages: 'Sider',
           };
           
           header.textContent = `${sectionTitles[type as keyof typeof sectionTitles]} (${items.length})`;
@@ -1167,7 +1167,7 @@ import Icon from './Icon.astro';
         case 'change-theme':
           // Check if theme switching is available before showing theme selection
           if ((window as any).isThemeSwitchingAvailable && !(window as any).isThemeSwitchingAvailable()) {
-            console.warn('Theme switching is not available');
+            console.warn('Temabytte er ikke tilgjengelig');
             this.close();
             return;
           }
@@ -1213,7 +1213,7 @@ import Icon from './Icon.astro';
     private populateThemeList() {
       // Check if theme switching is available before showing theme list
       if ((window as any).isThemeSwitchingAvailable && !(window as any).isThemeSwitchingAvailable()) {
-        this.themeList.innerHTML = '<div class="p-4 text-center text-primary-500 dark:text-primary-400">Theme switching is not available</div>';
+        this.themeList.innerHTML = '<div class="p-4 text-center text-primary-500 dark:text-primary-400">Temabytte er ikke tilgjengelig</div>';
         return;
       }
 
@@ -1331,7 +1331,7 @@ import Icon from './Icon.astro';
     private async applyTheme(themeName: string) {
       // Check if theme switching is available before applying
       if ((window as any).isThemeSwitchingAvailable && !(window as any).isThemeSwitchingAvailable()) {
-        console.warn('Theme switching is not available - theme change blocked');
+        console.warn('Temabytte er ikke tilgjengelig - theme change blocked');
         return;
       }
       

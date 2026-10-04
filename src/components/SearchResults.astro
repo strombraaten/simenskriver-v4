@@ -19,7 +19,7 @@ const { results } = Astro.props;
   <div class="divide-y divide-primary-200 dark:divide-primary-700">
     <div class="p-2">
       <div class="px-3 py-2 text-xs font-medium text-primary-500 dark:text-primary-400 uppercase tracking-wide">
-        Results ({results.length})
+        Treff ({results.length})
       </div>
       {results.map((result, index) => (
         <a 
@@ -51,7 +51,7 @@ const { results } = Astro.props;
 ) : (
   <div class="p-8 text-center">
     <Icon name="search-x" class="w-8 h-8 text-primary-400 dark:text-primary-500 mx-auto mb-2" />
-    <p class="text-primary-600 dark:text-primary-300">No results found</p>
-    <p class="text-sm text-primary-500 dark:text-primary-400 mt-1">Try a different search term</p>
+    <p class="text-primary-600 dark:text-primary-300">Ingen treff</p>
+    <p class="text-sm text-primary-500 dark:text-primary-400 mt-1">Prøv et annet søkeord</p>
   </div>
 )}

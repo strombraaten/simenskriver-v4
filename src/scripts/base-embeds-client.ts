@@ -176,7 +176,7 @@ async function renderBaseEmbeds() {
         el.innerHTML = buildTableHTML(columns, rows, (cfg as any).headerLabels);
       } catch (err) {
         // Replace loading state with a minimal, styled error to avoid perpetual hanging UI
-        el.innerHTML = `<div class="table-wrapper"><div class="overflow-x-auto"><div class="py-3 px-4 text-sm text-primary-600 dark:text-primary-300">Failed to load base.</div></div></div>`;
+        el.innerHTML = `<div class="table-wrapper"><div class="overflow-x-auto"><div class="py-3 px-4 text-sm text-primary-600 dark:text-primary-300">Kunne ikke laste basen.</div></div></div>`;
       } finally {
         el.removeAttribute('data-base-processing');
       }

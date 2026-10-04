@@ -83,7 +83,7 @@ async function renderDiagram(diagram: HTMLElement): Promise<void> {
     contentDiv.innerHTML = `
       <div class="mermaid-loading-skeleton">
         <div class="animate-pulse bg-primary-100 dark:bg-primary-800 rounded h-32 flex items-center justify-center">
-          <div class="text-primary-500 dark:text-primary-400 text-sm">Loading diagram...</div>
+          <div class="text-primary-500 dark:text-primary-400 text-sm">Laster diagram …</div>
         </div>
       </div>
     `;
