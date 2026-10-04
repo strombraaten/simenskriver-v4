@@ -60,7 +60,7 @@ export function calculateReadingTime(content: string): ReadingTime {
   // Handle empty or undefined content
   if (!content || typeof content !== "string") {
     return {
-      text: "1 min read",
+      text: "1 min lesetid",
       minutes: 1,
       time: 60000,
       words: 0,
@@ -86,7 +86,7 @@ export function calculateReadingTime(content: string): ReadingTime {
   const minutes = Math.max(1, Math.ceil(wordCount / wordsPerMinute));
 
   return {
-    text: `${minutes} min read`,
+    text: `${minutes} min lesetid`,
     minutes: minutes,
     time: minutes * 60 * 1000, // in milliseconds
     words: wordCount,
@@ -115,7 +115,7 @@ export function getReadingTime(
     typeof remarkData.readingTime.words === "number"
   ) {
     return {
-      text: remarkData.readingTime.text,
+      text: `${remarkData.readingTime.minutes} min lesetid`,
       minutes: remarkData.readingTime.minutes,
       time: remarkData.readingTime.time,
       words: remarkData.readingTime.words,
@@ -129,7 +129,7 @@ export function getReadingTime(
 
   // Default for no content and no valid remark data
   return {
-    text: "1 min read",
+    text: "1 min lesetid",
     minutes: 1,
     time: 60000,
     words: 0,

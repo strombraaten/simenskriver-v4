@@ -32,7 +32,7 @@ export function extractImagesFromContent(content: string): ImageInfo[] {
     const [, alt, src, title] = match;
     images.push({
       src: src.trim(),
-      alt: alt.trim() || "Image",
+      alt: alt.trim() || "Bilde",
       caption: title ? title.trim() : undefined,
     });
   }
@@ -68,7 +68,7 @@ export function findConsecutiveImages(content: string): Array<{
 
       currentGroup.push({
         src: src.trim(),
-        alt: alt.trim() || "Image",
+        alt: alt.trim() || "Bilde",
       });
     } else if (line.trim() === "" && currentGroup.length > 0) {
       // Empty line, continue group
@@ -376,7 +376,7 @@ export function getFallbackOGImage(site?: URL): OpenGraphImage {
 // Get image alt text with fallback
 export function getImageAlt(
   image: ImageInfo,
-  fallback: string = "Image"
+  fallback: string = "Bilde"
 ): string {
   return image.alt && image.alt.trim() !== "" ? image.alt : fallback;
 }

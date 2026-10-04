@@ -340,7 +340,7 @@ import Icon from './Icon.astro';
             const imgElement = img as HTMLImageElement;
             const imageData = {
               src: imgElement.src,
-              alt: imgElement.alt || 'Image',
+              alt: imgElement.alt || 'Bilde',
               caption: imgElement.getAttribute('data-caption') || imgElement.title || undefined
             };
             return imageData;
@@ -356,7 +356,7 @@ import Icon from './Icon.astro';
         const imgElement = img as HTMLImageElement;
         const imageData = {
           src: imgElement.src,
-          alt: imgElement.alt || 'Image',
+          alt: imgElement.alt || 'Bilde',
           caption: imgElement.getAttribute('data-caption') || imgElement.title || undefined
         };
         return imageData;
@@ -448,7 +448,7 @@ import Icon from './Icon.astro';
 
     private updateUI() {
       if (this.images.length > 1) {
-        this.counter.textContent = `${this.currentIndex + 1} of ${this.images.length}`;
+        this.counter.textContent = `${this.currentIndex + 1} av ${this.images.length}`;
         this.prevButton.style.display = 'block';
         this.nextButton.style.display = 'block';
       } else {

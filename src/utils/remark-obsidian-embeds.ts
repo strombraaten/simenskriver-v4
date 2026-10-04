@@ -210,7 +210,7 @@ export const remarkObsidianEmbeds: Plugin<[], Root> = () => {
 <div class="youtube-embed aspect-video overflow-hidden rounded-xl my-8">
   <iframe
     src="https://www.youtube.com/embed/${youtubeVideoId}?rel=0&modestbranding=1"
-    title="${alt || 'YouTube video player'}"
+    title="${alt || 'YouTube-videospiller'}"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen
     loading="lazy"
@@ -228,7 +228,7 @@ export const remarkObsidianEmbeds: Plugin<[], Root> = () => {
 <div class="vimeo-embed aspect-video overflow-hidden rounded-xl my-8">
   <iframe
     src="https://player.vimeo.com/video/${vimeoVideoId}"
-    title="${alt || 'Vimeo video player'}"
+    title="${alt || 'Vimeo-videospiller'}"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen
     loading="lazy"
@@ -345,7 +345,7 @@ export const remarkObsidianEmbeds: Plugin<[], Root> = () => {
 <div class="base-embed base-embed--table" data-base-config='${JSON.stringify(cfg).replace(/'/g, '&apos;')}'>
   <div class="prose w-full overflow-x-auto">
     <div class="rounded-lg border border-primary-200 dark:border-primary-600 p-4 bg-primary-50 dark:bg-primary-800 text-primary-600 dark:text-primary-300">
-      <strong>Loading base…</strong>
+      <strong>Laster base …</strong>
     </div>
   </div>
 </div>`;
@@ -546,7 +546,7 @@ export const remarkObsidianEmbeds: Plugin<[], Root> = () => {
 <div class="base-embed base-embed--table" data-base-config='${JSON.stringify(cfg).replace(/'/g, '&apos;')}'>
   <div class="prose w-full overflow-x-auto">
     <div class="rounded-lg border border-primary-200 dark:border-primary-600 p-4 bg-primary-50 dark:bg-primary-800 text-primary-600 dark:text-primary-300">
-      <strong>Loading base…</strong>
+      <strong>Laster base …</strong>
     </div>
   </div>
 </div>`;
@@ -576,7 +576,7 @@ export const remarkObsidianEmbeds: Plugin<[], Root> = () => {
 <div class="youtube-embed aspect-video overflow-hidden rounded-xl my-8">
   <iframe
     src="https://www.youtube.com/embed/${youtubeVideoId}?rel=0&modestbranding=1"
-    title="${title || 'YouTube video player'}"
+    title="${title || 'YouTube-videospiller'}"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen
     loading="lazy"
@@ -594,7 +594,7 @@ export const remarkObsidianEmbeds: Plugin<[], Root> = () => {
 <div class="vimeo-embed aspect-video overflow-hidden rounded-xl my-8">
   <iframe
     src="https://player.vimeo.com/video/${vimeoVideoId}"
-    title="${title || 'Vimeo video player'}"
+    title="${title || 'Vimeo-videospiller'}"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen
     loading="lazy"

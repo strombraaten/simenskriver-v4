@@ -178,7 +178,7 @@ const structuredData = {
             <section class="mb-12">
               <div class="flex items-center justify-between mb-6">
                 <h2 class="text-lg font-semibold text-primary-900 dark:text-primary-50">
-                  {siteConfig.homeOptions.featuredPost.type === "latest" ? "Latest Post" : "Featured Post"}
+                  {siteConfig.homeOptions.featuredPost.type === "latest" ? "Siste innlegg" : "Utvalgt innlegg"}
                 </h2>
               </div>
 
@@ -298,15 +298,15 @@ const structuredData = {
           <div class="max-w-md mx-auto">
             <Icon name="file-text" class="w-16 h-16 text-primary-400 dark:text-primary-500 mx-auto mb-6" />
             <h2 class="text-2xl font-semibold text-primary-900 dark:text-primary-50 mb-4">
-              No Posts Yet
+              Ingen innlegg ennå
             </h2>
             <p class="text-primary-600 dark:text-primary-300 mb-8">
-              This blog is just getting started. Check back soon for new content!
+              Bloggen har så vidt startet. Kom tilbake snart for nytt innhold!
             </p>
             {isDev && (
               <div class="p-4 bg-blue-50 dark:bg-blue-950 rounded-lg border border-blue-200 dark:border-blue-800">
                 <p class="text-sm text-blue-800 dark:text-blue-200">
-                  <strong>Dev Mode:</strong> Add some posts to the <code>content/posts/</code> directory to see them here.
+                  <strong>Utviklingsmodus:</strong> Legg til innlegg i <code>content/posts/</code> for å se dem her.
                 </p>
               </div>
             )}

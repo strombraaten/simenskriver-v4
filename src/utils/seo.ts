@@ -86,7 +86,7 @@ export function generatePostSEO(post: Post, url: string): SEOData {
     }
     ogImage = {
       url: imageUrl,
-      alt: post.data.imageAlt || `Featured image for post: ${title}`,
+      alt: post.data.imageAlt || `Forsidebilde for innlegget: ${title}`,
       width: 1200,
       height: 630,
     };
@@ -102,7 +102,7 @@ export function generatePostSEO(post: Post, url: string): SEOData {
 
   return {
     title: `${title} | ${siteConfig.title}`,
-    description: description || `Post: ${title}`,
+    description: description || `Innlegg: ${title}`,
     canonical: url,
     ogImage,
     ogType: "article",
@@ -140,7 +140,7 @@ export function generatePageSEO(page: Page, url: string): SEOData {
     }
     ogImage = {
       url: imageUrl,
-      alt: page.data.imageAlt || `Featured image for page: ${title}`,
+      alt: page.data.imageAlt || `Forsidebilde for siden: ${title}`,
       width: 1200,
       height: 630,
     };
@@ -190,7 +190,7 @@ export function generateProjectSEO(project: Project, url: string): SEOData {
     }
     ogImage = {
       url: imageUrl,
-      alt: project.data.imageAlt || `Featured image for project: ${title}`,
+      alt: project.data.imageAlt || `Forsidebilde for prosjektet: ${title}`,
       width: 1200,
       height: 630,
     };
@@ -247,7 +247,7 @@ export function generateDocumentationSEO(
       url: imageUrl,
       alt:
         documentation.data.imageAlt ||
-        `Featured image for documentation: ${title}`,
+        `Forsidebilde for dokumentasjonen: ${title}`,
       width: 1200,
       height: 630,
     };
@@ -300,8 +300,8 @@ export function generateTagSEO(
   site: string,
   currentPage?: number
 ): SEOData {
-  const title = `Posts tagged with "${tag}" | ${siteConfig.title}`;
-  const description = `Browse all posts tagged with ${tag} on ${siteConfig.title}`;
+  const title = `Innlegg merket «${tag}» | ${siteConfig.title}`;
+  const description = `Alle innlegg merket ${tag} på ${siteConfig.title}`;
   const baseUrl = `${site}/posts/tag/${tag}`;
   const canonical =
     currentPage && currentPage > 1 ? `${baseUrl}/${currentPage}` : baseUrl;
@@ -329,9 +329,9 @@ export function generatePostsListSEO(
 ): SEOData {
   const title =
     currentPage && currentPage > 1
-      ? `Posts - Page ${currentPage} | ${siteConfig.title}`
-      : `Posts | ${siteConfig.title}`;
-  const description = `Browse all posts on ${siteConfig.title}`;
+      ? `Innlegg – side ${currentPage} | ${siteConfig.title}`
+      : `Innlegg | ${siteConfig.title}`;
+  const description = `Alle innlegg på ${siteConfig.title}`;
   const canonical =
     currentPage && currentPage > 1
       ? `${site}/posts/${currentPage}`

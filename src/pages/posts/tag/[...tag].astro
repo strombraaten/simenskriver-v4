@@ -81,8 +81,8 @@ const endIndex = Math.min(postsPerPage, totalPosts);
 const paginatedPosts = filteredPosts.slice(startIndex, endIndex);
 
 // Generate SEO data
-const pageTitle = `Posts tagged "${tag}"`;
-const pageDescription = `All posts tagged with "${tag}"`;
+const pageTitle = `Innlegg merket «${tag}»`;
+const pageDescription = `Alle innlegg merket «${tag}»`;
 
 const seoData = {
   title: `${pageTitle} | ${siteConfig.title}`,
@@ -116,25 +116,25 @@ const pagination = {
             <a 
               href="/rss.xml"
               class="inline-flex items-center px-3 py-2 type-ui text-highlight-600 dark:text-highlight-400 bg-highlight-50 dark:bg-highlight-900/20 rounded-lg border border-highlight-200 dark:border-highlight-700 hover:bg-highlight-100 dark:hover:bg-highlight-900/40 hover:text-highlight-700 dark:hover:text-highlight-300 transition-all duration-200"
-              title="Subscribe to RSS feed"
+              title="Abonner på RSS-feeden"
               data-no-swup
             >
               <Icon name="rss" class="w-4 h-4 mr-1.5" />
-              RSS Feed
+              RSS-feed
             </a>
             <a 
               href="/feed.xml"
               class="inline-flex items-center px-3 py-2 type-ui text-highlight-600 dark:text-highlight-400 bg-highlight-50 dark:bg-highlight-900/20 rounded-lg border border-highlight-200 dark:border-highlight-700 hover:bg-highlight-100 dark:hover:bg-highlight-900/40 hover:text-highlight-700 dark:hover:text-highlight-300 transition-all duration-200"
-              title="Subscribe to Atom feed"
+              title="Abonner på Atom-feeden"
               data-no-swup
             >
               <Icon name="atom" class="w-4 h-4 mr-1.5" />
-              Atom Feed
+              Atom-feed
             </a>
           </div>
         </div>
         <p class="type-small text-primary-600 dark:text-primary-300">
-          Showing <strong>{filteredPosts.length}</strong> posts tagged with 
+          Viser <strong>{filteredPosts.length}</strong> innlegg merket 
           <span class="inline-flex items-center px-2 py-1 bg-highlight-100 dark:bg-highlight-900/30 text-highlight-800 dark:text-highlight-200 rounded type-meta ml-1">
             #{tag}
           </span>
@@ -146,7 +146,7 @@ const pagination = {
             class="inline-flex items-center type-meta text-primary-600 dark:text-primary-300 hover:text-primary-800 dark:hover:text-primary-200 transition-colors"
           >
             <Icon name="arrow-left" class="w-4 h-4 mr-1" />
-            Show all posts
+            Vis alle innlegg
           </a>
         </div>
       </header>
@@ -171,11 +171,11 @@ const pagination = {
             <div class="text-center py-16">
               <Icon name="tag" class="w-16 h-16 text-primary-400 dark:text-primary-500 mx-auto mb-6" />
               <h2 class="text-2xl font-semibold text-primary-900 dark:text-primary-50 mb-4">
-                No posts found
+                Fant ingen innlegg
               </h2>
               <p class="text-primary-600 dark:text-primary-300 mb-8 max-w-md mx-auto">
-                There are no posts tagged with "{tag}". Try browsing other tags or 
-                <a href="/posts" class="text-primary-600 dark:text-primary-300 hover:underline">view all posts</a>.
+                Ingen innlegg er merket «{tag}». Prøv et annet tema eller 
+                <a href="/posts" class="text-primary-600 dark:text-primary-300 hover:underline">se alle innlegg</a>.
               </p>
             </div>
           )}

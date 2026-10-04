@@ -54,7 +54,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
         <!-- Smart Navigation (single system with style variants) -->
         {siteConfig.navigation.showNavigation && (  
     <nav class={`nav-desktop-audit-visible flex items-center ${  
-      siteConfig.navigation.style === 'minimal' ? `space-x-5 ${siteConfig.featureButton === 'none' && !siteConfig.commandPalette.enabled ? '' : 'mr-4'}` : 'space-x-5' }`} aria-label="Main navigation">
+      siteConfig.navigation.style === 'minimal' ? `space-x-5 ${siteConfig.featureButton === 'none' && !siteConfig.commandPalette.enabled ? '' : 'mr-4'}` : 'space-x-5' }`} aria-label="Hovednavigasjon">
             {siteConfig.navigation.pages.map((page, index) => {
               const hasChildren = page.children && page.children.length > 0;
               const hasUrl = page.url && page.url.trim() !== '';
@@ -73,7 +73,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
                             : `flex items-center space-x-1 type-meta transition-colors hover:text-highlight-600 dark:hover:text-highlight-400 text-primary-600 dark:text-primary-300`
                         }
                         target={page.url.startsWith('http') ? '_blank' : undefined}
-                        aria-label={`Navigate to ${page.title}`}
+                        aria-label={`Gå til ${page.title}`}
                         aria-haspopup="true"
                         aria-expanded="false"
                       >
@@ -91,7 +91,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
                             ? `flex items-center space-x-1 type-meta transition-colors hover:text-highlight-600 dark:hover:text-highlight-400 text-primary-500 dark:text-primary-400`
                             : `flex items-center space-x-1 type-meta transition-colors hover:text-highlight-600 dark:hover:text-highlight-400 text-primary-600 dark:text-primary-300`
                         }
-                        aria-label={`${page.title} menu`}
+                        aria-label={`${page.title}-meny`}
                         aria-haspopup="true"
                         aria-expanded="false"
                       >
@@ -106,7 +106,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
                           href={child.url || '#'}
                           class="block px-4 py-2 type-meta text-primary-700 dark:text-primary-200 hover:text-highlight-600 dark:hover:text-highlight-400 transition-colors"
                           target={child.url?.startsWith('http') ? '_blank' : undefined}
-                          aria-label={`Navigate to ${child.title}`}
+                          aria-label={`Gå til ${child.title}`}
                         >
                           {child.title}
                           {child.url?.startsWith('http') && (
@@ -128,7 +128,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
                         : `flex items-center space-x-1 type-meta transition-colors hover:text-highlight-600 dark:hover:text-highlight-400 text-primary-600 dark:text-primary-300`
                     }
                     target={page.url?.startsWith('http') ? '_blank' : undefined}
-                    aria-label={`Navigate to ${page.title}`}
+                    aria-label={`Gå til ${page.title}`}
                   >
                     <span>{page.title}</span>
                     {page.url?.startsWith('http') && (
@@ -150,7 +150,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
           <button
             id="header-graph-button"
             class="p-2 text-primary-500 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-800 rounded-lg transition-colors duration-200"
-            aria-label="Open graph view"
+            aria-label="Åpne grafvisning"
           >
             <Icon name="git-fork" class="w-5 h-5" />
           </button>
@@ -159,7 +159,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
           <button
             id="header-theme-button"
             class="p-2 text-primary-500 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-800 rounded-lg transition-colors duration-200"
-            aria-label="Change theme"
+            aria-label="Bytt tema"
           >
             <Icon name="palette" class="w-5 h-5" />
           </button>
@@ -170,7 +170,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
             <button
               id="command-palette-trigger"
               class="flex items-center space-x-2 px-3 py-2 type-meta text-ink-subtle bg-surface-tinted rounded-lg hover:bg-surface-dyed transition-colors"
-              aria-label="Open command palette"
+              aria-label="Åpne kommandopaletten"
             >
               <Icon name={paletteIcon} class="w-5 h-5" />
               <kbd id="cmd-shortcut-display" class="hidden sm:inline type-label text-ink-default"></kbd>
@@ -179,7 +179,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
             <button
               id="command-palette-trigger"
               class="p-2 text-primary-500 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
-              aria-label="Open command palette"
+              aria-label="Åpne kommandopaletten"
             >
               <Icon name={paletteIcon} class="w-5 h-5" />
             </button>
@@ -191,7 +191,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
           <button
             id="mobile-menu-toggle"
             class="md:hidden p-2 text-ink-subtle hover:bg-surface-tinted rounded-lg transition-colors"
-            aria-label="Toggle mobile navigation menu"
+            aria-label="Vis eller skjul menyen"
             aria-expanded="false"
           >
             <Icon name="menu" class="w-5 h-5 menu-icon" />
@@ -205,7 +205,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
     {siteConfig.navigation.showNavigation && siteConfig.navigation.showMobileMenu && (
       <div id="mobile-menu" class="md:hidden hidden py-4 border-t border-primary-200 dark:border-primary-700" role="dialog"
           aria-modal="true"
-          aria-label="Mobile navigation menu">
+          aria-label="Mobilmeny">
         <nav class="flex flex-col space-y-1">
           {siteConfig.navigation.pages.map((page, index) => {
             const hasChildren = page.children && page.children.length > 0;
@@ -222,7 +222,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
                         href={page.url}
                         class="flex-1 flex items-center justify-between px-3 py-2 text-primary-600 dark:text-primary-300 hover:text-highlight-600 dark:hover:text-highlight-400 hover:bg-primary-50 dark:hover:bg-primary-800 transition-colors type-meta rounded-md"
                         target={page.url.startsWith('http') ? '_blank' : undefined}
-                        aria-label={`Navigate to ${page.title}`}
+                        aria-label={`Gå til ${page.title}`}
                       >
                         <span>{page.title}</span>
                         {page.url.startsWith('http') && (
@@ -237,7 +237,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
                     )}
                     <button
                       class="mobile-nav-toggle px-3 py-2 text-primary-500 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-800 rounded-md transition-colors"
-                      aria-label={`Toggle ${page.title} submenu`}
+                      aria-label={`Vis eller skjul undermenyen for ${page.title}`}
                       aria-expanded="false"
                       data-toggle-index={index}
                     >
@@ -251,7 +251,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
                         href={child.url || '#'}
                         class="block px-3 py-2 text-primary-600 dark:text-primary-300 hover:text-highlight-600 dark:hover:text-highlight-400 hover:bg-primary-50 dark:hover:bg-primary-800 transition-colors type-meta rounded-md"
                         target={child.url?.startsWith('http') ? '_blank' : undefined}
-                        aria-label={`Navigate to ${child.title}`}
+                        aria-label={`Gå til ${child.title}`}
                       >
                         {child.title}
                         {child.url?.startsWith('http') && (
@@ -269,7 +269,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
                   href={page.url || '#'}
                   class="flex items-center justify-between px-3 py-2 text-primary-600 dark:text-primary-300 hover:text-highlight-600 dark:hover:text-highlight-400 hover:bg-primary-50 dark:hover:bg-primary-800 transition-colors type-meta rounded-md"
                   target={page.url?.startsWith('http') ? '_blank' : undefined}
-                  aria-label={`Navigate to ${page.title}`}
+                  aria-label={`Gå til ${page.title}`}
                 >
                   <span>{page.title}</span>
                   {page.url?.startsWith('http') && (
