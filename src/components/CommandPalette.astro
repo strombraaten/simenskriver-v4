@@ -42,7 +42,7 @@ import Icon from './Icon.astro';
             id="command-palette-input"
             type="text"
             placeholder={siteConfig.commandPalette.placeholder}
-            class="w-full pl-4 pr-10 py-3 bg-surface-tinted border border-transparent rounded-lg text-ink-prominent placeholder-ink-subtle focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+            class="type-body max-w-none w-full pl-4 pr-10 py-3 bg-surface-tinted border border-transparent rounded-lg text-ink-prominent placeholder-ink-subtle focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
             autocomplete="off"
             spellcheck="false"
           >
@@ -71,7 +71,7 @@ import Icon from './Icon.astro';
         <div id="command-palette-no-results" class="hidden p-8 text-center">
           <Icon name="search-x" class="w-8 h-8 text-primary-400 dark:text-primary-500 mx-auto mb-2" />
           <p class="text-primary-600 dark:text-primary-300">No results found</p>
-          <p class="text-sm text-primary-500 dark:text-primary-400 mt-1">Try a different search term</p>
+          <p class="type-small text-primary-500 dark:text-primary-400 mt-1">Try a different search term</p>
         </div>
 
         <!-- Default items (shown when no search) -->
@@ -82,7 +82,7 @@ import Icon from './Icon.astro';
             siteConfig.commandPalette.quickActions.graphView || 
             siteConfig.commandPalette.quickActions.changeTheme) && (
             <div class="p-2">
-              <div class="px-3 py-2 text-xs font-medium text-primary-500 dark:text-primary-400 uppercase tracking-wide">
+              <div class="px-3 py-2 type-label text-primary-500 dark:text-primary-400">
                 Quick Actions
               </div>
               {siteConfig.commandPalette.quickActions.toggleMode && (
@@ -120,7 +120,7 @@ import Icon from './Icon.astro';
           <!-- Pages -->
           {siteConfig.commandPalette.sections.pages && siteConfig.navigation.pages.length > 0 && (
             <div class="p-2">
-              <div class="px-3 py-2 text-xs font-medium text-primary-500 dark:text-primary-400 uppercase tracking-wide">
+              <div class="px-3 py-2 type-label text-primary-500 dark:text-primary-400">
                 Pages
               </div>
               {siteConfig.navigation.pages.map(page => {
@@ -139,7 +139,7 @@ import Icon from './Icon.astro';
                           target={page.url.startsWith('http') ? '_blank' : undefined}
                         >
                           <Icon name="file-text" class="w-4 h-4 text-primary-500 dark:text-primary-400 group-hover:text-highlight-500" />
-                          <span class="text-primary-900 dark:text-primary-50 font-medium">{page.title}</span>
+                          <span class="type-list-item text-primary-900 dark:text-primary-50">{page.title}</span>
                           {page.url.startsWith('http') && (
                             <Icon name="external-link" class="w-3 h-3 text-primary-400 dark:text-primary-500 ml-auto" />
                           )}
@@ -147,7 +147,7 @@ import Icon from './Icon.astro';
                       ) : (
                         <div class="w-full flex items-center space-x-3 px-3 py-2 text-primary-700 dark:text-primary-300">
                           <Icon name="folder" class="w-4 h-4 text-primary-500 dark:text-primary-400" />
-                          <span class="text-primary-900 dark:text-primary-50 font-medium">{page.title}</span>
+                          <span class="type-list-item text-primary-900 dark:text-primary-50">{page.title}</span>
                         </div>
                       )}
                       {/* Children items (indented) */}
@@ -189,7 +189,7 @@ import Icon from './Icon.astro';
           <!-- Social Links -->
           {siteConfig.commandPalette.sections.social && (siteConfig.navigation.social || []).filter((social) => social && social.url && social.icon).length > 0 && (
             <div class="p-2">
-              <div class="px-3 py-2 text-xs font-medium text-primary-500 dark:text-primary-400 uppercase tracking-wide">
+              <div class="px-3 py-2 type-label text-primary-500 dark:text-primary-400">
                 Social
               </div>
               {(siteConfig.navigation.social || []).filter((social) => social && social.url && social.icon).map(social => (
@@ -214,7 +214,7 @@ import Icon from './Icon.astro';
         <!-- Theme Selection -->
         <div id="command-palette-theme-selection" class="hidden divide-y divide-primary-200 dark:divide-primary-700">
           <div class="p-2">
-            <div class="px-3 py-2 text-xs font-medium text-primary-500 dark:text-primary-400 uppercase tracking-wide">
+            <div class="px-3 py-2 type-label text-primary-500 dark:text-primary-400">
               Choose Theme
             </div>
             <div id="theme-list" class="space-y-1">
@@ -226,7 +226,7 @@ import Icon from './Icon.astro';
 
       <!-- Footer -->
       <div class="p-3 border-t border-line-subtle bg-surface-tinted rounded-b-xl">
-        <div class="flex items-center justify-between text-xs text-ink-subtle">
+        <div class="flex items-center justify-between type-meta text-ink-subtle">
           <span>Use ↑↓ to navigate, ↵ to select, ESC to close</span>
           <!-- <span>Press <kbd class="px-1 py-0.5 bg-white dark:bg-primary-700 rounded border">{siteConfig.commandPalette.shortcut.replace('ctrl', '⌘').replace('+', '').toUpperCase()}</kbd> to return</span> -->
         </div>
@@ -842,7 +842,7 @@ import Icon from './Icon.astro';
           container.className = 'p-2';
 
           const header = document.createElement('div');
-          header.className = 'px-3 py-2 text-xs font-medium text-ink-subtle uppercase tracking-wide';
+          header.className = 'px-3 py-2 type-label text-ink-subtle';
 
           // Format section titles
           const sectionTitles = {
@@ -990,14 +990,14 @@ import Icon from './Icon.astro';
 
       // Add post title with highlighting
       const titleSpan = document.createElement('div');
-      titleSpan.className = 'text-ink-prominent font-medium';
+      titleSpan.className = 'type-list-item text-ink-prominent';
       titleSpan.innerHTML = this.highlightSearchTerm(item.title, this.input.value);
       contentDiv.appendChild(titleSpan);
 
       // Add post description if it exists with highlighting
       if (item.description) {
         const descriptionPara = document.createElement('div');
-        descriptionPara.className = 'text-sm text-ink-default mt-1 truncate';
+        descriptionPara.className = 'type-small text-ink-default mt-1 truncate';
         // Pagefind excerpts already contain <mark> highlighting (and pre-encoded entities);
         // re-running our own highlighter on them would double-escape the markup.
         descriptionPara.innerHTML = item.preHighlighted

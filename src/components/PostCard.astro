@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { formatDate, formatDateMobile, processMarkdown, calculateReadingTime, getReadingTimeMobile, postUrl } from '../utils/markdown';
+import { processMarkdown, calculateReadingTime, getReadingTimeMobile, postUrl } from '../utils/markdown';
+import { formatIsoDate } from '../utils/date';
 import { siteConfig, getPostCardAspectRatio } from '../config';
 import { getOptimizedFormat } from '@/utils/images';
 import ImageWrapper from './ImageWrapper.astro';
@@ -152,11 +153,8 @@ const shouldShowCoverImage = (() => {
     )}
 
     <div class={`p-4 ${image && shouldShowCoverImage ? 'rounded-b-lg' : 'rounded-lg'}`}>
-      <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-primary-500 dark:text-primary-400 mb-1">
-        <time datetime={date.toISOString()}>
-          <span class="hidden sm:inline">{formatDate(date)}</span>
-          <span class="sm:hidden">{formatDateMobile(date)}</span>
-        </time>
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-1 type-meta text-primary-500 dark:text-primary-400 mb-1">
+        <time datetime={date.toISOString()}>{formatIsoDate(date)}</time>
 
         {siteConfig.postOptions.readingTime && readingTime && (
           <>
@@ -181,14 +179,12 @@ const shouldShowCoverImage = (() => {
         )}
       </div>
 
-      <h3 id={`post-title-${post.id}`} class={`font-medium text-primary-900 dark:text-primary-100 leading-relaxed group-hover:text-highlight-600 dark:group-hover:text-highlight-400 transition-colors ${
-        featured ? 'text-lg' : 'text-base'
-      }`}>
+      <h3 id={`post-title-${post.id}`} class="type-h3 text-primary-900 dark:text-primary-100 group-hover:text-highlight-600 dark:group-hover:text-highlight-400 transition-colors">
         {title}
       </h3>
 
       {featured && description && (
-        <p class="text-primary-600 dark:text-primary-300 line-clamp-3 text-sm leading-relaxed mt-1">
+        <p class="type-small text-primary-600 dark:text-primary-300 line-clamp-3 mt-1">
           {description}
         </p>
       )}
@@ -198,7 +194,7 @@ const shouldShowCoverImage = (() => {
           {tags.slice(0, 3).map((tag) => (
             <a
               href={`/posts/tag/${tag}`}
-              class="inline-block text-xs text-primary-600 dark:text-primary-300 bg-primary-100 dark:bg-primary-800 px-2.5 py-1 rounded-full border border-primary-200 dark:border-primary-700 transition-colors hover:bg-highlight-100 dark:hover:bg-highlight-800 mr-2 mb-1"
+              class="inline-block type-meta text-primary-600 dark:text-primary-300 bg-primary-100 dark:bg-primary-800 px-2.5 py-1 rounded-full border border-primary-200 dark:border-primary-700 transition-colors hover:bg-highlight-100 dark:hover:bg-highlight-800 mr-2 mb-1"
               aria-label={`View posts tagged with ${tag}`}
             >
               {tag}
@@ -206,7 +202,7 @@ const shouldShowCoverImage = (() => {
           ))}
           {tags.length > 3 && (
             <span 
-              class="inline-block text-xs text-primary-500 dark:text-primary-400 bg-primary-50 dark:bg-primary-800 px-2.5 py-1 rounded-full border border-primary-200 dark:border-primary-700 mr-2 mb-1"
+              class="inline-block type-meta text-primary-500 dark:text-primary-400 bg-primary-50 dark:bg-primary-800 px-2.5 py-1 rounded-full border border-primary-200 dark:border-primary-700 mr-2 mb-1"
               aria-label={`${tags.length - 3} more tags available`}
             >
               + {tags.length - 3} more

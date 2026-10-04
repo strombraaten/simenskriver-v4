@@ -473,8 +473,10 @@ import Icon from './Icon.astro';
         .text((d) => d.name)
         .attr("text-anchor", "middle")
         .attr("dy", (d) => d.radius + 8) // Position below the node
-        .attr("font-size", "12px")
-        .attr("font-weight", "500")
+        // .type-label: mono 500 at step -2. style(), not attr(), so var() resolves
+        .style("font-family", "var(--type-mono)")
+        .style("font-size", "var(--step--2)")
+        .style("font-weight", "500")
         .attr("fill", colors.postText)
         .attr("pointer-events", "none")
         .style("user-select", "none")

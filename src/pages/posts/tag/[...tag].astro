@@ -109,13 +109,13 @@ const pagination = {
       <!-- Header -->
       <header class="mb-8">
         <div class="flex items-start justify-between mb-3">
-          <h1 class="text-lg font-bold text-primary-900 dark:text-primary-50">
+          <h1 class="type-page-title text-primary-900 dark:text-primary-50">
             {pageTitle}
           </h1>
           <div class="flex items-center space-x-2">
             <a 
               href="/rss.xml"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-highlight-600 dark:text-highlight-400 bg-highlight-50 dark:bg-highlight-900/20 rounded-lg border border-highlight-200 dark:border-highlight-700 hover:bg-highlight-100 dark:hover:bg-highlight-900/40 hover:text-highlight-700 dark:hover:text-highlight-300 transition-all duration-200"
+              class="inline-flex items-center px-3 py-2 type-ui text-highlight-600 dark:text-highlight-400 bg-highlight-50 dark:bg-highlight-900/20 rounded-lg border border-highlight-200 dark:border-highlight-700 hover:bg-highlight-100 dark:hover:bg-highlight-900/40 hover:text-highlight-700 dark:hover:text-highlight-300 transition-all duration-200"
               title="Subscribe to RSS feed"
               data-no-swup
             >
@@ -124,7 +124,7 @@ const pagination = {
             </a>
             <a 
               href="/feed.xml"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-highlight-600 dark:text-highlight-400 bg-highlight-50 dark:bg-highlight-900/20 rounded-lg border border-highlight-200 dark:border-highlight-700 hover:bg-highlight-100 dark:hover:bg-highlight-900/40 hover:text-highlight-700 dark:hover:text-highlight-300 transition-all duration-200"
+              class="inline-flex items-center px-3 py-2 type-ui text-highlight-600 dark:text-highlight-400 bg-highlight-50 dark:bg-highlight-900/20 rounded-lg border border-highlight-200 dark:border-highlight-700 hover:bg-highlight-100 dark:hover:bg-highlight-900/40 hover:text-highlight-700 dark:hover:text-highlight-300 transition-all duration-200"
               title="Subscribe to Atom feed"
               data-no-swup
             >
@@ -133,9 +133,9 @@ const pagination = {
             </a>
           </div>
         </div>
-        <p class="text-base text-primary-600 dark:text-primary-300">
+        <p class="type-small text-primary-600 dark:text-primary-300">
           Showing <strong>{filteredPosts.length}</strong> posts tagged with 
-          <span class="inline-flex items-center px-2 py-1 bg-highlight-100 dark:bg-highlight-900/30 text-highlight-800 dark:text-highlight-200 rounded text-sm font-medium ml-1">
+          <span class="inline-flex items-center px-2 py-1 bg-highlight-100 dark:bg-highlight-900/30 text-highlight-800 dark:text-highlight-200 rounded type-meta ml-1">
             #{tag}
           </span>
         </p>
@@ -143,7 +143,7 @@ const pagination = {
         <div class="mt-4">
           <a 
             href="/posts"
-            class="inline-flex items-center text-sm text-primary-600 dark:text-primary-300 hover:text-primary-800 dark:hover:text-primary-200 transition-colors"
+            class="inline-flex items-center type-meta text-primary-600 dark:text-primary-300 hover:text-primary-800 dark:hover:text-primary-200 transition-colors"
           >
             <Icon name="arrow-left" class="w-4 h-4 mr-1" />
             Show all posts
