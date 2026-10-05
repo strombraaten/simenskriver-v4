@@ -113,6 +113,9 @@ Skal nevnes at jeg velger å bruke mer penger på apper og digitale tjenester re
 
 ## Når er den årlige ABO-dagen
 
-Bare for å gi deg muligheten til å delta kan vi si at det er **siste søndagen i juni**, altså neste søndag. Veit ikke med deg, men jeg syns søndag er en god dag for å både reflektere, men også ta et skippertak på personlig "administrasjonsarbeid".
+La vårs si at det er **siste søndagen i juni**. Når det er like før du tar sommerferie, eller du allerede har kommet i gang, og det ikke er så mye annet som står på. Veit ikke med deg, men jeg har alltid syns at søndag er en god dag for å både reflektere, men også ta et skippertak på personlig "administrasjonsarbeid", så det passer jo perfekt for en dag som dette.
 
-Kjenner du også at du burde overveie abonnementene du har gående? Bare send meg en mail på `strombraaten@gmail.com`, så kan du få det inn i kalenderen.
+Kjenner du også at du burde overveie abonnementene du har gående? Legg ABO-dagen inn i kalenderen din, så dukker den opp hvert år:
+
+- [Legg til i Google Kalender](https://calendar.google.com/calendar/render?action=TEMPLATE&text=ABO-dagen&dates=20270627%2F20270628&details=Abonnement%20B%C3%B8r%20Overveies%3A%20Om%20du%20hadde%20sletta%20alle%20abonnementene%20dine%20i%20dag%2C%20hva%20hadde%20du%20faktisk%20savna%3F%20https%3A%2F%2Fsimenskriver.no%2Fabonnementer&recur=RRULE%3AFREQ%3DYEARLY%3BBYMONTH%3D6%3BBYDAY%3D-1SU)
+- [Legg til i Apple Kalender](https://simenskriver.no/kalender/abo-dagen.ics)

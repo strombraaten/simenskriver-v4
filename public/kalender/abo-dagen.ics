@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Simen Skriver//ABO-dagen//NO
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:abo-dagen@simenskriver.no
+DTSTAMP:20261005T000000Z
+DTSTART;VALUE=DATE:20270627
+DTEND;VALUE=DATE:20270628
+RRULE:FREQ=YEARLY;BYMONTH=6;BYDAY=-1SU
+SUMMARY:ABO-dagen
+DESCRIPTION:Abonnement Bør Overveies: Om du hadde sletta alle abonnemente
+ ne dine i dag\, hva hadde du faktisk savna? https://simenskriver.no/abonne
+ menter
+URL:https://simenskriver.no/abonnementer
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
