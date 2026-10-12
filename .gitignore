@@ -63,3 +63,6 @@ src/content/references/
 public/_redirects
 public/_headers
 .claude/
+
+# Symlenke til Hjernen-vaultet (kun lokalt)
+src/content/Referanser
