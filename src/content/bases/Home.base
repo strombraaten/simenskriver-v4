@@ -111,9 +111,19 @@ views:
     imageAspectRatio: 0.55
     maxTagsToShow: 2
     hideQuickEditIcon: true
-  - type: cms
+  - type: kanban
     name: Drafts
     filters:
       and:
         - draft == true
+    groupBy:
+      property: draft
+      direction: ASC
+    order:
+      - file.name
+    sort:
+      - property: file.ctime
+        direction: DESC
     cardSize: 360
+    imageAspectRatio: 0.5
+    columnWidth: 380

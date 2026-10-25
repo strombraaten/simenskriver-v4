@@ -18,7 +18,8 @@
   "syntax_highlighting": true,
   "syntax_highlighting_mobile": false,
   "enabled_templates_hotkeys": [
-    "src/content/templates/Publiser.md"
+    "src/content/templates/Publiser.md",
+    "src/content/templates/new post.md"
   ],
   "startup_templates": [],
   "intellisense_render": "1",

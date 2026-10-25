@@ -5,7 +5,7 @@ lastModified: 2024-02-25
 tags:
   - skriving
 aliases:
-  - TK-trikset
+  - TK
 title: TK-trikset
 permalink: tk
 ---

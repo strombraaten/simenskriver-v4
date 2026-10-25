@@ -6,6 +6,7 @@ tags:
   - teknologi
 aliases:
   - AI
+  - kunstig intellligens
 title: Kunstig intelligens
 permalink: kunstig-intelligens
 ---
