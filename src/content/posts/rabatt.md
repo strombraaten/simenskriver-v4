@@ -15,7 +15,7 @@ permalink: rabatt
 Til nå er det seks tjenester jeg har egne rabattkoder til:
 
 1. Smarte dumtelefoner, eller mer distraksjonsfri teknologi, fra [Romobil](https://romobil.no/discount/simenskriver) (koden «simenskriver» legges til automatisk)
-2. [Cleanshot](cleanshot.sjv.io/simenskriver)
+2. [Cleanshot](https://cleanshot.sjv.io/simenskriver)
 3. [Readwise](https://readwise.io/simenskriver/)
 4. [Raycast](https://www.raycast.com/?via=simen)
 5. [Ørepropper fra Loop](http://rwrd.io/5ndgmck?c)
