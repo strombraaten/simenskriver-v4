@@ -7,6 +7,7 @@ tags:
   - tankemat
 aliases:
   - Om oppmerksomhet
+  - ta vare på oppmerksomheten
 title: Om oppmerksomhet
 permalink: oppmerksomhet
 ---
