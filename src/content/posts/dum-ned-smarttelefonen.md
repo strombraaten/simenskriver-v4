@@ -45,7 +45,7 @@ Her tror jeg selve bruksområdet spiller en viktig rolle, når det kommer til de
 
 ## Kindle-opplevelsen blant smarttelefoner
 
-Det er nettopp de positive sidene der – den matte skjermen, og at det ikke er så fancy – som gjør konseptet bak en "dum" smarttelefon så spennende. Noen av dere har kanskje hørt om [Light-phone](https://www.thelightphone.com/lightiii), som har eksistert i noen år nå, så konseptet er jo ikke nytt. Samtidig så virker det ikke som det har helt funka sånn som du *vil* at det skal funke.
+Det er nettopp de positive sidene der – den matte skjermen, og at det ikke er så fancy – som gjør konseptet bak en "dum" smarttelefon så spennende. Noen av dere har kanskje hørt om [Light-phone](https://romobil.no/discount/simenskriver?redirect=/products/light-phone-iii-new-and-used%3Fvariant%3D45015021846581), som har eksistert i noen år nå, så konseptet er jo ikke nytt. Samtidig så virker det ikke som det har helt funka sånn som du *vil* at det skal funke.
 
 Ut i fra anmeldelsene jeg har sett fra [folk som har prøvd Light-phone](https://www.youtube.com/watch?v=C7G1pWYVtBg) så handler det nok en gang om bruksområdet. At du går inn i brukeropplevelsen med forventningene du har bygd opp over tid, av å bruke en moderne smarttelefon. I praksis vil de forventningene være vanskelige, om ikke umulige, å leve opp til. Samtidig vil en smarttelefon, *smart* som den er, ikke representere én enkeltstående handling, på samme måte som en kindle. 
 
