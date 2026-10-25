@@ -47,7 +47,7 @@ Bare at det er nettsider. Det er tjenester. Det er sanger. Det er bilder. Det er
 
 ### Alternativ 2) Vi lager det for vårs sjøl
 
-Dette er alternativet som gir mest mening for meg, desto mer jeg tenker på det. Mikkel Malmberg snakker om hvordan han lagde en epost-app kun for seg sjøl. Da er det du som er brukeren. Det er du som får slite med at noe eventuelt ikke fungerer. Ingen andre. Samtidig er det også du som får gleden av at din digitale verden blir nøyaktig sånn *du* vil. Uten å irritere deg over at ingen andre tenker som deg. 
+Dette er alternativet som gir mest mening for meg, desto mer jeg tenker på det. [Mikkel Malmberg snakker om hvordan han lagde en epost-app](https://youtu.be/OmP6lZsmUw8?si=cRQe0iZtm3WrsxKK) kun for seg sjøl. Da er det du som er brukeren. Det er du som får slite med at noe eventuelt ikke fungerer. Ingen andre. Samtidig er det også du som får gleden av at din digitale verden blir nøyaktig sånn *du* vil. Uten å irritere deg over at ingen andre tenker som deg. 
 
 Den kreative søpla vi snakka om tidligere er ikke lenger støy på samme måte, føler jeg. Da er det mer et eksperiment. Noe du testa for å se hvordan det ville være. Da er lista med prosjekter du har lagt bak deg en historikk over ideer du har hatt. Og er det ikke akkurat den type ting som nettopp hører hjemme på harddiskene våre?
 
