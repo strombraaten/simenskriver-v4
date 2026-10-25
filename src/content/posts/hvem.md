@@ -6,7 +6,7 @@ description: ""
 tags: []
 hideTOC: false
 targetKeyword: ""
-draft: true
+draft: false
 aliases:
   - prosess eller produkt
   - prosess-eller-produkt
