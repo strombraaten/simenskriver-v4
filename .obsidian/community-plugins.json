@@ -13,5 +13,7 @@
   "url-into-selection",
   "dim-lights",
   "obsidian-linter",
-  "templater-obsidian"
+  "obsidian-hider",
+  "templater-obsidian",
+  "obsidian-style-settings"
 ]

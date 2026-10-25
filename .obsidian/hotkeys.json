@@ -54,15 +54,6 @@
       "key": "A"
     }
   ],
-  "zenmode:toggle-zen-mode": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "Z"
-    }
-  ],
   "theme:toggle-light-dark": [
     {
       "modifiers": [
@@ -197,6 +188,14 @@
         "Mod"
       ],
       "key": "N"
+    }
+  ],
+  "zenmode:toggle-zen-mode": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "Z"
     }
   ]
 }

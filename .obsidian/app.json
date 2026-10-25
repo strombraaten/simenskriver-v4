@@ -5,7 +5,7 @@
   "attachmentFolderPath": "./attachments",
   "userIgnoreFilters": [
     "bases/",
-    "references/"
+    "src/content/references/"
   ],
   "focusNewTab": false,
   "mobilePullAction": "command-palette:open",

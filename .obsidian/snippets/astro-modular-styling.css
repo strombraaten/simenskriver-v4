@@ -66,3 +66,7 @@
   height: 100%;
   border: none;
 }
+/* Narrower reading column (Oxygen default is 40rem) */
+body {
+  --line-width: 32rem;
+}
