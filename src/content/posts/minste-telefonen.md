@@ -11,7 +11,7 @@ description:
 ---
 Det er noe spennende med å prøve noe nytt. Samtidig er det ikke alltid like lett. 
 
-I det siste har jeg gått over til en kjedelig smarttelefon-løsning. Mer konkret å bruke [en smarttelefon som heter Jelly Star](https://www.unihertz.com/products/jelly-star?variant=44179567968495), fra et selskap som heter Unihertz.
+I det siste har jeg gått over til en kjedelig smarttelefon-løsning. Mer konkret å bruke [en smarttelefon som heter Jelly Star](https://romobil.no/discount/simenskriver?redirect=/products/jelly-star%3Fvariant%3D45188980113461), fra et selskap som heter Unihertz.
 
 ![[attachments/jelly-star.jpg]]
 

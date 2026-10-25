@@ -85,7 +85,7 @@ En ting som overraska meg er at airpods fungerer overraskende bra sammen med de 
 
 Som sagt, jeg har ingen plan om å bytte, for jeg er fornøyd nok med telefonen jeg har. Men om det er noen telefoner som jeg har et lite øye med:
 
-- [Minimal phone 02](https://minimalcompany.com/pages/mp02)
+- [Minimal phone 02](https://romobil.no/discount/simenskriver?redirect=/products/minimal-phone-2)
 - [Titan 2 elite](https://www.unihertz.com/products/titan-2-elite)
 - [Clicks communicator](https://clicks.tech/communicator)
 
@@ -99,9 +99,9 @@ Her er forresten telefonene rangert fra minst til størst, men her har jeg lent 
 
 | **Modell**              | **Dimensjoner (Høyde × Bredde × Tykkelse)** |
 | ----------------------- | ------------------------------------------- |
-| **[Jelly Star](https://www.unihertz.com/products/jelly-star)**          | 95.1 × 49.6 × 18.7 mm                       |
+| **[Jelly Star](https://romobil.no/discount/simenskriver?redirect=/products/jelly-star)**          | 95.1 × 49.6 × 18.7 mm                       |
 | **[Titan 2 Elite](https://www.unihertz.com/products/titan-2-elite)**       | 117.8 × 75.0 × 10.4 mm                      |
-| **[Minimal Phone 2](https://www.kickstarter.com/projects/minimalcompany/minimal-phone-2-the-modern-qwerty-phone)**     | 122.6 × 72.0 × 9.48 mm                      |
+| **[Minimal Phone 2](https://romobil.no/discount/simenskriver?redirect=/products/minimal-phone-2)**     | 122.6 × 72.0 × 9.48 mm                      |
 | **[Jelly Max](https://www.unihertz.com/products/jelly-max)**           | 128.7 × 62.7 × 16.3 mm                      |
 | **[Clicks Communicator](https://clicks.tech/communicator)** | 130.5 × 78.6 × 12.0 mm                      |
 | **[iPhone 13 mini](https://www.apple.com/iphone/compare/?modelList=iphone-13-mini,iphone-18-pro,iphone-duo)**      | 131.5 × 64.2 × 7.65 mm                      |

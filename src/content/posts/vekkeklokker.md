@@ -15,9 +15,7 @@ Du har noen klassikere fra Braun, som ligner litt på den her:
 
 https://www.elkjop.no/product/tv-lyd-og-smarte-hjem/radio-og-stereo/vekkerklokke-og-klokkeradio/braun-digital-vekkerklokke-radiostyrt-bnc009bk-rc/MPBNC009BKRC
 
-Du har også den rakkeren her, fra Loftie, som prøver å være mye mer enn bare en vekkerklokke, som er altfor dyr til en vekkerklokke å være, men det er også noe veldig interessant med den 🤓
-
-https://byloftie.com/products/loftie
+Du har også den rakkeren her, fra [Loftie](https://romobil.no/discount/simenskriver?redirect=/products/loftie-klokke), som prøver å være mye mer enn bare en vekkerklokke, som er altfor dyr til en vekkerklokke å være, men det er også noe veldig interessant med den 🤓
 
 Du har også sånne wakeup-lights da. Veit ikke om du har sett noe på det? I så fall er du nok avhengig av at du står opp på et annet tidspunkt enn Jacob, eller at dere begge faktisk vil opp til samme tidspunkt, for det kommer jo masse lys inn i rommet da. https://www.clasohlson.com/no/Philips-HF3500-Wake-up-light/p/36-5449
 
