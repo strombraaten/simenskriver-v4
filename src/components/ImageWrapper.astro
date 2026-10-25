@@ -76,7 +76,8 @@ let isImageMissing = false;
 
 if (isLocal) {
   try {
-    const files = import.meta.glob<ImageMetadata>("/public/**", {
+    // Only match image files; non-module files in public/ (e.g. .ics) break the Vite build
+    const files = import.meta.glob<ImageMetadata>("/public/**/*.{png,jpg,jpeg,webp,gif,svg,avif,PNG,JPG,JPEG,WEBP,GIF,SVG,AVIF}", {
       import: "default",
     });
     
